@@ -1,17 +1,28 @@
 // Font
 $mainFont                : 'Montserrat', Helvetica, Arial, sans-serif;
 
-// Size
-$mainFontColor           : #101010;
-$mainFontSize            : 18px;
-$mainFontWeight          : 400;
-$mainLineHeight          : 1.4;
+// colors
+$darkShade100           : #1F2041;
+$darkShade75            : rgba(31, 32, 65, 0.75);
+$darkShade50            : rgba(31, 32, 65, 0.5);
+$darkShade25            : rgba(31, 32, 65, 0.25);
+$darkShade5             : rgba(31, 32, 65, 0.05);
+$mainColor              : #BC9CFF;
+$seconColor             : #6FCF97;
 
-$desktopWidth            : 1280px;
+
+// Size
+$mainFontColor           : $darkShade100;
+$mainFontSize            : 14px;
+$mainFontWeight          : normal;
+$mainLineHeight          : 24px;
+
+$desktopWidth            : 1160px; 
 $smDesktopWidth          : 980px;
 $tableWidth              : 768px;
 $phoneWidth              : 480px;
 $smPhoneWidth            : 320px;
+
 
 // Main color
 $default-color           : #ffffff;

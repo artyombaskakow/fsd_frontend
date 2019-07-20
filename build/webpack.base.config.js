@@ -10,7 +10,7 @@ const PATHS = {
     assets: 'assets/'
 }
 
-const PAGES_DIR = `${PATHS.src}/pug/pages/`;
+const PAGES_DIR = `${PATHS.src}/pages/`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'));
 
 module.exports = {
