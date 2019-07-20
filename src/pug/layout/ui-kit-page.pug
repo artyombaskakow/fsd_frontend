@@ -1,0 +1,16 @@
+block variables
+
+doctype html
+html(lang=en)
+    head
+        meta(charset='urf=8')
+        title #{title}
+        block head
+
+    body(class=pageClass)
+        header.ui-kit-header
+            include ../components/icon/icon_gray
+        .content 
+            block content
+
+        block script
