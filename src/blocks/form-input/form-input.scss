@@ -1,0 +1,25 @@
+.form-input{
+    margin-bottom: 16px;
+}
+
+.form-input__label{
+    @extend %form-elem-label;
+}
+
+.form-input__input{
+    border: 1px solid $darkShade25;
+    padding: 13px 15px;
+    border-radius: 4px;
+    width: 100%;
+
+    &:hover,
+    &:focus{
+        border-color: $darkShade50;
+    }
+}
+
+.form-input__hint{
+    float: right;
+    font-weight: 100;
+    color: $darkShade50;
+}

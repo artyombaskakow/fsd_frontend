@@ -1,5 +1,35 @@
+@import '../ui-kit-color/ui-kit-color.scss';
+
 .ui-kit-header{
-    margin: 30px 30px 72px 30px; 
+    margin: 30px 30px 60px 30px; 
 }
 
-@import '../ui-kit-color/ui-kit-color.scss';
+.ui-kit-color-examples,
+.ui-kit-text-examples{
+    margin-top: 7px;
+    width: 30%;
+}
+
+.ui-kit-color-examples{
+    margin-right: 364px;
+}
+
+.ui-kit-text-examples .t-cell{
+    padding-bottom: 50px;
+}
+
+.ui-kit-text-examples .t-cell:first-child{
+    font-weight: 100;
+    text-align: right;
+    padding-right: 26px;
+    color: $darkShade25;
+}
+
+.ui-kit-text-examples .t-cell:first-child > h1,
+.ui-kit-text-examples .t-cell:first-child > h2,
+.ui-kit-text-examples .t-cell:first-child > h3{
+    color: $darkShade25;
+    font-family: $mainFont;
+    font-weight: 100;
+    text-transform: uppercase;
+}

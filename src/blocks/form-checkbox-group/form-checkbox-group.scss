@@ -1,0 +1,10 @@
+.form-checkbox-group__label{
+    @extend %form-elem-label;
+
+    margin-bottom: 11px;
+}
+
+.form-checkbox-group__checkbox-elem{
+    margin-bottom: 11px;
+}
+

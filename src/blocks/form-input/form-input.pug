@@ -1,0 +1,11 @@
+mixin form_input(args)
+    - 
+        var type_attr = args.type ? args.type : '';
+        var placeholder = args.placeholder ? args.placeholder : '';
+        var label = args.label ? args.label : '';
+        var hint = args.hint ? args.hint : '';
+        var value = args.value ? args.value : '';
+    .form-input
+        label.form-input__label= label
+            span.form-input__hint= hint
+        input.form-input__input(type= type_attr, placeholder= placeholder, value= value)

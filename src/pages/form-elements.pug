@@ -1,0 +1,14 @@
+extends ../blocks/ui-kit-layout/ui-kit-layout 
+include ../blocks/blocks
+
+block variables
+    - var title = 'Form Elements'
+
+block content
+    .content-col(style='margin-right: 126px;')
+        +form_input({type: 'email', placeholder: 'Email', label: 'Text field', hint: 'Default'})
+        +form_input({type: 'text', placeholder: 'Type text', label: 'Text field', value: 'This is pretty awesome', hint: 'Hover/focus'})
+
+    .content-col(style='margin-right: 72px;')
+        +form_checkbox_group({label: 'Checkbox buttons'})
+    .content-col 22

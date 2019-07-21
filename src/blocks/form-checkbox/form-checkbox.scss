@@ -1,0 +1,44 @@
+.form-checkbox__input{
+    display: none;
+}
+
+.form-checkbox__label{
+    color: $darkShade50;
+    font-weight: 100;
+    position: relative;
+    padding-left: 30px;
+    display: block;
+    line-height: 20px;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.form-checkbox__checkmark{
+    position: absolute;
+    display: flex;
+    @include size(20px);
+    border: 1px solid $darkShade25;
+    border-radius: 4px;
+    left: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-checkbox__check-icon{
+    margin-bottom: 1px;
+}
+
+.form-checkbox__input:not(:checked) + .form-checkbox__checkmark > .form-checkbox__check-icon{
+    opacity: 0;
+}
+
+.form-checkbox__input:checked + .form-checkbox__checkmark{
+    border-color: $mainColor;
+
+    & .form-checkbox__check-icon{
+        opacity: 1;
+    }
+}

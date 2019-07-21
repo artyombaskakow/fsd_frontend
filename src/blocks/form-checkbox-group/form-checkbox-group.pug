@@ -1,0 +1,8 @@
+mixin form_checkbox_group(obj)
+    - 
+        var label = obj.label ? obj.label : '';
+    .form-checkbox-group
+        label.form-checkbox-group__label= label
+        +form_checkbox({label: 'Можно курить'})
+        +form_checkbox({label: 'Можно курить'})
+        +form_checkbox({label: 'Можно пригласить гостей (до 10 человек)'})

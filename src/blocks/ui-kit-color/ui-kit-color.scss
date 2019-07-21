@@ -1,13 +1,24 @@
 .ui-kit-color{
     display: inline-block;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
-.ui-kit-color_color-rect{
+.ui-kit-color__color-rect{
     @include size(70px);
     border-radius: 6px;
     float: left;
     margin-right: 40px;
     margin-left: 10px;
-    margin-top: -5px;
+}
+
+.ui-kit-color__color-title{
+    margin-top: 9px;
+    margin-bottom: 5px;
+}
+
+.ui-kit-color__color-value{
+    font-family: $headerFontColor;
+    font-weight: 100;
+    font-size: 19px;
+    text-transform: uppercase;
 }

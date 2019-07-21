@@ -9,30 +9,59 @@ html {
   font-size: $mainFontSize;
   color: $mainFontColor;
   height: 100%;
+  letter-spacing: 0.1px;
+  word-spacing: 0.8px;
+
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: normal;
+
+
   @media screen and (max-width: $desktopWidth) {
-    font-size: 16px;
+    /*font-size: 16px;*/
   }
   @media screen and (max-width: $tableWidth) {
-    font-size: 15px;
+    /*font-size: 15px;*/
   }
   @media screen and (max-width: $phoneWidth) {
-    font-size: 14px;
+    /*font-size: 14px;*/
   }
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: $mainFont;
-  font-size: $mainFontSize;
-  font-weight: $mainFontWeight;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 *, *:before, *:after { box-sizing: border-box; }
 
-h1, h2, h3, h4, h5, h6 { margin: 0; }
+h1, h2, h3, h4, h5, h6 { 
+  margin: 0; 
+  color: $headerFontColor;
+}
+
+h1, h2{
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+}
+
+h1{
+  font-size: 24px;
+  line-height: 30px;
+}
+
+h2{
+  font-size: 19px;
+  line-height: 24px;
+}
+
+h3{
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
 
 a { text-decoration: none; }
 
@@ -42,17 +71,20 @@ ul, li {
   list-style-type: none;
 }
 
+
+
+
 section, .section {
   position: relative;
-  padding: 40px 0;
+
   @media screen and (max-width: $desktopWidth) {
-    padding: 36px 0;
+
   }
   @media screen and (max-width: $desktopWidth) {
-    padding: 28px 0;
+
   }
   @media screen and (max-width: $desktopWidth) {
-    padding: 20px 0;
+
   }
 }
 
@@ -60,13 +92,15 @@ section, .section {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  min-height: 100vh;
 }
 
 .content-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+}
+
+.flex{
+  display: flex;
 }
 
 .container {
@@ -75,6 +109,7 @@ section, .section {
   position: relative;
   margin: 0 auto;
   max-width: $desktopWidth;
+
   @media screen and (max-width: $smDesktopWidth) {
     max-width: tableWidth;
   }
@@ -86,6 +121,35 @@ section, .section {
   }
 }
 
+.content-col{
+  width: 320px;
+}
+
+
+.table{
+  display: table;
+}
+
+.t-row{
+  display: table-row;
+}
+
+.t-cell{
+  display: table-cell;
+}
+
+.t-col{
+  display: table-column;
+}
+
+%form-elem-label{
+  text-transform: uppercase;
+  display: block;
+  font-weight: bold;
+  color: $darkShade100;
+  font-size: 0.87rem;
+}
+
 // Modules
 // @import "modules/my-module.scss";
-@import "../../blocks/ui-kit-layout/ui-kit-layout.scss";
+@import "../../blocks/blocks.scss";
