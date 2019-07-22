@@ -1,0 +1,28 @@
+.form-radio{
+    display: inline-block;
+}
+
+.form-radio__input{
+    display: none;
+}
+
+.form-radio__label{
+    @extend %form-input-label;
+}
+
+.form-radio__checkmark{
+    @extend %form-input-checkmark;
+    border-radius: 50%;
+}
+
+.form-radio__input:checked + .form-radio__checkmark{
+    border-color: $mainColor;
+
+    &::before{
+        content: '';
+        display: block;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        @include size(12px);
+        border-radius: 50%;
+    }
+}

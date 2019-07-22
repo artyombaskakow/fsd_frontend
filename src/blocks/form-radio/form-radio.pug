@@ -1,0 +1,12 @@
+mixin form-radio(obj)
+    -
+        var label = obj.label ? obj.label : '';
+        var value = obj.value ? obj.value : label;
+        var name = obj.name ? obj.name : '';
+        var checked_attr = obj.checked ? obj.checked : false;
+        var className = obj.className ?  obj.className : '';
+
+    div(class='form-radio ' + className)
+        label.form-radio__label !{label}
+            input.form-radio__input(type='radio', value=value, name=name, checked=checked_attr)
+            .form-radio__checkmark

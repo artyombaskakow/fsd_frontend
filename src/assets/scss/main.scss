@@ -32,6 +32,10 @@ body {
   padding: 0;
 }
 
+input{
+  font-family: $mainFont;
+}
+
 *, *:before, *:after { box-sizing: border-box; }
 
 h1, h2, h3, h4, h5, h6 { 
@@ -147,6 +151,31 @@ section, .section {
   font-weight: bold;
   color: $darkShade100;
   font-size: 0.87rem;
+}
+
+%form-input-label{
+  color: $darkShade50;
+  font-weight: 100;
+  position: relative;
+  padding-left: 30px;
+  display: inline-block;
+  line-height: 18px;
+
+  &:hover{
+      cursor: pointer;
+  }
+}
+
+%form-input-checkmark{
+    position: absolute;
+    display: flex;
+    @include size(20px);
+    border: 1px solid $darkShade25;
+    border-radius: 4px;
+    left: 0;
+    top: 0;
+    justify-content: center;
+    align-items: center;
 }
 
 // Modules

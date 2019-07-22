@@ -5,28 +5,11 @@
 }
 
 .form-checkbox__label{
-    color: $darkShade50;
-    font-weight: 100;
-    position: relative;
-    padding-left: 30px;
-    display: inline-block;
-    line-height: 20px;
-
-    &:hover{
-        cursor: pointer;
-    }
+    @extend %form-input-label;
 }
 
 .form-checkbox__checkmark{
-    position: absolute;
-    display: flex;
-    @include size(20px);
-    border: 1px solid $darkShade25;
-    border-radius: 4px;
-    left: 0;
-    top: 0;
-    justify-content: center;
-    align-items: center;
+    @extend %form-input-checkmark;
 }
 
 .form-checkbox__input:not(:checked) + .form-checkbox__checkmark::before{

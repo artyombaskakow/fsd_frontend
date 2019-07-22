@@ -1,1 +1,1 @@
-import './form-checkbox-group/form-checkbox-group';
+import './form-group/form-group';

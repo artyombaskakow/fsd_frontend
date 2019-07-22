@@ -1,7 +1,7 @@
 mixin form-checkbox(obj)
     -
-        var label = obj.label ? ' ' + obj.label : '';
-        var value = obj.value ? obj.value : '';
+        var label = obj.label ? obj.label : '';
+        var value = obj.value ? obj.value : label;
         var checked_attr = obj.checked ? obj.checked : false;
         var richClass = obj.rich ? ' form-checkbox_rich ' : '';
         var className = obj.className ?  obj.className : '';
@@ -11,6 +11,5 @@ mixin form-checkbox(obj)
         label.form-checkbox__label !{label}
             input.form-checkbox__input(type='checkbox', value=value, checked=checked_attr)
             .form-checkbox__checkmark
-                .form-checkbox__check-icon
             if(obj.rich && description.length)
                 .form-checkbox__description !{description}
