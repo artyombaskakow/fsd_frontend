@@ -1,7 +1,7 @@
 @import "utils/libs";
+@import "utils/fonts";
 @import "utils/vars";
 @import "utils/mixins";
-@import "utils/fonts";
 @import "utils/reset";
 
 html {
@@ -9,8 +9,7 @@ html {
   font-size: $mainFontSize;
   color: $mainFontColor;
   height: 100%;
-  letter-spacing: 0.1px;
-  word-spacing: 0.8px;
+  letter-spacing: -0.1px;
 
   font-family: $mainFont;
   font-style: normal;

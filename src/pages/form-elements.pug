@@ -4,11 +4,55 @@ include ../blocks/blocks
 block variables
     - var title = 'Form Elements'
 
-block content
+block content           
     .content-col(style='margin-right: 126px;')
-        +form_input({type: 'email', placeholder: 'Email', label: 'Text field', hint: 'Default'})
-        +form_input({type: 'text', placeholder: 'Type text', label: 'Text field', value: 'This is pretty awesome', hint: 'Hover/focus'})
+        +form-input({type: 'email', placeholder: 'Email', label: 'Text field', hint: 'Default'})
+        +form-input({type: 'text', placeholder: 'Type text', label: 'Text field', value: 'This is pretty awesome', hint: 'Hover/focus'})
+        div пусть
+
+        +form-checkbox-group({
+            label: 'expandable checkbox list',
+            expandable: true,
+            elems: [
+                {label: 'Завтрак'},
+                {label: 'Письменный стол'},
+                {label: 'Кроватка'}
+            ]
+        })
+
+        +form-checkbox-group({
+            label: 'expandable checkbox list',
+            expandable: true,
+            expanded: true,
+            elems: [
+                {label: 'Завтрак'},
+                {label: 'Письменный стол', checked: true},
+                {label: 'Стул для кормления', checked: true},
+                {label: 'Кроватка', checked: true},
+                {label: 'Телевизор'},
+                {label: 'Шампунь'},
+                {label: 'Телевизор'},
+                {label: 'Шампунь'}
+            ]
+        })
 
     .content-col(style='margin-right: 72px;')
-        +form_checkbox_group({label: 'Checkbox buttons'})
+
+        +form-checkbox-group({
+            label: 'Checkbox buttons',
+            elems: [
+                {label: 'Можно курить'},
+                {label: 'Можно курить', checked: true},
+                {label: 'Можно пригласить гостей <br/>(до 10 человек)', checked: true}
+            ]
+        })
+
+        +form-checkbox-group({
+            label: 'Rich checkbox buttons',
+            elems: [
+                {label: 'Широкий коридор', rich: true, descr: 'Ширина коридоров в номере<br/> не менее 91 см'},
+                {label: 'Помощник для инвалидов', rich: true, descr: 'На 1 этаже вас встретит специалист<br/> и проводит до номера.'}
+            ]
+        })
+
     .content-col 22

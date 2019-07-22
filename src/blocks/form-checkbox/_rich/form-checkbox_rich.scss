@@ -1,0 +1,17 @@
+.form-checkbox_rich{
+
+    margin-bottom: 5px;
+
+    & .form-checkbox__label{
+        font-weight: bold;
+        color: $darkShade75;
+    }
+}
+
+.form-checkbox__description{
+    font-weight: normal;
+    font-size: 0.87rem;
+    color: $darkShade50;
+    line-height: 14px;
+    margin-top: 5px;
+}
