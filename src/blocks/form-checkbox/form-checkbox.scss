@@ -1,31 +1,4 @@
+@import'./form-checkbox_.scss';
 @import './_rich/form-checkbox_rich';
-
-.form-checkbox__input{
-    display: none;
-}
-
-.form-checkbox__label{
-    @extend %form-input-label;
-}
-
-.form-checkbox__checkmark{
-    @extend %form-input-checkmark;
-}
-
-.form-checkbox__input:not(:checked) + .form-checkbox__checkmark::before{
-    display: none;
-}
-
-.form-checkbox__input:checked + .form-checkbox__checkmark{
-    border-color: $mainColor;
-
-    &::before{
-        content: '';
-        display: block;
-        background: url('/assets/img/check-icon.png') 0 0 no-repeat;
-        margin-bottom: 1px;
-        width: 10px;
-        height: 11px;
-    }
-}
+@import './_theme/form-checkbox_theme_toggle.scss';
 

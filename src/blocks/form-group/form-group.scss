@@ -3,11 +3,11 @@
 
 .form-group{
     margin-bottom: 40px;
-    max-width: $maxElemWidth;
 }
 
 .form-group__label{
     @extend %form-elem-label;
+    max-width: $maxElemWidth;
     margin-bottom: 9px;
     padding-right: 16px;
 }

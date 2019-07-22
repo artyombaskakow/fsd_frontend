@@ -23,7 +23,7 @@ block content
             +form-checkbox({label: 'Телевизор'})
             +form-checkbox({label: 'Шампунь'})
             +form-checkbox({label: 'Телевизор'})
-            +form-checkbox({label: 'Шампунь'})
+            +form-checkbox({label: 'Шампунь'}) 
 
     .content-col(style='margin-right: 72px;')
 
@@ -36,8 +36,15 @@ block content
             +form-radio({label: 'Mужчина', value: 'men', name: 'sex', checked: true})
             +form-radio({label: 'Женщина', value: 'women', name: 'sex'})
 
+        +form-group({label: 'Toggle'})(style="margin-bottom: 28px;")
+            +form-checkbox({label: 'Получать спецпредложения', theme: 'toggle', checked: true})
+            +form-checkbox({label: 'Получать спецпредложения', theme: 'toggle'})
+
         +form-group({label: 'Rich checkbox buttons'})
             +form-checkbox({label: 'Широкий коридор', rich: true, descr: 'Ширина коридоров в номере<br/> не менее 91 см'})
             +form-checkbox({label: 'Помощник для инвалидов', rich: true, descr: 'На 1 этаже вас встретит специалист<br/> и проводит до номера.'})
+
+        
+
 
     .content-col 22

@@ -1,0 +1,30 @@
+.form-checkbox__input{
+    display: none;
+}
+
+.form-checkbox__label{
+    @extend %form-input-label;
+}
+
+.form-checkbox__checkmark{
+    @extend %form-input-checkmark;
+}
+
+.form-checkbox__checkmark::before{
+    content: '';
+    background: url('/assets/img/check-icon.png') 0 0 no-repeat;
+    margin-bottom: 1px;
+    @include size(10px, 11px);
+}
+
+.form-checkbox__input:not(:checked) + .form-checkbox__checkmark::before{
+    display: none;
+}
+
+.form-checkbox__input:checked + .form-checkbox__checkmark{
+    border-color: $mainColor;
+
+    &::before{
+        display: block;
+    }
+}
