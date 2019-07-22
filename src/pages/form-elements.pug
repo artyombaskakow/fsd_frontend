@@ -32,19 +32,26 @@ block content
             +form-checkbox({label: 'Можно с питомцами', checked: true})
             +form-checkbox({label: 'Можно пригласить гостей <br/>(до 10 человек)', checked: true})
 
-        +form-group({label: 'Radio buttons'})
+        +form-group({label: 'Radio buttons'})(style="margin-bottom: 28px;")
             +form-radio({label: 'Mужчина', value: 'men', name: 'sex', checked: true})
             +form-radio({label: 'Женщина', value: 'women', name: 'sex'})
 
-        +form-group({label: 'Toggle'})(style="margin-bottom: 28px;")
+        +form-group({label: 'Toggle'})
             +form-checkbox({label: 'Получать спецпредложения', theme: 'toggle', checked: true})
             +form-checkbox({label: 'Получать спецпредложения', theme: 'toggle'})
 
         +form-group({label: 'Rich checkbox buttons'})
             +form-checkbox({label: 'Широкий коридор', rich: true, descr: 'Ширина коридоров в номере<br/> не менее 91 см'})
             +form-checkbox({label: 'Помощник для инвалидов', rich: true, descr: 'На 1 этаже вас встретит специалист<br/> и проводит до номера.'})
-
+    
         
 
 
-    .content-col 22
+    .content-col 
+
+        +form-group({label: 'Bullet list'})
+            +bullet-list([
+                'Нельзя с питомцами',
+                'Без вечеринок и мероприятий',
+                'Время прибытия — после 13:00, а выезд до 12:00'
+            ])
