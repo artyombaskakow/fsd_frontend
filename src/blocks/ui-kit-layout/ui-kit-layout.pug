@@ -1,5 +1,7 @@
 block variables
 
+include ../icons/icon-logo_gray
+
 doctype html
 html(lang=en)
     head
@@ -9,7 +11,8 @@ html(lang=en)
 
     body(class=pageClass)
         header.ui-kit-header
-            include ../icon/icon_gray
+            +icon-logo-gray
+            block header-content
         .container.flex 
             block content
 
