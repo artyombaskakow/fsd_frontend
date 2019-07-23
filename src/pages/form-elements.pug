@@ -5,7 +5,10 @@ block variables
     - var title = 'Form Elements'
 
 block content
-    +icon-arrow-right    
+    +icon-arrow-right
+    +icon-heart-empty
+    +icon-heart
+
     .content-col(style='margin-right: 126px;')
         +form-input({type: 'email', placeholder: 'Email', label: 'Text field', hint: 'Default'})
         +form-input({type: 'text', placeholder: 'Type text', label: 'Text field', value: 'This is pretty awesome', hint: 'Hover / focus'})
@@ -45,6 +48,9 @@ block content
             +form-checkbox({label: 'Широкий коридор', rich: true, descr: 'Ширина коридоров в номере<br/> не менее 91 см'})
             +form-checkbox({label: 'Помощник для инвалидов', rich: true, descr: 'На 1 этаже вас встретит специалист<br/> и проводит до номера.'})
     
+        +form-group({label: 'Like button'})
+            +form-button-like({likeCount: 2})(style="margin-right: 10px")
+            +form-button-like({likeCount: 12, liked: true})
         
 
 
