@@ -1,0 +1,29 @@
+.form-button-rate{
+    display: inline-flex;
+    flex-direction: row-reverse;
+}
+
+.form-button-rate__star-elem{
+    margin-right: 4px;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.form-button-rate__icon{
+    @include size(20px);
+}
+
+.form-button-rate__input{
+    display: none;
+}
+
+.form-button-rate__icon-fill{
+    display: none;
+}
+
+.form-button-rate__star-elem_checked .form-button-rate__icon-fill,
+.form-button-rate__star-elem_checked ~ .form-button-rate__star-elem .form-button-rate__icon-fill{
+    display: inline;
+}

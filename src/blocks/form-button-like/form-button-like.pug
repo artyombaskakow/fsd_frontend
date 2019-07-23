@@ -5,6 +5,6 @@ mixin form-button-like(obj={})
 
     button(class='form-button-like ' + likedClass)&attributes(attributes)
         svg.form-button-like__icon
-            use.form-buttom__icon-empty(xlink:href='#icon-heart-empty')
-            use.form-buttom__icon-fill(xlink:href='#icon-heart')
+            use.form-button__icon-empty(xlink:href='#icon-heart-empty')
+            use.form-button__icon-fill(xlink:href='#icon-heart')
         .form-button-like__count= likeCount

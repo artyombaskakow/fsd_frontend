@@ -1,24 +1,24 @@
 .form-checkbox_theme_toggle{
 
-    & .form-checkbox__checkmark{
+    .form-checkbox__checkmark{
         border-radius: 10px;
         width: 40px;
         flex-direction: column;
     }
     
-    & .form-checkbox__label{
+    .form-checkbox__label{
         padding-left: 50px;
     }
 
-    & .form-checkbox__checkmark::before{
+    .form-checkbox__checkmark::before{
+        content: '';
+        display: block;
         border-radius: 50%;
         margin: 0 3px;
         @include size(12px);
     }
 
     .form-checkbox__input:not(:checked) + .form-checkbox__checkmark::before{
-        content: '';
-        display: block;
         background: $darkShade25;
         align-self: flex-start;
     }

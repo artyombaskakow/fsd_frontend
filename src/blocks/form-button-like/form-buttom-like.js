@@ -1,5 +1,5 @@
 (function(){
-    console.log('like btn');
+
     let likeBtns = document.querySelectorAll('.form-button-like');
 
     for(let i=0; i<likeBtns.length; i++){

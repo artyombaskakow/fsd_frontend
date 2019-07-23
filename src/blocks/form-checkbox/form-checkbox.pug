@@ -11,5 +11,8 @@ mixin form-checkbox(obj)
         label.form-checkbox__label !{label}
             input.form-checkbox__input(type='checkbox', value=value, checked=checked_attr)
             .form-checkbox__checkmark
+                if(!obj.theme || obj.theme=='checkbox')
+                    svg.form-checkbox__icon
+                        use.form-checkbox__icon-elem(xlink:href='#icon-check')
             if(obj.rich && description.length)
                 .form-checkbox__description !{description}
