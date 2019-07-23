@@ -1,0 +1,10 @@
+.form-button_theme_simple{
+    color: $mainColor;
+    background: none;
+    padding: 0;
+
+    &:hover{
+        background: none;
+        color: $darkShade50;
+    }
+}

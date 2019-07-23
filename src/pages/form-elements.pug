@@ -4,7 +4,8 @@ include ../blocks/blocks
 block variables
     - var title = 'Form Elements'
 
-block content           
+block content
+    +icon-arrow-right    
     .content-col(style='margin-right: 126px;')
         +form-input({type: 'email', placeholder: 'Email', label: 'Text field', hint: 'Default'})
         +form-input({type: 'text', placeholder: 'Type text', label: 'Text field', value: 'This is pretty awesome', hint: 'Hover / focus'})
@@ -48,6 +49,19 @@ block content
 
 
     .content-col 
+
+        +form-group({label: 'Buttons'})
+            div(style="margin-bottom: 33px;")
+                +form-button({text: 'Click me'})(style="margin-right: 20px")
+                +form-button()
+            div(style="margin-bottom: 27px;")
+                +form-button({theme: 'ghost'})(style="margin-right: 20px")
+                +form-button({theme: 'ghost'})
+            div(style="margin-bottom: 27px;")
+                +form-button({theme: 'simple'})(style="margin-right: 20px")
+                +form-button({theme: 'simple'})
+            div(style="margin-right: 0")
+                +form-button({theme: 'fullwidth', text: 'Перейти к оплате'})
 
         +form-group({label: 'Bullet list'})
             +bullet-list([
