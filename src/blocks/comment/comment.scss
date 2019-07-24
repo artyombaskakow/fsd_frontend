@@ -1,0 +1,23 @@
+.comment__author-info{
+    margin-bottom: 10px;
+}
+
+.comment__author-photo{
+    @include size(48px);
+    float: left;
+    margin-right: 10px;
+}
+
+.comment__author-name{
+    font-weight: bold;
+}
+
+.comment__like-button-wrap{
+    margin-left: 5px;
+    margin-right: 15px;
+}
+
+.comment__content{
+    display: flex;
+}
+

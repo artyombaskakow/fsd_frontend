@@ -41,9 +41,20 @@ block content
             {icon: 'location_city', title: 'Удобство', descr: 'Окно в каждой из спален'}
         ]})
 
-    .content-col
+    div(style="width: inherit")
+
+        +comment({
+            authorPhoto: '/assets/img/comment-man1.png',
+            authorName: 'Мурад Сарафанов',
+            date: '5 дней назад',
+            likeCount: 12,
+            liked: true,
+            text:   `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. 
+                    И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — 
+                    никто не жаловался из соседей.`
+        })
     
-        .content-col(style='margin-right: 72px;')
+        .content-col(style)
 
             +form-group({label: 'Checkbox buttons'})(style="margin-bottom: 36px;")
                 +form-checkbox({label: 'Можно курить'})

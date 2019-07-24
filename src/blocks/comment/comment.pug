@@ -1,0 +1,20 @@
+include ../form-button-like/form-button-like
+
+mixin comment(obj)
+    - 
+        var bgStyle = `background-image: url(${obj.authorPhoto})`;
+        var authorName = obj.authorName ? obj.authorName : 'Иванов Иван';
+        var date = obj.date ? obj.date : '';
+        var liked = obj.liked ? obj.liked : false;
+        var likeCount = obj.likeCount ? obj.likeCount : 0;
+        var text = obj.text ? obj.text : '';
+    .comment
+        .comment__author-info
+            .comment__author-photo(style=bgStyle)
+            .comment__author-name= authorName
+            .comment__date= date
+        .comment__content
+            .comment__like-button-wrap
+                +form-button-like({likeCount: likeCount, liked: liked})
+            .comment__text= text
+
