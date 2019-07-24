@@ -1,0 +1,29 @@
+$advListPaddingSize : rem(20px);
+
+.advantages-list{
+
+}
+
+.advantages-list__list-item{
+    position: relative;
+    padding-left: 58px;
+    padding-top: $advListPaddingSize;
+    padding-bottom: $advListPaddingSize;
+    border-bottom: 1px solid $darkShade10;
+}
+
+.advantages-list__icon{
+    font-size: rem(48px);
+    @include icon-gradient;
+    position: absolute;
+    left: 0;
+    top: $advListPaddingSize;
+}
+
+.advantages-list__title{
+    font-weight: bold;
+}
+
+.advantages-list__descr{
+
+}

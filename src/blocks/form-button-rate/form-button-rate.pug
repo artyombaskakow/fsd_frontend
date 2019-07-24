@@ -8,6 +8,8 @@ mixin form-button-rate(obj)
             - labelClass = value==i ? labelMainClass + ' form-button-rate__star-elem_checked' : labelMainClass;
                 label(class=labelClass)
                     input.form-button-rate__input(type='radio' value=i name=btnName)
-                    svg.form-button-rate__icon
-                        use.form-button-rate__icon-empty(xlink:href='#icon-star-empty')
-                        use.form-button-rate__icon-fill(xlink:href='#icon-star')
+                    i.material-icons.form-button-rate__icon-empty star_border
+                    i.material-icons.form-button-rate__icon-fill star
+                    //svg.form-button-rate__icon
+                    //   use.form-button-rate__icon-empty(xlink:href='#icon-star-empty')
+                    //    use.form-button-rate__icon-fill(xlink:href='#icon-star')

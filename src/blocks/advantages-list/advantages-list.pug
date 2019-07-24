@@ -1,0 +1,10 @@
+mixin advantages-list(obj)
+    - 
+        var list = obj.list ? obj.list : [];
+    ul.advantages-list
+        each item in obj.list
+            li.advantages-list__list-item
+                .advantages-list__icon.material-icons= item.icon
+                .advantages-list__title= item.title
+                .advantages-list__descr= item.descr
+

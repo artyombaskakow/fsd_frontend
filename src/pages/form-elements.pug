@@ -7,6 +7,15 @@ block variables
 block content
     +icons-define
 
+    //svg
+    //    use(xlink:href='#icon-smile')
+    //svg
+        use(xlink:href='#icon-city')
+
+    //i.material-icons face
+    //i.material-icons(style="color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);") insert_emoticon
+
+
     .content-col(style='margin-right: 126px;')
         +form-input({type: 'email', placeholder: 'Email', label: 'Text field', hint: 'Default'})
         +form-input({type: 'text', placeholder: 'Type text', label: 'Text field', value: 'This is pretty awesome', hint: 'Hover / focus'})
@@ -17,7 +26,7 @@ block content
             +form-checkbox({label: 'Письменный стол'})
             +form-checkbox({label: 'Кроватка'})
 
-        +form-group({label: 'expandable checkbox list', expandable: true, expanded: true})
+        +form-group({label: 'expandable checkbox list', expandable: true, expanded: true})(style="margin-bottom: 18px;")
             +form-checkbox({label: 'Завтрак'})
             +form-checkbox({label: 'Письменный стол', checked: true})
             +form-checkbox({label: 'Стул для кормления', checked: true})
@@ -27,54 +36,58 @@ block content
             +form-checkbox({label: 'Телевизор'})
             +form-checkbox({label: 'Шампунь'}) 
 
-    .content-col(style='margin-right: 72px;')
+        +advantages-list({list: [
+            {icon: 'insert_emoticon', title: 'Комфорт', descr: 'Шумопоглощающие стены'},
+            {icon: 'location_city', title: 'Удобство', descr: 'Окно в каждой из спален'}
+        ]})
 
-        +form-group({label: 'Checkbox buttons'})(style="margin-bottom: 36px;")
-            +form-checkbox({label: 'Можно курить'})
-            +form-checkbox({label: 'Можно с питомцами', checked: true})
-            +form-checkbox({label: 'Можно пригласить гостей <br/>(до 10 человек)', checked: true})
-
-        +form-group({label: 'Radio buttons'})(style="margin-bottom: 28px;")
-            +form-radio({label: 'Mужчина', value: 'men', name: 'sex', checked: true})
-            +form-radio({label: 'Женщина', value: 'women', name: 'sex'})
-
-        +form-group({label: 'Toggle'})
-            +form-checkbox({label: 'Получать спецпредложения', theme: 'toggle', checked: true})
-            +form-checkbox({label: 'Получать спецпредложения', theme: 'toggle'})
-
-        +form-group({label: 'Like button'})(style="margin-bottom: 29px;")
-            +form-button-like({likeCount: 2})(style="margin-right: 10px")
-            +form-button-like({likeCount: 12, liked: true})
-
-        +form-group({label: 'Rate button'})
-            +form-button-rate({value: 4})
-            +form-button-rate({value: 5})
-
-        +form-group({label: 'Rich checkbox buttons'})
-            +form-checkbox({label: 'Широкий коридор', rich: true, descr: 'Ширина коридоров в номере<br/> не менее 91 см'})
-            +form-checkbox({label: 'Помощник для инвалидов', rich: true, descr: 'На 1 этаже вас встретит специалист<br/> и проводит до номера.'})
+    .content-col
     
-        
+        .content-col(style='margin-right: 72px;')
 
+            +form-group({label: 'Checkbox buttons'})(style="margin-bottom: 36px;")
+                +form-checkbox({label: 'Можно курить'})
+                +form-checkbox({label: 'Можно с питомцами', checked: true})
+                +form-checkbox({label: 'Можно пригласить гостей <br/>(до 10 человек)', checked: true})
 
-    .content-col 
+            +form-group({label: 'Radio buttons'})(style="margin-bottom: 28px;")
+                +form-radio({label: 'Mужчина', value: 'men', name: 'sex', checked: true})
+                +form-radio({label: 'Женщина', value: 'women', name: 'sex'})
 
-        +form-group({label: 'Buttons'})
-            div(style="margin-bottom: 33px;")
-                +form-button({text: 'Click me'})(style="margin-right: 20px")
-                +form-button()
-            div(style="margin-bottom: 27px;")
-                +form-button({theme: 'ghost'})(style="margin-right: 20px")
-                +form-button({theme: 'ghost'})
-            div(style="margin-bottom: 27px;")
-                +form-button({theme: 'simple'})(style="margin-right: 20px")
-                +form-button({theme: 'simple'})
-            div(style="margin-right: 0")
-                +form-button({theme: 'fullwidth', text: 'Перейти к оплате'})
+            +form-group({label: 'Toggle'})
+                +form-checkbox({label: 'Получать спецпредложения', mode: 'toggle', checked: true})
+                +form-checkbox({label: 'Получать спецпредложения', mode: 'toggle'})
 
-        +form-group({label: 'Bullet list'})
-            +bullet-list([
-                'Нельзя с питомцами',
-                'Без вечеринок и мероприятий',
-                'Время прибытия — после 13:00, а выезд до 12:00'
-            ])
+            +form-group({label: 'Like button'})(style="margin-bottom: 29px;")
+                +form-button-like({likeCount: 2})(style="margin-right: 10px")
+                +form-button-like({likeCount: 12, liked: true})
+
+            +form-group({label: 'Rate button'})
+                +form-button-rate({value: 4})
+                +form-button-rate({value: 5})
+
+            +form-group({label: 'Rich checkbox buttons'})
+                +form-checkbox({label: 'Широкий коридор', mode: 'rich', descr: 'Ширина коридоров в номере<br/> не менее 91 см'})
+                +form-checkbox({label: 'Помощник для инвалидов', mode: 'rich', descr: 'На 1 этаже вас встретит специалист<br/> и проводит до номера.'})
+
+        .content-col 
+
+            +form-group({label: 'Buttons'})
+                div(style="margin-bottom: 33px;")
+                    +form-button({text: 'Click me'})(style="margin-right: 20px")
+                    +form-button()
+                div(style="margin-bottom: 27px;")
+                    +form-button({theme: 'ghost'})(style="margin-right: 20px")
+                    +form-button({theme: 'ghost'})
+                div(style="margin-bottom: 27px;")
+                    +form-button({theme: 'simple'})(style="margin-right: 20px")
+                    +form-button({theme: 'simple'})
+                div(style="margin-right: 0")
+                    +form-button({theme: 'fullwidth', text: 'Перейти к оплате'})
+
+            +form-group({label: 'Bullet list'})
+                +bullet-list([
+                    'Нельзя с питомцами',
+                    'Без вечеринок и мероприятий',
+                    'Время прибытия — после 13:00, а выезд до 12:00'
+                ])

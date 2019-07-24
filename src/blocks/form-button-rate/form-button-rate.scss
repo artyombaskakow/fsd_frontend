@@ -4,15 +4,14 @@
 }
 
 .form-button-rate__star-elem{
-    margin-right: 4px;
-
     &:hover{
         cursor: pointer;
     }
 }
 
-.form-button-rate__icon{
-    @include size(20px);
+.form-button-rate__icon-empty,
+.form-button-rate__icon-fill{
+    @include icon-gradient;
 }
 
 .form-button-rate__input{
@@ -23,7 +22,15 @@
     display: none;
 }
 
-.form-button-rate__star-elem_checked .form-button-rate__icon-fill,
-.form-button-rate__star-elem_checked ~ .form-button-rate__star-elem .form-button-rate__icon-fill{
-    display: inline;
+.form-button-rate__star-elem_checked{
+
+    .form-button-rate__icon-fill,
+    & ~ .form-button-rate__star-elem .form-button-rate__icon-fill{
+        display: inline;
+    }
+
+    .form-button-rate__icon-empty,
+    & ~ .form-button-rate__star-elem .form-button-rate__icon-empty{
+        display: none;
+    }
 }

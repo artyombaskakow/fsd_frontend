@@ -6,12 +6,12 @@
     font-size: 0.82rem;
     font-weight: bold;
     padding: 15px 21px;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: $primaryGradient;
     border-radius: 22px;
 
     &:hover{
         cursor: pointer;
-        background: linear-gradient(180deg, #ddcdfe 0%, #c5d1fc 100%);
+        background: $primaryGradient05;
     }
 }
 

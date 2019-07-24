@@ -4,7 +4,6 @@ mixin form-button-like(obj={})
         var likedClass = obj.liked ? 'form-button-like_liked' : '';
 
     button(class='form-button-like ' + likedClass)&attributes(attributes)
-        svg.form-button-like__icon
-            use.form-button__icon-empty(xlink:href='#icon-heart-empty')
-            use.form-button__icon-fill(xlink:href='#icon-heart')
-        .form-button-like__count= likeCount
+        i.material-icons.form-button__icon-empty favorite_border
+        i.material-icons.form-button__icon-fill favorite
+        span.form-button-like__count= likeCount

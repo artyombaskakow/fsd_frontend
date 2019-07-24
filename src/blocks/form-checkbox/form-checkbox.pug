@@ -3,16 +3,15 @@ mixin form-checkbox(obj)
         var label = obj.label ? obj.label : '';
         var value = obj.value ? obj.value : label;
         var checked_attr = obj.checked ? obj.checked : false;
-        var richClass = obj.rich ? ' form-checkbox_rich ' : '';
-        var themeClass = obj.theme ?  `form-checkbox_theme_${obj.theme}` : '';
+        var modeClass = obj.mode ? ` form-checkbox_mode_${obj.mode}` : '';
         var description = obj.descr ?  obj.descr : '';
 
-    div(class='form-checkbox ' + themeClass + richClass)
+    div(class='form-checkbox ' + modeClass)
         label.form-checkbox__label !{label}
             input.form-checkbox__input(type='checkbox', value=value, checked=checked_attr)
             .form-checkbox__checkmark
-                if(!obj.theme || obj.theme=='checkbox')
+                if(!obj.mode || obj.mode=='checkbox' || obj.mode=='rich')
                     svg.form-checkbox__icon
                         use.form-checkbox__icon-elem(xlink:href='#icon-check')
-            if(obj.rich && description.length)
+            if(obj.mode=='rich' && description.length)
                 .form-checkbox__description !{description}

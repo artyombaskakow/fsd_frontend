@@ -21,7 +21,7 @@
     &::before{
         content: '';
         display: block;
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        background: $primaryGradient;
         @include size(12px);
         border-radius: 50%;
     }
