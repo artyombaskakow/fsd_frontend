@@ -1,11 +1,49 @@
-mixin form-input(args)
+mixin form-input(obj)
     - 
-        var type_attr = args.type ? args.type : '';
-        var placeholder = args.placeholder ? args.placeholder : '';
-        var label = args.label ? args.label : '';
-        var hint = args.hint ? args.hint : '';
-        var value = args.value ? args.value : '';
-    .form-input
+        var type_attr = obj.type ? obj.type : 'text';
+        var modeClass = obj.mode ? ` form-input_mode_${obj.mode}` : '';
+        var iconID = '';
+        var disabled = false;
+        var dropdownElems = [];
+
+        switch(obj.mode){
+            case 'subscription':
+                type_attr = 'email';
+                iconID = 'arrow_forward';
+                break;
+            case 'dropdown':
+                type_attr = 'text';
+                iconID = 'expand_more';
+                disabled = true;
+                dropdownElems = obj.dropdownElems;
+                break;
+            default: break;
+        }
+        var placeholder = obj.placeholder ? obj.placeholder : '';
+        var label = obj.label ? obj.label : '';
+        var hint = obj.hint ? obj.hint : '';
+        var value = obj.value ? obj.value : '';
+        var mask = obj.mask ? obj.mask.toUpperCase() : '';
+        if(mask.length) placeholder = mask;
+
+    div(class='form-input'+modeClass)
         label.form-input__label= label
             span.form-input__hint= hint
-        input.form-input__input(type= type_attr, placeholder= placeholder, value= value)
+        .form-input__container
+            input.form-input__input(type= type_attr, placeholder= placeholder, value= value, disabled=disabled)
+            if iconID
+                i.material-icons.form-input__icon= iconID
+            if dropdownElems.length
+                ul.form-input__dropdown-elems-container
+                    each item in dropdownElems
+                        li.form-input__dropdown-elem
+                            .form-input__dropdown-elem-title= item.title
+                            .form-input__dropdown-elem-control
+                                input.form-input__dropdown-elem-input(
+                                    type='text', 
+                                    disabled=true,
+                                    value=item.count ? item.count : 0,
+                                    name=item.name
+                                )
+                                i.material-icons.form-input__dropdown-elem-minus remove
+                                i.material-icons.form-input__dropdown-elem-plus add

@@ -1,3 +1,10 @@
+@import './_mode/form-input_mode_subscription';
+@import './_mode/form-input_mode_dropdown.scss';
+
+.form-input__container{
+    position: relative;
+}
+
 .form-input{
     margin-bottom: 16px;
 }
@@ -23,4 +30,14 @@
     float: right;
     font-weight: 100;
     color: $darkShade50;
+}
+
+.form-input__icon{
+    padding: 10px;
+    position: absolute;
+    right: 0;
+
+    &:hover{
+        cursor: pointer;
+    }
 }

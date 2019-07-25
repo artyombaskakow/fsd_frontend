@@ -1,0 +1,11 @@
+.form-input_mode_subscription{
+    
+    .form-input__input{
+        padding-right: 40px;
+    }
+
+    .form-input__icon{
+        @include icon-gradient;
+    }
+}
+

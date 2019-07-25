@@ -16,10 +16,20 @@ block content
     //i.material-icons(style="color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);") insert_emoticon
 
 
-    .content-col(style='margin-right: 126px;')
+    div(style='width: 320px; margin-right: 170px')
         +form-input({type: 'email', placeholder: 'Email', label: 'Text field', hint: 'Default'})
         +form-input({type: 'text', placeholder: 'Type text', label: 'Text field', value: 'This is pretty awesome', hint: 'Hover / focus'})
-        div пусть
+        +form-input({mask: 'дд.мм.гггг', label: 'Masked text field', hint: 'Default'})
+        +form-input({mode: 'subscription', type: 'email', label: 'subscription text field', placeholder: 'email'})
+
+        div(style="width: 266px")
+            +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Комнаты', hint: 'Expanded',
+                dropdownElems: [
+                    {title: 'Спальни', name: 'bedrooms', count: 2},
+                    {title: 'Кровати', name: 'beds', count: 2},
+                    {title: 'Ванные комнаты', name: 'bathrooms'}
+                ]
+            })
 
         +form-group({label: 'expandable checkbox list', expandable: true})
             +form-checkbox({label: 'Завтрак'})
@@ -41,7 +51,7 @@ block content
             {icon: 'location_city', title: 'Удобство', descr: 'Окно в каждой из спален'}
         ]})
 
-    div(style="width: inherit")
+    .content-col
 
         +comment({
             authorPhoto: '/assets/img/comment-man1.png',
