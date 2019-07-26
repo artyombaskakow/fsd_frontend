@@ -1,0 +1,23 @@
+@import '../../../node_modules/jquery-ui-slider/jquery-ui.css';
+
+.slider-range__slider{
+    height: 6px;
+    margin-top: 18px;
+
+    .ui-slider-range,
+    .ui-slider-handle{
+        background: $secondaryGradient;
+    }
+
+    .ui-slider-handle{
+        @include size(13px);
+        border-radius: 50%;
+        border: none;
+        box-shadow: 0 0 0px 2px white;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+}

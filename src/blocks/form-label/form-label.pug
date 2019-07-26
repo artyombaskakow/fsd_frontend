@@ -1,0 +1,6 @@
+mixin form-label(obj)
+    -
+        var text = obj.text ? obj.text : '';
+        var hint = obj.hint ? obj.hint : '';
+    label.form-label= text
+            span.form-label__hint= hint

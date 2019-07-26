@@ -1,0 +1,20 @@
+include ../form-label/form-label
+
+mixin range-slider(obj)
+    - 
+        var label = obj.label ? obj.label : '';
+        var min = obj.min ? +obj.min : 0;
+        var max = obj.max ? +obj.max : 20000;
+        var startValue = obj.startValue ? +obj.startValue : 0;
+        var endValue = obj.endValue ? +obj.endValue : max;
+        var step = obj.step ? +obj.step : 100;
+    .slider-range
+        .slider-range__label-wrapper
+            +form-label({text: 'Range slider', hint: `${startValue} - ${endValue}₽`})
+        .slider-range__slider(
+            data-min=min, 
+            data-max=max,
+            data-step=step,
+            data-start-value=startValue, 
+            data-end-value=endValue
+        )

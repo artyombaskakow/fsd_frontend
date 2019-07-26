@@ -1,0 +1,9 @@
+.form-label{
+    @extend %form-elem-label;
+}
+
+.form-label__hint{
+    float: right;
+    font-weight: 100;
+    color: $darkShade50;
+}

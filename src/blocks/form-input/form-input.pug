@@ -1,3 +1,5 @@
+include ../form-label/form-label
+
 mixin form-input(obj)
     - 
         var type_attr = obj.type ? obj.type : 'text';
@@ -31,8 +33,7 @@ mixin form-input(obj)
         var value = obj.value ? obj.value : '';
 
     div(class='form-input'+modeClass)
-        label.form-input__label= label
-            span.form-input__hint= hint
+        +form-label({text: label, hint: hint})
         .form-input__container(data-text=dropdownInputText)
             input.form-input__input(type= type_attr, placeholder= placeholder, value= value, disabled=disabled, mask=maskAttr)
             if iconID
