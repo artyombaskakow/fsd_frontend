@@ -1,0 +1,67 @@
+@import '../../../node_modules/paginationjs/dist/pagination.css';
+
+.pagination-block{
+
+    .pagination-block__pagination{
+
+        .pagination-block__page-container{
+
+            $pageElemSize:  rem(40px);
+
+            .pagination-block__elem-page,
+            .pagination-block__elem-ellipsis,
+            .pagination-block__elem-next{
+                border: none;
+            }
+
+            .pagination-block__elem-page>a,
+            .pagination-block__page-elem_disabled>a,
+            .pagination-block__elem-next>a{
+                @include size($pageElemSize);
+                line-height: $pageElemSize;
+                border-radius: 50%;
+            }
+
+            .pagination-block__elem-page>a{
+                font-size: rem(12px);
+                
+                text-align: center;
+                font-family: $mainFont;
+                color: $darkShade50;
+            }
+
+            .pagination-block__page-elem_active>a{
+                background: $primaryGradient;
+                color: white;
+                font-weight: bold;
+            }
+
+            .pagination-block__page-elem_disabled>a{
+                background: none;
+                font-size: rem(10px);
+            }
+
+            .pagination-block__elem-next>a{
+                background: $secondaryGradient;
+                color: white;
+                font-size: rem(24px);
+            }
+
+            .pagination-block__elem-next.pagination-block__page-elem_disabled{
+                display: none;
+            }
+
+
+
+
+        }
+
+        
+    
+    }
+
+}
+
+.pagination-block__text{
+    margin: 8px 0 0 6px;
+}

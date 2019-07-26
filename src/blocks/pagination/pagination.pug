@@ -1,2 +1,12 @@
 mixin pagination(obj)
-    div#demo 
+    -
+        var elemCount = obj.elemCount ? obj.elemCount : 100;
+        var pageSize = obj.pageSize ? obj.pageSize : 5;
+        var descr = obj.descr ? obj.descr : '';
+    .pagination-block
+        .pagination-block__pagination(
+            data-elem-count=elemCount, 
+            data-page-size=pageSize,
+            data-descr=descr
+        )
+        .pagination-block__text
