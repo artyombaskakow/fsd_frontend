@@ -1,9 +1,8 @@
 (function(){
-    console.log('dropdown');
+
     let dropdownInputs = document.querySelectorAll('.form-input_mode_dropdown');
 
     dropdownInputsInit(dropdownInputs);
-
 
     function dropdownInputsInit(dropdownInputs){
 

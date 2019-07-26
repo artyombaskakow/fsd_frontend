@@ -19,8 +19,8 @@ block content
     div(style='width: 320px; margin-right: 170px')
         +form-input({type: 'email', placeholder: 'Email', label: 'Text field', hint: 'Default'})
         +form-input({type: 'text', placeholder: 'Type text', label: 'Text field', value: 'This is pretty awesome', hint: 'Hover / focus'})
-        +form-input({mask: 'дд.мм.гггг', label: 'Masked text field', hint: 'Default'})
-        +form-input({mode: 'subscription', type: 'email', label: 'subscription text field', placeholder: 'email'})
+        +form-input({mode: 'mask', placeholder: 'дд.мм.гггг', mask: '00.00.0000', label: 'Masked text field', hint: 'Default'})
+        +form-input({mode: 'subscription', label: 'subscription text field', placeholder: 'email'})
 
         div(style="width: 266px")
             +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Комнаты', hint: 'Expanded',

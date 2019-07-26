@@ -5,6 +5,7 @@ mixin form-input(obj)
         var iconID = '';
         var disabled = false;
         var dropdownElems = [];
+        var maskAttr = '';
         var dropdownInputText = obj.dropdownInputText ? obj.dropdownInputText : '';
 
         switch(obj.mode){
@@ -18,20 +19,22 @@ mixin form-input(obj)
                 disabled = true;
                 dropdownElems = obj.dropdownElems;
                 break;
+            case 'mask':
+                type_attr = 'text';
+                maskAttr = obj.mask ? obj.mask : '';
+                break;
             default: break;
         }
         var placeholder = obj.placeholder ? obj.placeholder : '';
         var label = obj.label ? obj.label : '';
         var hint = obj.hint ? obj.hint : '';
         var value = obj.value ? obj.value : '';
-        var mask = obj.mask ? obj.mask.toUpperCase() : '';
-        if(mask.length) placeholder = mask;
 
     div(class='form-input'+modeClass)
         label.form-input__label= label
             span.form-input__hint= hint
         .form-input__container(data-text=dropdownInputText)
-            input.form-input__input(type= type_attr, placeholder= placeholder, value= value, disabled=disabled)
+            input.form-input__input(type= type_attr, placeholder= placeholder, value= value, disabled=disabled, mask=maskAttr)
             if iconID
                 i.material-icons.form-input__icon= iconID
             if dropdownElems.length
