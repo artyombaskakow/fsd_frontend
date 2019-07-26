@@ -5,6 +5,7 @@ mixin form-input(obj)
         var iconID = '';
         var disabled = false;
         var dropdownElems = [];
+        var dropdownInputText = obj.dropdownInputText ? obj.dropdownInputText : '';
 
         switch(obj.mode){
             case 'subscription':
@@ -29,14 +30,14 @@ mixin form-input(obj)
     div(class='form-input'+modeClass)
         label.form-input__label= label
             span.form-input__hint= hint
-        .form-input__container
+        .form-input__container(data-text=dropdownInputText)
             input.form-input__input(type= type_attr, placeholder= placeholder, value= value, disabled=disabled)
             if iconID
                 i.material-icons.form-input__icon= iconID
             if dropdownElems.length
-                ul.form-input__dropdown-elems-container
+                .form-input__dropdown-elems-container
                     each item in dropdownElems
-                        li.form-input__dropdown-elem
+                        .form-input__dropdown-elem
                             .form-input__dropdown-elem-title= item.title
                             .form-input__dropdown-elem-control
                                 input.form-input__dropdown-elem-input(
@@ -45,5 +46,11 @@ mixin form-input(obj)
                                     value=item.count ? item.count : 0,
                                     name=item.name
                                 )
-                                i.material-icons.form-input__dropdown-elem-minus remove
-                                i.material-icons.form-input__dropdown-elem-plus add
+                                button.material-icons.form-input__dropdown-elem-minus remove
+                                button.material-icons.form-input__dropdown-elem-plus add
+                    if obj.dropdownApplyBtn || obj.dropdownClearBtn
+                        .form-input__dropdown-buttons-containers
+                            obj.dropdownApplyBtn
+                                button.form-input__dropdown-clear Очистить
+                            obj.dropdownClearBtn
+                                button.form-input__dropdown-apply Применить
