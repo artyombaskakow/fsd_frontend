@@ -1,4 +1,5 @@
 include ../card/card 
+include ../form-group/form-group
 include ../form-datepicker/form-datepicker 
 include ../form-input/form-input 
 include ../form-button/form-button
@@ -13,6 +14,7 @@ mixin card-search-room
                     +form-input({mode: 'dropdown', label: 'Гости', placeholder: 'Сколько гостей', hint: '',
                         dropdownApplyBtn: true,
                         dropdownClearBtn: false,
+                        dropdownInputText: 'гостя',
                         dropdownElems: [
                             {title: 'Взрослые', count: 0},
                             {title: 'Дети'},

@@ -1,12 +1,18 @@
-@import '../form-datepicker/form-datepicker.scss';
+@import '../card/card.scss';
+@import '../form-group/form-group.scss';
 @import '../form-input/form-input.scss';
 @import '../form-button/form-button.scss';
-
+@import '../form-radio-buttons/form-radio-buttons.scss';
+@import '../form-checkbox/form-checkbox.scss';
 
 .card-registration__container{
     margin-top: rem(20px);
 }
 
 .card-registration__paymet-button{
-    margin-top: 24px;
+    margin-top: 22px;
+}
+
+.card-registation__footer-wrapper{
+    margin-top: 29px;
 }

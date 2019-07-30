@@ -1,5 +1,9 @@
 include ../card/card 
+include ../form-group/form-group
 include ../form-input/form-input 
+include ../form-radio-buttons/form-radio-buttons
+include ../form-checkbox/form-checkbox
+include ../form-button/form-button
 
 mixin card-registration
     .card-registration
@@ -32,3 +36,6 @@ mixin card-registration
 
                 .card-registration__paymet-button
                     +form-button({theme: 'fullwidth', text: 'Перейти к оплате'})
+
+                .card-registation__footer-wrapper
+                    +card-footer({text: 'Уже есть аккаунт на Toxin', buttonText: 'Войти'})

@@ -1,0 +1,12 @@
+include ../form-button/form-button
+
+
+mixin card-footer(options)
+    -
+        var text = options.text ? options.text : 'text';
+        var buttonText = options.buttonText ? options.buttonText : 'buttonText';
+
+    .card-footer
+        .card-footer__text= text
+        .card-footer__button
+            +form-button({text: buttonText, theme: 'ghost'})
