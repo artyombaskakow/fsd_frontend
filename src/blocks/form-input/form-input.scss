@@ -1,13 +1,14 @@
 @import './_mode/form-input_mode_subscription';
 @import './_mode/form-input_mode_dropdown.scss';
 
+.form-input{
+    width: 100%;
+}
+
 .form-input__container{
     position: relative;
 }
 
-.form-input{
-    margin-bottom: 16px;
-}
 
 .form-input__input{
     border: 1px solid $darkShade25;

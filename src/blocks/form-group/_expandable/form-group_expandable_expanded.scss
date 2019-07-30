@@ -1,7 +1,12 @@
 .form-group_expandable_expanded {
 
-    & .form-group__expand-arrow{
+    & .form-group__label-wrapper .form-label__icon{
         transform: rotate(180deg);
     }
+
+    .form-group__label-wrapper > .form-label:hover{
+        cursor: pointer;
+    }
+
     
 }

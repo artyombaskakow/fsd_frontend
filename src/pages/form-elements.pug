@@ -8,6 +8,8 @@ block content
     +icons-define
 
     div(style='width: 320px; margin-right: 126px; float: left')
+        +form-group({label: 'Text field', hint: 'Default'})
+            +form-input({type: 'email', placeholder: 'Email'})
         +form-input({type: 'email', placeholder: 'Email', label: 'Text field', hint: 'Default'})
         +form-input({type: 'text', placeholder: 'Type text', label: 'Text field', value: 'This is pretty awesome', hint: 'Hover / focus'})
         +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Сколько гостей', hint: 'Default',
@@ -73,14 +75,19 @@ block content
     div
         div(style="width: 320px; display: inline-block;; margin-right: 72px;")
 
-            +form-group({label: 'Checkbox buttons'})(style="margin-bottom: 36px;")
+            +form-group({label: 'Checkbox buttons', labelMargin: true})(style="margin-bottom: 36px;")
                 +form-checkbox({label: 'Можно курить'})
                 +form-checkbox({label: 'Можно с питомцами', checked: true})
                 +form-checkbox({label: 'Можно пригласить гостей <br/>(до 10 человек)', checked: true})
 
             +form-group({label: 'Radio buttons'})(style="margin-bottom: 28px;")
-                +form-radio({label: 'Mужчина', value: 'men', name: 'sex', checked: true})
-                +form-radio({label: 'Женщина', value: 'women', name: 'sex'})
+                +form-radio-buttons({
+                    name: 'sex',
+                    elems: [
+                        {label: 'Mужчина', value: 'man', checked: true},
+                        {label: 'Женщина', value: 'woman'}
+                    ]
+                })
 
             +form-group({label: 'Toggle'})
                 +form-checkbox({label: 'Получать спецпредложения', mode: 'toggle', checked: true})

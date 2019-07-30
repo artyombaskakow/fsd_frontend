@@ -3,7 +3,11 @@
 }
 
 .form-label__hint{
-    float: right;
     font-weight: 100;
     color: $darkShade50;
+}
+
+.form-label__icon{
+    color: $darkShade50;
+    margin-right: 9px;
 }

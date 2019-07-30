@@ -1,32 +1,53 @@
 @import './_expandable/form-group_expandable_close.scss';
 @import './_expandable/form-group_expandable_expanded.scss';
 
-.form-group{
-    margin-bottom: 40px;
+.form-group__label-wrapper{
+    //margin-bottom: 9px;
+    //padding-right: 9px;
 }
 
-.form-group__label{
-    @extend %form-elem-label;
-    max-width: $maxElemWidth;
+.form-group__label-wrapper_margin{
     margin-bottom: 9px;
-    padding-right: 9px;
 }
 
-.form-group_elems-container > * {
-    margin-bottom: 7px;
-    margin-right: 20px;
-}
+.form-group_elems-container{
+
+    .form-checkbox {
+        margin-top: 7px;
+        //margin-right: 20px;
+
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+
+    .form-group__elem-row{
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+
+        &:first-child{
+            margin-top: 0;
+        }
+    }
+
+    .form-radio,
+    .form-button-rate{
+        margin-right: 20px;
+    }
+
+    .form-button-like {
+        margin-right: 10px;
+    }
+
+    &> *:first-child:not(.form-input),
+    &> *:first-child:not(.form-datepicker){
+        //margin-top: 9px;
+    }
+
+} 
 
 .form-group__expand-arrow{
     float: right;
     color: $darkShade50;
-}
-
-.form-group_expandable_close,
-.form-group_expandable_expanded{
-
-    & .form-group__label:hover{
-        cursor: pointer;
-    }
-
 }

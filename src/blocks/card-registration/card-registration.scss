@@ -1,8 +1,12 @@
-@import '../card/card.scss';
 @import '../form-datepicker/form-datepicker.scss';
 @import '../form-input/form-input.scss';
 @import '../form-button/form-button.scss';
 
-.card-search-room__button{
-    margin-top: 32px;
+
+.card-registration__container{
+    margin-top: rem(20px);
+}
+
+.card-registration__paymet-button{
+    margin-top: 24px;
 }

@@ -152,7 +152,8 @@ section, .section {
 
 %form-elem-label{
   text-transform: uppercase;
-  display: block;
+  display: flex;
+  justify-content: space-between;
   font-weight: bold;
   color: $darkShade100;
   font-size: 0.87rem;

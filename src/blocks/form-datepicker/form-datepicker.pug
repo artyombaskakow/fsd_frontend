@@ -1,3 +1,4 @@
+include ../form-label/form-label
 include ../form-input/form-input
 
 mixin form-datepicker(obj)
@@ -19,6 +20,8 @@ mixin form-datepicker(obj)
         else
             .form-datepicker__input-container
                 .form-datepicker__input-from(data-date-format="dd.mm.yyyy")
-                    +form-input({label: labelFrom, placeholder: 'ДД.ММ.ГГГГ', iconID: 'expand_more', value: inputFromValue})
+                    +form-label({text: labelFrom})
+                    +form-input({placeholder: 'ДД.ММ.ГГГГ', iconID: 'expand_more', value: inputFromValue})
                 .form-datepicker__input-to(data-date-format="dd.mm.yyyy")
-                    +form-input({label: labelTo, placeholder: 'ДД.ММ.ГГГГ', iconID: 'expand_more', value: inputToValue})
+                    +form-label({text: labelTo})
+                    +form-input({placeholder: 'ДД.ММ.ГГГГ', iconID: 'expand_more', value: inputToValue})

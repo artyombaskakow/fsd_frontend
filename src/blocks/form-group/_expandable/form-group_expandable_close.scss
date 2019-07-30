@@ -1,7 +1,12 @@
 .form-group_expandable_close{
 
-    & .form-group_elems-container{
+    .form-group_elems-container{
         display: none;
     }
+    
+    .form-group__label-wrapper > .form-label:hover{
+        cursor: pointer;
+    }
+
     
 }

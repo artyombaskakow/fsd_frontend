@@ -1,0 +1,34 @@
+include ../card/card 
+include ../form-input/form-input 
+
+mixin card-registration
+    .card-registration
+        +card({header: 'Регистрация аккаунта'})
+            .card-registration__container
+                +form-group
+                    .form-group__elem-row
+                        +form-input({placeholder: 'Имя', name: 'firstname'})
+                    .form-group__elem-row
+                        +form-input({placeholder: 'Фамилия', name: 'lastname'})
+                    .form-group__elem-row
+                        +form-radio-buttons({
+                            name: 'sex',
+                            elems: [
+                                {label: 'Mужчина', value: 'man', checked: true},
+                                {label: 'Женщина', value: 'woman'}
+                            ]
+                        })
+
+                +form-group({label: 'Дата рождения'})
+                    +form-input({mode: 'mask', placeholder: 'ДД.ММ.ГГГГ', mask: '00.00.0000', label: 'Дата рождения', name: 'birthdate'})
+                
+                +form-group({label: 'Данные для входа в сервис'})
+                    .form-group__elem-row
+                        +form-input({type: 'email', placeholder: 'Email', name: 'email'})
+                    .form-group__elem-row
+                        +form-input({type: 'password', placeholder: 'Пароль', name: 'password'})
+                    .form-group__elem-row
+                        +form-checkbox({label: 'Получать спецпредложения', mode: 'toggle', checked: false})
+
+                .card-registration__paymet-button
+                    +form-button({theme: 'fullwidth', text: 'Перейти к оплате'})

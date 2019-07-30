@@ -1,17 +1,23 @@
 include ../card/card 
+include ../form-datepicker/form-datepicker 
+include ../form-input/form-input 
+include ../form-button/form-button
 
 mixin card-search-room
-    .card-search-room__wrapper
+    .card-search-room
         +card({header: 'Найдём номера под ваши пожелания'})
-            +form-datepicker({labelFrom: 'Прибытие', labelTo: 'Выезд'})
-            +form-input({mode: 'dropdown', label: 'Гости', placeholder: 'Сколько гостей', hint: '',
-                dropdownApplyBtn: true,
-                dropdownClearBtn: false,
-                dropdownElems: [
-                    {title: 'Взрослые', count: 0},
-                    {title: 'Дети'},
-                    {title: 'Младенцы'}
-                ]
-            })
-            .card-search-room__button
-                +form-button({theme: 'fullwidth', text: 'Подобрать номер'})
+            .card-seacrh-room__container
+                +form-group
+                    +form-datepicker({labelFrom: 'Прибытие', labelTo: 'Выезд'})
+                +form-group({label: 'Гости'})
+                    +form-input({mode: 'dropdown', label: 'Гости', placeholder: 'Сколько гостей', hint: '',
+                        dropdownApplyBtn: true,
+                        dropdownClearBtn: false,
+                        dropdownElems: [
+                            {title: 'Взрослые', count: 0},
+                            {title: 'Дети'},
+                            {title: 'Младенцы'}
+                        ]
+                    })
+                .card-search-room__button
+                    +form-button({theme: 'fullwidth', text: 'Подобрать номер'})

@@ -1,16 +1,18 @@
-mixin form-group(obj)
+mixin form-group(obj={})
     - 
         var label = obj.label ? obj.label : '';
-        var elems = obj.elems ? obj.elems : [];
         var expandableClass = '';
+        var icon = '';
+        var hint = obj.hint ? obj.hint : '';
+        var labelWrapperClass = obj.labelMargin ? ' form-group__label-wrapper_margin' : '';
         if(obj.expandable){
             expandableClass = obj.expanded ? ' form-group_expandable_expanded' : ' form-group_expandable_close';
+            icon = 'expand_more';
         }
         
     div(class='form-group' + expandableClass, style!=attributes.style)
-        label.form-group__label= label
-            if obj.expandable
-                i.material-icons.form-group__expand-arrow expand_more
+        div(class='form-group__label-wrapper ' + labelWrapperClass )
+            +form-label({text: label, hint: hint, icon: icon})
         .form-group_elems-container
             if block
                 block

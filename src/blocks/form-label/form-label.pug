@@ -2,5 +2,11 @@ mixin form-label(obj)
     -
         var text = obj.text ? obj.text : '';
         var hint = obj.hint ? obj.hint : '';
-    label.form-label= text
+        var icon = obj.icon ? obj.icon : '';
+    label.form-label
+        .form-label__text= text
+        if hint
             span.form-label__hint= hint
+        else
+            if icon
+                i.material-icons.form-label__icon= icon

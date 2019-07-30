@@ -4,6 +4,7 @@ mixin form-input(obj={})
     - 
         var type_attr = obj.type ? obj.type : 'text';
         var modeClass = obj.mode ? ` form-input_mode_${obj.mode}` : '';
+        var name = obj.name ? obj.name : '';
         var iconID =  obj.iconID ? obj.iconID : '';
         var disabled = false;
         var dropdownElems = [];
@@ -32,10 +33,17 @@ mixin form-input(obj={})
         var hint = obj.hint ? obj.hint : '';
         var value = obj.value ? obj.value : '';
 
-    div(class='form-input'+modeClass)
-        +form-label({text: label, hint: hint})
+    div(class='form-input '+modeClass)
+        //+form-label({text: label, hint: hint})
         .form-input__container(data-text=dropdownInputText)
-            input.form-input__input(type= type_attr, placeholder= placeholder, value= value, disabled=disabled, mask=maskAttr)
+            input.form-input__input(
+                type= type_attr, 
+                name=name, 
+                placeholder= placeholder, 
+                value= value, 
+                disabled=disabled, 
+                mask=maskAttr
+            )
             if iconID
                 i.material-icons.form-input__icon= iconID
             if dropdownElems && dropdownElems.length
