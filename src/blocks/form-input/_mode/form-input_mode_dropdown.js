@@ -76,8 +76,10 @@
                 totalCount+= +listElems[i].querySelector('.form-input__dropdown-elem-input').value;
             }
 
-            inputText = totalCount + ' ' + dataText;
-
+            if(totalCount>0){
+                inputText = totalCount + ' ' + dataText;
+            }
+            
         } else{
 
             for(let i=0; i<listElems.length; i++){
@@ -88,8 +90,6 @@
                 }
             }
         }
-
-        
 
         inputText = inputText.toLocaleLowerCase();
         inputContainer.querySelector('.form-input__input').value = inputText;

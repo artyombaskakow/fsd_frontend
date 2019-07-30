@@ -1,0 +1,56 @@
+@import '../../../node_modules/air-datepicker/dist/css/datepicker.min.css';
+
+.datepicker{
+    min-width: 320px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-datepicker__input-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-datepicker__input-from,
+.form-datepicker__input-to{
+    width: 47%;
+}
+
+.datepicker--content{
+    padding: 0;
+}
+
+.datepicker--pointer{
+    display: none;
+}
+
+.datepicker--nav-title{
+    font-size: rem(19px);
+    font-weight: bold;
+    color: black;
+    font-family: $secondFont;
+}
+
+.datepicker--nav{
+    border-bottom: none;
+    padding: 0;
+}
+
+.datepicker--buttons{
+    border-top: none;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.datepicker--button{
+    display: inline-block;
+    flex: none;
+    height: auto;
+    text-transform: uppercase;
+    font-family: $mainFont;
+    font-size: rem(12px);
+
+    &:hover{
+        background: none;
+    }
+}

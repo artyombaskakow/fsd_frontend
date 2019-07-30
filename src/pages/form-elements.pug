@@ -7,83 +7,71 @@ block variables
 block content
     +icons-define
 
-    //svg
-    //    use(xlink:href='#icon-smile')
-    //svg
-        use(xlink:href='#icon-city')
-
-    //i.material-icons face
-    //i.material-icons(style="color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);") insert_emoticon
-
-
-    div(style='width: 320px; margin-right: 170px')
+    div(style='width: 320px; margin-right: 126px; float: left')
         +form-input({type: 'email', placeholder: 'Email', label: 'Text field', hint: 'Default'})
         +form-input({type: 'text', placeholder: 'Type text', label: 'Text field', value: 'This is pretty awesome', hint: 'Hover / focus'})
-        +form-input({mode: 'mask', placeholder: 'дд.мм.гггг', mask: '00.00.0000', label: 'Masked text field', hint: 'Default'})
-        +form-input({mode: 'subscription', label: 'subscription text field', placeholder: 'email'})
-
-        div(style="width: 266px")
-            +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Комнаты', hint: 'Expanded',
-                dropdownApplyBtn: true,
-                dropdownClearBtn: true,
-                dropdownElems: [
-                    {title: 'Спальни', name: 'bedrooms', count: 2},
-                    {title: 'Кровати', name: 'beds', count: 2},
-                    {title: 'Ванные комнаты', name: 'bathrooms'}
-                ]
-            })
-
-            +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Сколько гостей', hint: '',
-                dropdownApplyBtn: true,
-                dropdownInputText: 'гостя',
-                dropdownElems: [
-                    {title: 'Взрослые', count: 2},
-                    {title: 'Дети', count: 1},
-                    {title: 'Младенцы'}
-                ]
-            })
-
-        +form-group({label: 'expandable checkbox list', expandable: true})
-            +form-checkbox({label: 'Завтрак'})
-            +form-checkbox({label: 'Письменный стол'})
-            +form-checkbox({label: 'Кроватка'})
-
-        +form-group({label: 'expandable checkbox list', expandable: true, expanded: true})(style="margin-bottom: 18px;")
-            +form-checkbox({label: 'Завтрак'})
-            +form-checkbox({label: 'Письменный стол', checked: true})
-            +form-checkbox({label: 'Стул для кормления', checked: true})
-            +form-checkbox({label: 'Кроватка', checked: true})
-            +form-checkbox({label: 'Телевизор'})
-            +form-checkbox({label: 'Шампунь'})
-            +form-checkbox({label: 'Телевизор'})
-            +form-checkbox({label: 'Шампунь'}) 
-
-        +advantages-list({list: [
-            {icon: 'insert_emoticon', title: 'Комфорт', descr: 'Шумопоглощающие стены'},
-            {icon: 'location_city', title: 'Удобство', descr: 'Окно в каждой из спален'}
-        ]})
-
-    .content-col
-
-        div(style="margin-bottom: 40px; width: 266px;")
-            +range-slider({ startValue: 5000, endValue: 10000})
-
-        div(style="margin-bottom: 40px;")
-            +form-group({label: 'Pagination'})
-                +pagination({elemCount: 150, pageSize: 12, descr: 'вариантов аренды'})
-
-        +comment({
-            authorPhoto: '/assets/img/comment-man1.png',
-            authorName: 'Мурад Сарафанов',
-            date: '5 дней назад',
-            likeCount: 12,
-            liked: true,
-            text:   `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. 
-                    И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — 
-                    никто не жаловался из соседей.`
+        +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Сколько гостей', hint: 'Default',
+            dropdownApplyBtn: true,
+            dropdownInputText: 'гостя',
+            dropdownElems: [
+                {title: 'Взрослые', count: 0},
+                {title: 'Дети'},
+                {title: 'Младенцы'}
+            ]
         })
-    
-        .content-col(style)
+        +form-input({mode: 'mask', placeholder: 'дд.мм.гггг', mask: '00.00.0000', label: 'Masked text field', hint: 'Default'})
+        
+        div(style="margin-top: 39px;")
+            +form-datepicker({labelFrom: 'Date Dropdown', labelTo: 'Date Dropdown', inputToValue: '19.08.2019'})
+        
+        div(style="margin-top: 21px; width: 266px")
+            +form-datepicker({label: 'Filter date dropdown', filterDate: true, inputValue: '19.08.2019 - 23.08.2019'})
+
+            div(style="margin-top: 37px")
+                +form-input({mode: 'subscription', label: 'subscription text field', placeholder: 'Email'})
+
+            div(style="margin-top: 96px;")
+                +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Комнаты', hint: 'Default',
+                    dropdownElems: [
+                        {title: 'Спальни', name: 'bedrooms', count: 2},
+                        {title: 'Кровати', name: 'beds', count: 2},
+                        {title: 'Ванные комнаты', name: 'bathrooms'}
+                    ]
+                })
+                +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Комнаты', hint: 'Expanded',
+                    dropdownApplyBtn: true,
+                    dropdownClearBtn: true,
+                    dropdownElems: [
+                        {title: 'Спальни', name: 'bedrooms', count: 2},
+                        {title: 'Кровати', name: 'beds', count: 2},
+                        {title: 'Ванные комнаты', name: 'bathrooms'}
+                    ]
+                })
+
+            div(style="margin-top: 168px")
+                +form-group({label: 'expandable checkbox list', expandable: true})
+                    +form-checkbox({label: 'Завтрак'})
+                    +form-checkbox({label: 'Письменный стол'})
+                    +form-checkbox({label: 'Кроватка'})
+
+                +form-group({label: 'expandable checkbox list', expandable: true, expanded: true})(style="margin-bottom: 18px;")
+                    +form-checkbox({label: 'Завтрак'})
+                    +form-checkbox({label: 'Письменный стол', checked: true})
+                    +form-checkbox({label: 'Стул для кормления', checked: true})
+                    +form-checkbox({label: 'Кроватка', checked: true})
+                    +form-checkbox({label: 'Телевизор'})
+                    +form-checkbox({label: 'Шампунь'})
+                    +form-checkbox({label: 'Телевизор'})
+                    +form-checkbox({label: 'Шампунь'}) 
+
+            +advantages-list({list: [
+                {icon: 'insert_emoticon', title: 'Комфорт', descr: 'Шумопоглощающие стены'},
+                {icon: 'location_city', title: 'Удобство', descr: 'Окно в каждой из спален'}
+            ]})
+
+
+    div
+        div(style="width: 320px; display: inline-block;; margin-right: 72px;")
 
             +form-group({label: 'Checkbox buttons'})(style="margin-bottom: 36px;")
                 +form-checkbox({label: 'Можно курить'})
@@ -106,11 +94,26 @@ block content
                 +form-button-rate({value: 4})
                 +form-button-rate({value: 5})
 
-            +form-group({label: 'Rich checkbox buttons'})
-                +form-checkbox({label: 'Широкий коридор', mode: 'rich', descr: 'Ширина коридоров в номере<br/> не менее 91 см'})
-                +form-checkbox({label: 'Помощник для инвалидов', mode: 'rich', descr: 'На 1 этаже вас встретит специалист<br/> и проводит до номера.'})
+            div(style="margin-top: 181px")
+                +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Сколько гостей', hint: '',
+                    dropdownApplyBtn: true,
+                    dropdownClearBtn: false,
+                    dropdownElems: [
+                        {title: 'Взрослые', count: 0},
+                        {title: 'Дети'},
+                        {title: 'Младенцы'}
+                    ]
+                })
 
-        .content-col 
+            div(style="margin-top: 253px")
+                +form-group({label: 'Rich checkbox buttons'})
+                    +form-checkbox({label: 'Широкий коридор', mode: 'rich', descr: 'Ширина коридоров в номере<br/> не менее 91 см'})
+                    +form-checkbox({label: 'Помощник для инвалидов', mode: 'rich', descr: 'На 1 этаже вас встретит специалист<br/> и проводит до номера.'})
+
+        div(style="width: 320px; display: inline-block;")
+
+            div(style="width: 266px; margin-bottom: 40px")
+                +range-slider({ startValue: 5000, endValue: 10000, max: 15000})
 
             +form-group({label: 'Buttons'})
                 div(style="margin-bottom: 33px;")
@@ -125,9 +128,39 @@ block content
                 div(style="margin-right: 0")
                     +form-button({theme: 'fullwidth', text: 'Перейти к оплате'})
 
-            +form-group({label: 'Bullet list'})
-                +bullet-list([
-                    'Нельзя с питомцами',
-                    'Без вечеринок и мероприятий',
-                    'Время прибытия — после 13:00, а выезд до 12:00'
-                ])
+            div(style="margin-top: -5px")
+                +form-group({label: 'Pagination'})
+                    +pagination({elemCount: 150, pageSize: 12, descr: 'вариантов аренды'})
+
+
+            div(style="margin-top: 231px")
+                +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Сколько гостей', hint: '',
+                    dropdownApplyBtn: true,
+                    dropdownClearBtn: true,
+                    dropdownInputText: 'гостя',
+                    dropdownElems: [
+                        {title: 'Взрослые', count: 2},
+                        {title: 'Дети', count: 1},
+                        {title: 'Младенцы'}
+                    ]
+                })
+
+            div(style="margin-top: 252px")
+                +form-group({label: 'Bullet list'})
+                    +bullet-list([
+                        'Нельзя с питомцами',
+                        'Без вечеринок и мероприятий',
+                        'Время прибытия — после 13:00, а выезд до 12:00'
+                    ])
+    
+        div(style="margin-top: 190px")
+            +comment({
+                authorPhoto: '/assets/img/comment-man1.png',
+                authorName: 'Мурад Сарафанов',
+                date: '5 дней назад',
+                likeCount: 12,
+                liked: true,
+                text:   `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. 
+                        И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — 
+                        никто не жаловался из соседей.`
+            })

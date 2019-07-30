@@ -1,10 +1,10 @@
 include ../form-label/form-label
 
-mixin form-input(obj)
+mixin form-input(obj={})
     - 
         var type_attr = obj.type ? obj.type : 'text';
         var modeClass = obj.mode ? ` form-input_mode_${obj.mode}` : '';
-        var iconID = '';
+        var iconID =  obj.iconID ? obj.iconID : '';
         var disabled = false;
         var dropdownElems = [];
         var maskAttr = '';
@@ -38,7 +38,7 @@ mixin form-input(obj)
             input.form-input__input(type= type_attr, placeholder= placeholder, value= value, disabled=disabled, mask=maskAttr)
             if iconID
                 i.material-icons.form-input__icon= iconID
-            if dropdownElems.length
+            if dropdownElems && dropdownElems.length
                 .form-input__dropdown-elems-container
                     each item in dropdownElems
                         .form-input__dropdown-elem
@@ -54,7 +54,7 @@ mixin form-input(obj)
                                 button.material-icons.form-input__dropdown-elem-plus add
                     if obj.dropdownApplyBtn || obj.dropdownClearBtn
                         .form-input__dropdown-buttons-containers
-                            obj.dropdownApplyBtn
+                            if obj.dropdownClearBtn
                                 button.form-input__dropdown-clear Очистить
-                            obj.dropdownClearBtn
+                            if obj.dropdownApplyBtn
                                 button.form-input__dropdown-apply Применить

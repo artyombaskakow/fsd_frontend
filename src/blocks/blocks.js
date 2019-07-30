@@ -4,3 +4,4 @@ import './form-button-like/form-buttom-like';
 import './form-button-rate/form-button-rate';
 import './pagination/pagination';
 import './range-slider/range-slider';
+import './form-datepicker/form-datepicker';
