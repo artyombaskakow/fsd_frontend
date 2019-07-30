@@ -2,7 +2,13 @@ extends ../blocks/ui-kit-layout/ui-kit-layout
 include ../blocks/blocks
 
 block variables
-    - var title = 'Cards'
+    - 
+        var title = 'Cards';
+        var pageClass = 'ui-kit__body_bg_gray';
 
 block content
-    +icons-define
+    .flex(style="margin-top: 73px;")
+        div
+            +card-search-room
+        div 
+        div 

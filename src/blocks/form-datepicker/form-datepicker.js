@@ -36,6 +36,12 @@ import 'air-datepicker';
 
     });
 
+    $(".form-datepicker .form-input__icon").on('click', function(){
+        let datepicker = $(this).closest('.form-input__container').find('.form-input__input').datepicker().data('datepicker');
+        datepicker.show();
+        console.log(datepicker);
+    });
+
     let applyBtn = `<span class="datepicker--button" data-action="hide">Применить</span>`;
     $(".datepicker--buttons").append(applyBtn);
 

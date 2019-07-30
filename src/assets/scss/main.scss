@@ -45,19 +45,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2{
-  font-family: Quicksand;
+  font-family: $secondFont;
   font-style: normal;
   font-weight: bold;
 }
 
 h1{
-  font-size: 24px;
-  line-height: 30px;
+  font-size: rem(24px);
+  line-height: rem(30px);
 }
 
 h2{
-  font-size: 19px;
-  line-height: 24px;
+  font-size: rem(19px);
+  line-height: rem(24px);
 }
 
 h3{
@@ -125,6 +125,9 @@ section, .section {
     max-width: smPhoneWidth;
   }
 }
+
+
+
 
 .content-col{
   width: 320px;
