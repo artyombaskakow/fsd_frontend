@@ -8,7 +8,7 @@ include ../form-button/form-button
 mixin card-registration
     .card-registration
         +card({header: 'Регистрация аккаунта'})
-            .card-registration__container
+            form.card-registration__form
                 +form-group
                     .form-group__elem-row
                         +form-input({placeholder: 'Имя', name: 'firstname'})

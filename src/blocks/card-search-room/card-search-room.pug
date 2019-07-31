@@ -7,7 +7,7 @@ include ../form-button/form-button
 mixin card-search-room
     .card-search-room
         +card({header: 'Найдём номера под ваши пожелания'})
-            .card-seacrh-room__container
+            form.card-search-room__form
                 +form-group
                     +form-datepicker({labelFrom: 'Прибытие', labelTo: 'Выезд'})
                 +form-group({label: 'Гости'})

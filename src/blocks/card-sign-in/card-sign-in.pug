@@ -1,0 +1,18 @@
+include ../card/card
+include ../form-group/form-group 
+include ../form-input/form-input 
+include ../form-button/form-button 
+
+mixin card-sign-in
+    .card-sign-in
+        +card({header: 'Войти'})
+            form.card-sign-in__form
+                +form-group
+                    .form-group__elem-row
+                        +form-input({type: "email", placeholder: 'Email', name: 'email'})
+                    .form-group__elem-row
+                        +form-input({type: "password", placeholder: 'Пароль', name: 'password'})
+                .card-sign-in__button
+                    +form-button({theme: 'fullwidth', text: 'Войти'})
+            .card-sign-in__footer
+                +card-footer({text: 'Нет аккаунта на Toxin?', buttonText: 'Создать'})
