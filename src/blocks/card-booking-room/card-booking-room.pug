@@ -1,0 +1,47 @@
+include ../card/card
+
+mixin card-booking-room
+    .card-booking-room
+        +card
+            .card-booking-room__header 
+                .card-booking-room__room-number-container № 
+                    .card-booking-room__room-number-value 888 
+                    .card-booking-room__room-number-type люкс
+                .card-booking-room__room-price-container
+                    .card-booking-room__room-price-value 9 990₽
+                    .card-booking-room__room-price-period в сутки
+            +form-group
+                +form-datepicker({labelFrom: 'Прибытие', labelTo: 'Выезд'})
+            +form-group({label: 'Гости'})
+                +form-input({mode: 'dropdown', label: 'Гости', placeholder: 'Сколько гостей', hint: '',
+                    dropdownApplyBtn: true,
+                    dropdownClearBtn: false,
+                    dropdownInputText: 'гостя',
+                    dropdownElems: [
+                        {title: 'Взрослые', count: 2},
+                        {title: 'Дети', count: 1},
+                        {title: 'Младенцы'}
+                    ]
+                })
+            .card-booking-room__calc-table
+                .card-booking-room__calc-table-row
+                    .card-booking-room__calc-table-cell 9 990₽ х 4 суток
+                    .card-booking-room__calc-table-cell
+                    .card-booking-room__calc-table-cell 39 960₽
+                .card-booking-room__calc-table-row
+                    .card-booking-room__calc-table-cell Сбор за услуги: скидка 2 179₽
+                    .card-booking-room__calc-table-cell
+                        .card-booking-room__calc-table-row-info(title="info") i
+                    .card-booking-room__calc-table-cell 0₽
+                .card-booking-room__calc-table-row
+                    .card-booking-room__calc-table-cell Сбор за дополнительные услуги
+                    .card-booking-room__calc-table-cell
+                        .card-booking-room__calc-table-row-info(title="info") i
+                    .card-booking-room__calc-table-cell 300₽
+            
+            .card-booking-room__total-price
+                .card-booking-room__total-price-text Итого
+                .card-booking-room__total-price-value 38 081₽
+
+            .card-booking-room__booking-button
+                    +form-button({theme: 'fullwidth', text: 'Забронировать'})
