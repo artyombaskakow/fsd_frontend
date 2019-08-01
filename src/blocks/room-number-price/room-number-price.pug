@@ -1,0 +1,12 @@
+mixin room-number-price(options)
+    -
+        var number = options.number ? options.number : '000';
+        var type = options.type ? options.type : '';
+        var price = options.price ? options.price+'₽' : '9 990₽';
+    .room-number-price
+        .room-number-price__number-container № 
+            .room-number-price__number-value= number 
+            .room-number-price__number-type= type
+        .room-number-price__price-container
+            .room-number-price__price-value= price
+            .room-number-price__price-period в сутки

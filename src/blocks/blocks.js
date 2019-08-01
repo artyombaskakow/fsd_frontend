@@ -5,3 +5,4 @@ import './form-button-rate/form-button-rate';
 import './pagination/pagination';
 import './range-slider/range-slider';
 import './form-datepicker/form-datepicker';
+import './room-preview-item/room-preview-item';

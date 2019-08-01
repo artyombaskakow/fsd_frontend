@@ -4,6 +4,8 @@
 }
 
 .form-button-rate__star-elem{
+    display: flex;
+
     &:hover{
         cursor: pointer;
     }

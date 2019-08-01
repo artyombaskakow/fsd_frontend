@@ -1,0 +1,134 @@
+.room-preview-item{
+    background: white;
+    width: 270px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+    &:hover{
+        .room-preview-item__slider-nav-left,
+        .room-preview-item__slider-nav-right{
+            opacity: 1;
+        }
+    }
+}
+
+.room-preview-item__slider{
+    height: 151px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.room-preview-item__slides-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.room-preview-item__slider-item{
+    @include size(100%);
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all ease-in-out .5s;
+}
+
+.room-preview-item__slider-input{
+    display: none;
+}
+
+@for $i from 1 through 4 {
+
+    .room-preview-item__slider-input:nth-of-type(#{$i}):checked{
+
+        ~ .room-preview-item__slides-container>.room-preview-item__slider-item:nth-of-type(#{$i}){
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        ~ .room-preview-item__slider-controls>.room-preview-item__slider-control-elem:nth-of-type(#{$i}){
+            background: white;
+        }
+    }
+
+}
+
+.room-preview-item__container{
+    padding: 20px;
+}
+
+.room-preview-item__slider-controls{
+    display: flex;
+    position: absolute;
+    z-index: 3;
+    right: 12px;
+    bottom: 14px;
+}
+
+.room-preview-item__slider-control-elem{
+    display: block;
+    @include size(8px);
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-right: 3px;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.room-preview-item__slider-nav-left,
+.room-preview-item__slider-nav-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 42px;
+    z-index: 2;
+    top: 0;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.room-preview-item__slider-nav-left{
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+}
+
+.room-preview-item__slider-nav-right{
+    right: 0;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+}
+
+.room-preview-item__room-info{
+    .room-number-price__number-value{
+        font-size: rem(18px);
+    }
+
+    .room-number-price__price-value{
+        margin-right: 4px;
+    }
+}
+
+.room-preview-item__room-rating{
+    border-top: 1px solid $darkShade10;
+    margin-top: 8px;
+    padding-top: 8px;
+    display: flex;
+    justify-content: space-between;
+    color: $darkShade50;
+}
+
+.room-preview-item__votes-count{
+    font-weight: bold;
+}

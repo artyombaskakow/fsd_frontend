@@ -1,0 +1,42 @@
+.room-number-price{
+    //padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.room-number-price__number-container{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+}
+
+.room-number-price__number-value,
+.room-number-price__number-type{
+    display: inline;
+}
+
+.room-number-price__number-value{
+    font-size: rem(22px);
+    margin-right: 5px;
+}
+
+.room-number-price__number-type{
+    color: $mainColor;
+    font-size: rem(12px);
+}
+
+.room-number-price__price-container{
+    color: $darkShade50;
+    display: inline-flex;
+    align-items: flex-end;
+}
+
+.room-number-price__price-value{
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.room-number-price__price-period{
+    font-size: rem(12px);
+}

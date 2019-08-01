@@ -3,18 +3,14 @@ include ../form-group/form-group
 include ../form-input/form-input 
 include ../form-datepicker/form-datepicker 
 include ../form-button/form-button 
+include ../room-number-price/room-number-price 
 
 mixin card-booking-room
     .card-booking-room
         +card
             form.card-booking-room__form
                 .card-booking-room__header 
-                    .card-booking-room__room-number-container № 
-                        .card-booking-room__room-number-value 888 
-                        .card-booking-room__room-number-type люкс
-                    .card-booking-room__room-price-container
-                        .card-booking-room__room-price-value 9 990₽
-                        .card-booking-room__room-price-period в сутки
+                    +room-number-price({number: 888, type: 'люкс', price: '9 990'})
                 +form-group
                     +form-datepicker({labelFrom: 'Прибытие', labelTo: 'Выезд'})
                 +form-group({label: 'Гости'})

@@ -3,50 +3,12 @@
 @import '../form-input/form-input.scss';
 @import '../form-datepicker/form-datepicker.scss';
 @import '../form-button/form-button.scss';
+@import '../room-number-price/room-number-price.scss';
  
 
 .card-booking-room__header{
     padding-top: 14px;
-    display: flex;
-    justify-content: space-between;
 }
-
-.card-booking-room__room-number-container{
-    text-transform: uppercase;
-    font-weight: bold;
-    color: black;
-}
-
-.card-booking-room__room-number-value,
-.card-booking-room__room-number-type{
-    display: inline;
-}
-
-.card-booking-room__room-number-value{
-    font-size: rem(22px);
-}
-
-.card-booking-room__room-number-type{
-    color: $mainColor;
-    font-size: rem(12px);
-}
-
-.card-booking-room__room-price-container{
-    color: $darkShade50;
-    display: inline-flex;
-    align-items: flex-end;
-}
-
-.card-booking-room__room-price-value{
-    font-weight: bold;
-    margin-right: 5px;
-}
-
-.card-booking-room__room-price-period{
-    font-size: rem(12px);
-}
-
-
 
 .card-booking-room__calc-table{
     display: table;

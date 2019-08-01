@@ -13,9 +13,39 @@ block content
                 +card-search-room
             div(style="margin-bottom: 100px")
                 +card-registration
-        div
+        div(style="margin-right: 40px;")
             div(style="margin-bottom: 40px")
                 +card-booking-room
             div
                 +card-sign-in
-        div 
+        div
+            div(style="margin-bottom: 40px")
+                +form-datepicker({filterDate: true, range: true, onlyCard: true, selectedDates: ['23.08.2019', '19.08.2019'] })
+            div(style="margin-bottom: 40px")
+                +room-preview-item({
+                    number: 888,
+                    type: 'люкс',
+                    rating: 5,
+                    votes: 145,
+                    price: '9 990',
+                    images: [
+                        '/assets/img/rooms/room1.png',
+                        '/assets/img/rooms/room2.png', 
+                        '/assets/img/rooms/room3.png', 
+                        '/assets/img/rooms/room4.png'
+                    ]
+                })
+            div
+                +room-preview-item({
+                    number: 840,
+                    type: 'люкс',
+                    rating: 4,
+                    votes: 65,
+                    price: '9 900',
+                    images: [
+                        '/assets/img/rooms/room2.png',
+                        '/assets/img/rooms/room3.png', 
+                        '/assets/img/rooms/room4.png', 
+                        '/assets/img/rooms/room5.png'
+                    ]
+                })

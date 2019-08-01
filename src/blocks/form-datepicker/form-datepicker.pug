@@ -5,18 +5,25 @@ mixin form-datepicker(obj)
     -
         var range = obj.range ? obj.range : false;
         var filterDate = obj.filterDate ? obj.filterDate : false;
+        var onlyCard = obj.onlyCard ? obj.onlyCard : false;
         var label = obj.label ? obj.label : '';
         var labelFrom = obj.labelFrom ? obj.labelFrom : label;
         var labelTo = obj.labelTo ? obj.labelTo : '';
         var inputValue = obj.inputValue ? obj.inputValue : '';
         var inputFromValue = obj.inputFromValue ? obj.inputFromValue : inputValue;
         var inputToValue = obj.inputToValue ? obj.inputToValue : '';
+        var selectedDates = obj.selectedDates ? obj.selectedDates.join(',') : '';
 
     .form-datepicker
         if filterDate
             +form-label({text: label})
-            .form-datepicker__input-range-container(data-date-format="dd M", data-range='true')
-                +form-input({iconID: 'expand_more', value: inputValue})
+            .form-datepicker__input-range-container(
+                data-date-format="dd M", 
+                data-range='true',
+                data-selected-dates=selectedDates
+            )
+                if !onlyCard
+                    +form-input({iconID: 'expand_more', value: inputValue})
         else
             .form-datepicker__input-container
                 .form-datepicker__input-from(data-date-format="dd.mm.yyyy")

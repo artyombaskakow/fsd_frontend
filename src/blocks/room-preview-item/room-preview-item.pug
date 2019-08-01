@@ -1,0 +1,48 @@
+include ../form-button-rate/form-button-rate
+include ../room-number-price/room-number-price 
+
+mixin room-preview-item(options={})
+    -
+        var number = options.number ? options.number : 000;
+        var type = options.type ? options.type : '';
+        var price = options.price ? options.price : 0;
+        var rating = options.rating ? options.rating : 0;
+        var votes = options.votes ? options.votes : 0;
+        var images = options.images ? options.images : [];
+        var controlIds = [];
+    .room-preview-item 
+
+        .room-preview-item__slider
+            - for(var i=0; i<images.length && i<4; i++)
+                -
+                    var idSliderElem = `room_${number}_photo_${i}`;
+                    var checked = (i==0) ? true : false;
+                    controlIds.push(idSliderElem);
+                input.room-preview-item__slider-input(
+                    type='radio', 
+                    id=idSliderElem, 
+                    name=`room_${number}`,
+                    checked=checked,
+                    data-index=i,
+                    data-slide-count=images.length
+                )
+
+            .room-preview-item__slides-container
+                button.room-preview-item__slider-nav-left
+                    i.material-icons chevron_left
+                button.room-preview-item__slider-nav-right
+                    i.material-icons chevron_right
+                - for(var i=0; i<images.length && i<4; i++)
+                    - var styleAttr = `background: url(${images[i]}) no-repeat center center;`;
+                    .room-preview-item__slider-item(style=styleAttr)
+
+            .room-preview-item__slider-controls
+                each controlID in controlIds
+                    label.room-preview-item__slider-control-elem(for=controlID)
+
+        .room-preview-item__container
+            .room-preview-item__room-info
+                +room-number-price({number: number, type: type, price: price})
+            .room-preview-item__room-rating
+                +form-button-rate({value: rating})
+                .room-preview-item__votes <span class="room-preview-item__votes-count">#{votes}</span> Отзывов
