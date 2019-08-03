@@ -1,19 +1,18 @@
 .card{
     background: white;
-    padding: 30px;
+    padding: rem(30px);
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     width: 380px;
+
+    @media screen and (max-width: $tableWidth) {
+        width: 100%;
+    }
+
+    
+
 }
 
 .card__header{
     margin-top: rem(10px);
-}
-
-.card__container{
-
-    .form-group{
-        margin-top: 16px;
-    }
-
 }

@@ -1,3 +1,4 @@
+import 'material-icons/iconfont/material-icons.scss'
 import './form-group/form-group';
 import './form-input/form-input';
 import './form-button-like/form-buttom-like';

@@ -32,7 +32,6 @@ mixin form-input(obj={})
         var value = obj.value ? obj.value : '';
 
     div(class='form-input '+modeClass)
-        //+form-label({text: label, hint: hint})
         .form-input__container(data-text=dropdownInputText)
             input.form-input__input(
                 type= type_attr, 
@@ -56,8 +55,8 @@ mixin form-input(obj={})
                                     value=item.count ? item.count : 0,
                                     name=item.name
                                 )
-                                button.material-icons.form-input__dropdown-elem-minus remove
-                                button.material-icons.form-input__dropdown-elem-plus add
+                                button.material-icons.form-input__dropdown-elem-minus(type='button') remove
+                                button.material-icons.form-input__dropdown-elem-plus(type='button') add
                     if obj.dropdownApplyBtn || obj.dropdownClearBtn
                         .form-input__dropdown-buttons-containers
                             if obj.dropdownClearBtn

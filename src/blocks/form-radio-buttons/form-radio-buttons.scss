@@ -4,6 +4,10 @@
 
 .form-radio{
     display: inline-flex;
+
+    @media (max-width: $phoneWidth) {
+        margin-bottom: 5px;
+    }
 }
 
 .form-radio__input{

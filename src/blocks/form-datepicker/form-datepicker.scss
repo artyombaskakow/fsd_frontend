@@ -9,11 +9,22 @@
 .form-datepicker__input-container{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .form-datepicker__input-from,
 .form-datepicker__input-to{
     width: 47%;
+
+    @media (max-width: $phoneWidth) {
+        width: 100%;
+    }
+}
+
+.form-datepicker__input-from{
+    @media (max-width: $phoneWidth) {
+        margin-bottom: 16px;
+    }
 }
 
 .datepicker--content{
@@ -171,4 +182,8 @@
 
 .datepicker--cell.-range-to-{
     border: none;
+}
+
+.datepicker--cell.-selected-.-focus-{
+    background: none;
 }

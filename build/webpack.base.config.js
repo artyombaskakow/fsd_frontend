@@ -57,7 +57,7 @@ module.exports = {
             test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]'
+                name: `[name].[ext]`
             }
         }, {
             test: /\.scss$/,
@@ -106,7 +106,6 @@ module.exports = {
             { from: `${PATHS.src}/static`, to: '' },
         ]),
        
-
         ...PAGES.map(page => new HtmlWebpackPlugin({
             template: `${PAGES_DIR}/${page}`, // .pug
             filename: `./${page.replace(/\.pug/,'.html')}`// .html

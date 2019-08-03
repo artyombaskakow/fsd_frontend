@@ -3,4 +3,18 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+@media (max-width: $phoneWidth){
+    .card-footer__text,
+    .card-footer__button{
+        width: 100%;
+        text-align: center;
+    }
+
+    .card-footer__text{
+        margin-bottom: 10px;
+    }
 }
