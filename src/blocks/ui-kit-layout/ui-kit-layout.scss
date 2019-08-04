@@ -12,13 +12,45 @@
 .ui-kit-color-examples,
 .ui-kit-text-examples{
     margin-top: 7px;
-    width: 30%;
+    width: 49%;
+
+    @media (max-width: $tableWidth){
+        width: 100%;
+    }
 }
 
-.ui-kit-color-examples{
-    margin-right: 364px;
+.ui-kit-text-examples{
+    padding-left: 138px;
+
+    @media (max-width: $smDesktopWidth){
+        padding-left: 0;
+    }
+
+    .t-cell{
+        padding-bottom: 50px;
+    }
+
+    .t-cell:first-child{
+        font-weight: 100;
+        text-align: right;
+        padding-right: 30px;
+        color: $darkShade25;
+    }
+
+    .t-cell:first-child{
+        &>h1,
+        &>h2,
+        &>h3{
+            color: $darkShade25;
+        font-family: $mainFont;
+        font-weight: 100;
+        text-transform: uppercase;
+        }
+    }
+    
 }
 
+/*
 .ui-kit-text-examples .t-cell{
     padding-bottom: 50px;
 }
@@ -26,7 +58,7 @@
 .ui-kit-text-examples .t-cell:first-child{
     font-weight: 100;
     text-align: right;
-    padding-right: 26px;
+    padding-right: 30px;
     color: $darkShade25;
 }
 
@@ -38,3 +70,4 @@
     font-weight: 100;
     text-transform: uppercase;
 }
+*/

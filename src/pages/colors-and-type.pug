@@ -2,36 +2,39 @@ extends ../blocks/ui-kit-layout/ui-kit-layout
 include ../blocks/ui-kit-color/ui-kit-color
 
 block variables
-    - var title = 'Colors&Type'
+    - 
+        var title = 'Colors&Type';
+        var pageClass = 'page-color-and-types';
 
 block content
-    .ui-kit-color-examples
-        +ui_kit_color('Dark Shade 100%', '#1F2041', '#1F2041')
-        +ui_kit_color('Dark Shade 75%', '#1F2041', 'rgba(31, 32, 65, 0.75)')
-        +ui_kit_color('Dark Shade 50%', '#1F2041', 'rgba(31, 32, 65, 0.5);')
-        +ui_kit_color('Dark Shade 25%', '#1F2041', 'rgba(31, 32, 65, 0.25);')
-        +ui_kit_color('Dark Shade 5%', '#1F2041', 'rgba(31, 32, 65, 0.05);')
-        +ui_kit_color('Purple', '#BC9CFF', '#BC9CFF')
-        +ui_kit_color('Green 100%', '#6FCF97', '#6FCF97')
-    .ui-kit-text-examples
-        .table
-            .t-row
-                .t-cell 
-                    h1 h1
-                .t-cell 
-                    h1 This one is the sub-section or widget title
-            .t-row
-                .t-cell 
-                    h2 h2
-                .t-cell
-                    h2 Next one is the item title inside widgets
-            .t-row
-                .t-cell 
-                    h3 h3
-                .t-cell
-                    h3 This is a label or CTA text
-            .t-row
-                .t-cell Body
-                .t-cell This is the body text which is used for most of the design, like paragraphs, lists, etc.
+    .flex-container
+        .ui-kit-color-examples
+            +ui_kit_color('Dark Shade 100%', '#1F2041', '#1F2041')
+            +ui_kit_color('Dark Shade 75%', '#1F2041', 'rgba(31, 32, 65, 0.75)')
+            +ui_kit_color('Dark Shade 50%', '#1F2041', 'rgba(31, 32, 65, 0.5);')
+            +ui_kit_color('Dark Shade 25%', '#1F2041', 'rgba(31, 32, 65, 0.25);')
+            +ui_kit_color('Dark Shade 5%', '#1F2041', 'rgba(31, 32, 65, 0.05);')
+            +ui_kit_color('Purple', '#BC9CFF', '#BC9CFF')
+            +ui_kit_color('Green 100%', '#6FCF97', '#6FCF97')
+        .ui-kit-text-examples
+            .table
+                .t-row
+                    .t-cell 
+                        h1 h1
+                    .t-cell 
+                        h1 This one is the sub-section or widget title
+                .t-row
+                    .t-cell 
+                        h2 h2
+                    .t-cell
+                        h2 Next one is the item title inside widgets
+                .t-row
+                    .t-cell 
+                        h3 h3
+                    .t-cell
+                        h3 This is a label or CTA text
+                .t-row
+                    .t-cell Body
+                    .t-cell This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
 
