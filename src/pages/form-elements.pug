@@ -2,13 +2,16 @@ extends ../blocks/ui-kit-layout/ui-kit-layout
 include ../blocks/blocks
 
 block variables
-    - var title = 'Form Elements'
+    - 
+        var title = 'Form Elements';
+        var pageClass = 'page-form-elements';
+
 
 block content
     +icons-define
 
     .flex-container
-        .flex-column(style='width: 320px; margin-right: 126px')
+        .form-elements-column
 
             +form-group({label: 'Text field', hint: 'Default'})
                 +form-input({type: 'email', placeholder: 'Email'})
@@ -33,24 +36,25 @@ block content
             
             .form-elements__form-group-wrapper
                 +form-group
-                    +form-datepicker({labelFrom: 'Date Dropdown', labelTo: 'Date Dropdown', inputToValue: '19.08.2019'})
+                    +form-datepicker({labelFrom: 'Date Dropdown', labelTo: 'Date Dropdown', values: ['', '19.08.2019'] })
             
             .narrow-column
                 .form-elements__form-group-wrapper
                     +form-group
-                        +form-datepicker({label: 'Filter date dropdown', filterDate: true, inputValue: '19.08.2019 - 23.08.2019'})
+                        +form-datepicker({label: 'Filter date dropdown', filterDate: true, values: ['19.08.2019', '23.08.2019'] })
 
-                +form-group({label: 'Subscription text field'})(style="margin-top: 37px")
-                    +form-input({mode: 'subscription', placeholder: 'Email'})
+                .form-elements__form-group-wrapper
+                    +form-group({label: 'Subscription text field'})
+                        +form-input({mode: 'subscription', placeholder: 'Email'})
 
-        .flex-column
-            +form-group({label: 'Checkbox buttons', labelMargin: true})(style="margin-bottom: 36px;")
+        .form-elements-column
+            +form-group({label: 'Checkbox buttons', labelMargin: true})
                 +form-checkbox({label: 'Можно курить'})
                 +form-checkbox({label: 'Можно с питомцами', checked: true})
                 +form-checkbox({label: 'Можно пригласить гостей <br/>(до 10 человек)', checked: true})
 
             .form-elements__form-group-wrapper
-                +form-group({label: 'Radio buttons', labelMargin: true})(style="margin-bottom: 28px;")
+                +form-group({label: 'Radio buttons', labelMargin: true})
                     +form-radio-buttons({
                         name: 'sex',
                         elems: [
@@ -65,7 +69,7 @@ block content
                     +form-checkbox({label: 'Получать спецпредложения', mode: 'toggle'})
 
             .form-elements__form-group-wrapper
-                +form-group({label: 'Like button', labelMargin: true})(style="margin-bottom: 29px;")
+                +form-group({label: 'Like button', labelMargin: true})
                     +form-button-like({likeCount: 2})(style="margin-right: 10px")
                     +form-button-like({likeCount: 12, liked: true})
 
@@ -74,8 +78,7 @@ block content
                     +form-button-rate({value: 4})
                     +form-button-rate({value: 5})
 
-        .flex-column(style='width: 320px; margin-left: 72px')
-            //div(style="width: 266px; margin-bottom: 40px")
+        .form-elements-column
             .narrow-column
                 +range-slider({ startValue: 5000, endValue: 10000, max: 15000})
 
@@ -97,55 +100,30 @@ block content
                 +form-group({label: 'Pagination', labelMargin: true})
                     +pagination({elemCount: 150, pageSize: 12, descr: 'вариантов аренды'})
 
-//-                
+    .flex-container
+        .form-elements-column
+            .narrow-column
+                +form-group({label: 'Dropdown', hint: 'Default'})
+                    +form-input({mode: 'dropdown', placeholder: 'Комнаты',
+                        dropdownElems: [
+                            {title: 'Спальни', name: 'bedrooms', count: 2},
+                            {title: 'Кровати', name: 'beds', count: 2},
+                            {title: 'Ванные комнаты', name: 'bathrooms'}
+                        ]
+                    })
+                +form-group({label: 'Dropdown', hint: 'Expanded'})
+                    +form-input({mode: 'dropdown', placeholder: 'Комнаты',
+                        dropdownApplyBtn: true,
+                        dropdownClearBtn: true,
+                        dropdownElems: [
+                            {title: 'Спальни', name: 'bedrooms', count: 2},
+                            {title: 'Кровати', name: 'beds', count: 2},
+                            {title: 'Ванные комнаты', name: 'bathrooms'}
+                        ]
+                    })
 
-            +form-group({label: 'Dropdown', hint: 'Default'})(style="margin-top: 96px;")
-                +form-input({mode: 'dropdown', placeholder: 'Комнаты',
-                    dropdownElems: [
-                        {title: 'Спальни', name: 'bedrooms', count: 2},
-                        {title: 'Кровати', name: 'beds', count: 2},
-                        {title: 'Ванные комнаты', name: 'bathrooms'}
-                    ]
-                })
-            +form-group({label: 'Dropdown', hint: 'Expanded'})
-                +form-input({mode: 'dropdown', placeholder: 'Комнаты',
-                    dropdownApplyBtn: true,
-                    dropdownClearBtn: true,
-                    dropdownElems: [
-                        {title: 'Спальни', name: 'bedrooms', count: 2},
-                        {title: 'Кровати', name: 'beds', count: 2},
-                        {title: 'Ванные комнаты', name: 'bathrooms'}
-                    ]
-                })
-
-            div(style="margin-top: 168px")
-                +form-group({label: 'expandable checkbox list', expandable: true})
-                    +form-checkbox({label: 'Завтрак'})
-                    +form-checkbox({label: 'Письменный стол'})
-                    +form-checkbox({label: 'Кроватка'})
-
-                +form-group({label: 'expandable checkbox list', expandable: true, expanded: true})(style="margin-bottom: 18px;")
-                    +form-checkbox({label: 'Завтрак'})
-                    +form-checkbox({label: 'Письменный стол', checked: true})
-                    +form-checkbox({label: 'Стул для кормления', checked: true})
-                    +form-checkbox({label: 'Кроватка', checked: true})
-                    +form-checkbox({label: 'Телевизор'})
-                    +form-checkbox({label: 'Шампунь'})
-                    +form-checkbox({label: 'Телевизор'})
-                    +form-checkbox({label: 'Шампунь'}) 
-
-            +advantages-list({list: [
-                {icon: 'insert_emoticon', title: 'Комфорт', descr: 'Шумопоглощающие стены'},
-                {icon: 'location_city', title: 'Удобство', descr: 'Окно в каждой из спален'}
-            ]})
-
-
-    div
-        div(style="width: 320px; display: inline-block;; margin-right: 72px;")
-
-           
-
-            +form-group({label: 'dropdown'})(style="margin-top: 181px")
+        .form-elements-column
+            +form-group({label: 'dropdown'})
                 +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Сколько гостей', hint: '',
                     dropdownApplyBtn: true,
                     dropdownClearBtn: false,
@@ -156,17 +134,8 @@ block content
                     ]
                 })
 
-            div(style="margin-top: 253px")
-                +form-group({label: 'Rich checkbox buttons'})
-                    +form-checkbox({label: 'Широкий коридор', mode: 'rich', descr: 'Ширина коридоров в номере<br/> не менее 91 см'})
-                    +form-checkbox({label: 'Помощник для инвалидов', mode: 'rich', descr: 'На 1 этаже вас встретит специалист<br/> и проводит до номера.'})
-
-        div(style="width: 320px; display: inline-block;")
-
-           
-
-
-            +form-group({label: 'dropdown'})(style="margin-top: 231px")
+        .form-elements-column
+            +form-group({label: 'dropdown'})
                 +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Сколько гостей', hint: '',
                     dropdownApplyBtn: true,
                     dropdownClearBtn: true,
@@ -177,16 +146,49 @@ block content
                         {title: 'Младенцы'}
                     ]
                 })
-
-            div(style="margin-top: 252px")
-                +form-group({label: 'Bullet list'})
-                    +bullet-list([
-                        'Нельзя с питомцами',
-                        'Без вечеринок и мероприятий',
-                        'Время прибытия — после 13:00, а выезд до 12:00'
-                    ])
     
-        div(style="margin-top: 190px")
+    .flex-container
+        .form-elements-column
+            .narrow-column
+                +form-group({label: 'expandable checkbox list', expandable: true, labelMargin: true})
+                        +form-checkbox({label: 'Завтрак'})
+                        +form-checkbox({label: 'Письменный стол'})
+                        +form-checkbox({label: 'Кроватка'})
+
+                +form-group({label: 'expandable checkbox list', expandable: true, expanded: true, labelMargin: true})
+                    +form-checkbox({label: 'Завтрак'})
+                    +form-checkbox({label: 'Письменный стол', checked: true})
+                    +form-checkbox({label: 'Стул для кормления', checked: true})
+                    +form-checkbox({label: 'Кроватка', checked: true})
+                    +form-checkbox({label: 'Телевизор'})
+                    +form-checkbox({label: 'Шампунь'})
+                    +form-checkbox({label: 'Телевизор'})
+                    +form-checkbox({label: 'Шампунь'}) 
+
+            
+
+        .form-elements-column
+            +form-group({label: 'Rich checkbox buttons', labelMargin: true})
+                +form-checkbox({label: 'Широкий коридор', mode: 'rich', descr: 'Ширина коридоров в номере<br/> не менее 91 см'})
+                +form-checkbox({label: 'Помощник для инвалидов', mode: 'rich', descr: 'На 1 этаже вас встретит специалист<br/> и проводит до номера.'})
+
+        .form-elements-column
+            +form-group({label: 'Bullet list', labelMargin: true})
+                +bullet-list([
+                    'Нельзя с питомцами',
+                    'Без вечеринок и мероприятий',
+                    'Время прибытия — после 13:00, а выезд до 12:00'
+                ])
+
+    .flex-container
+        .form-elements-column
+            .narrow-column
+                +advantages-list({list: [
+                    {icon: 'insert_emoticon', title: 'Комфорт', descr: 'Шумопоглощающие стены'},
+                    {icon: 'location_city', title: 'Удобство', descr: 'Окно в каждой из спален'}
+                ]})
+
+        .form-elements-column
             +comment({
                 authorPhoto: '/assets/img/comment-man1.png',
                 authorName: 'Мурад Сарафанов',

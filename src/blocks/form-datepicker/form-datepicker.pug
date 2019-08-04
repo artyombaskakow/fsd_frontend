@@ -9,10 +9,11 @@ mixin form-datepicker(obj)
         var label = obj.label ? obj.label : '';
         var labelFrom = obj.labelFrom ? obj.labelFrom : label;
         var labelTo = obj.labelTo ? obj.labelTo : '';
-        var inputValue = obj.inputValue ? obj.inputValue : '';
-        var inputFromValue = obj.inputFromValue ? obj.inputFromValue : inputValue;
-        var inputToValue = obj.inputToValue ? obj.inputToValue : '';
-        var selectedDates = obj.selectedDates ? obj.selectedDates.join(',') : '';
+        var values = obj.values ? obj.values : [];
+        
+        var inputFromValue = values[0] ? values[0] : '';
+        var inputToValue = values[1] ? values[1] : '';
+        var valuesStr = values.join(',');
 
     .form-datepicker
         if filterDate
@@ -20,15 +21,21 @@ mixin form-datepicker(obj)
             .form-datepicker__input-range-container(
                 data-date-format="dd M", 
                 data-range='true',
-                data-selected-dates=selectedDates
+                data-values=valuesStr
             )
                 if !onlyCard
                     +form-input({iconID: 'expand_more', value: inputValue})
         else
             .form-datepicker__input-container
-                .form-datepicker__input-from(data-date-format="dd.mm.yyyy")
+                .form-datepicker__input-from(
+                    data-date-format="dd.mm.yyyy",
+                    data-values=inputFromValue
+                )
                     +form-label({text: labelFrom})
                     +form-input({placeholder: 'ДД.ММ.ГГГГ', iconID: 'expand_more', value: inputFromValue})
-                .form-datepicker__input-to(data-date-format="dd.mm.yyyy")
+                .form-datepicker__input-to(
+                    data-date-format="dd.mm.yyyy",
+                    data-values=inputToValue
+                )
                     +form-label({text: labelTo})
                     +form-input({placeholder: 'ДД.ММ.ГГГГ', iconID: 'expand_more', value: inputToValue})

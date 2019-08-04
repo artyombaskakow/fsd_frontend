@@ -16,7 +16,7 @@ import 'air-datepicker';
         let dateFormat = $(this).attr('data-date-format');
         let range = $(this).attr('data-range');
         let $calendarElement = $(this).find('.form-input__input');
-        let selectedDatesAttr = $.trim( $(this).attr('data-selected-dates') );
+        let values = $.trim( $(this).attr('data-values') );
 
         if(!$calendarElement.length){
             $calendarElement = $(this);
@@ -46,8 +46,8 @@ import 'air-datepicker';
             },
         });
 
-        if(selectedDatesAttr.length){
-            let strDatesArr = selectedDatesAttr.split(',');
+        if(values.length){
+            let strDatesArr = values.split(',');
             let selectedDates = [];
 
             for(let i=0; i<strDatesArr.length && i<2; i++){
