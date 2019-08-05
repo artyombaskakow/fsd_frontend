@@ -1,9 +1,9 @@
 mixin card(options={})
     -
         var header = options.header ? options.header : '';
-    .card
+    section.card
         if header
-            h1.card__header= header
+            .card__header= header
         if block
             .card__container
                 block

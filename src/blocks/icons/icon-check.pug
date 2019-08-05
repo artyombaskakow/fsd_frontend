@@ -1,11 +1,14 @@
 mixin icon-check
-    svg#icon-check(xmlns='http://www.w3.org/2000/svg', width='10', height='10', viewBox='0 0 10 10', fill='none' style="position: absolute; left: -10000px;")
+    svg(style='width:0;height:0;position:absolute;', aria-hidden='true', focusable='false')
+        lineargradient#check_linear1(x1='7.82835', y1='2.17112', x2='2.1715', y2='7.82798', gradientUnits='userSpaceOnUse')
+            stop(stop-color='#BC9CFF')
+            stop(offset='1', stop-color='#8BA4F9')
+        lineargradient#check_linear2(x1='7.82835', y1='2.17112', x2='2.1715', y2='7.82798', gradientUnits='userSpaceOnUse')
+            stop(stop-color='#BC9CFF')
+            stop(offset='1', stop-color='#8BA4F9')
+
+    svg(xmlns='http://www.w3.org/2000/svg', width='10', height='10', viewBox='0 0 10 10', fill='none' style="display: none")
+        defs
+            symbol#icon-check
                 path(d='M1.46439 4.29245L5.70703 8.53509L4.29282 9.9493L0.0501771 5.70666L1.46439 4.29245Z', fill='url(#check_linear1)')
                 path(d='M8.53546 2.87823L9.94967 4.29245L4.29282 9.9493L2.8786 8.53509L8.53546 2.87823Z', fill='url(#check_linear2)')
-                defs
-                    lineargradient#check_linear1(x1='7.82835', y1='2.17112', x2='2.1715', y2='7.82798', gradientUnits='userSpaceOnUse')
-                        stop(stop-color='#BC9CFF')
-                        stop(offset='1', stop-color='#8BA4F9')
-                    lineargradient#check_linear2(x1='7.82835', y1='2.17112', x2='2.1715', y2='7.82798', gradientUnits='userSpaceOnUse')
-                        stop(stop-color='#BC9CFF')
-                        stop(offset='1', stop-color='#8BA4F9')

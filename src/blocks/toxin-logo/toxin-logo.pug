@@ -1,0 +1,8 @@
+mixin toxin-logo(options={})
+    - var theme = options.theme ? options.theme : '';
+    if theme=='gray'
+        svg.toxin-logo.toxin-logo_theme_gray
+            use(xlink:href='#icon-logo_theme_gray')
+    else
+        svg.toxin-logo
+            use(xlink:href='#toxin-logo')

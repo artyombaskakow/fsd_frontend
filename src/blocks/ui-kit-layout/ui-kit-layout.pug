@@ -1,20 +1,24 @@
 block variables
 
-include ../icons/icon-logo_gray
+include ../toxin-logo/toxin-logo
+include ../icons/icons
 
 doctype html
 html(lang=en)
     head
         meta(charset='urf=8')
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="description" content="")
+        meta(name="keywords" content="")
         title #{title}
         block head
 
     body(class=pageClass)
+        .site-icons
+            +icons-define
         header.ui-kit-header
-            +icon-logo-gray
+            +toxin-logo({theme: 'gray'})
             block header-content
-        .container 
-            block content
+        block content
 
         block script
