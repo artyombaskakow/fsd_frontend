@@ -1,0 +1,24 @@
+mixin page-footer(options={})
+    -
+        var desctiption = options.desctiption ? options.desctiption : '';
+        var theme = options.theme ? options.theme : '';
+        var instagram = options.instagram ? options.instagram : '';
+        var facebook = options.facebook ? options.facebook : '';
+        var twitter = options.twitter ? options.twitter : '';
+
+        if(theme!='simple'){
+            var navColumns = options.navColumns ? options.navColumns : [];
+            var subscribe = options.subscribe ? options.subscribe : {};
+            var copyright = options.copyright ? options.copyright : '';
+        }
+    footer.page-footer 
+        .page-footer__wrapper
+            if theme=='simple'
+                div simple
+
+            else
+                .page-footer__logo-container
+                    +toxin-logo
+                    .page-footer__company-description= desctiption
+                .page-footer__nav-menu-container nav menu
+                .page-footer__subscribe-container subscribe
