@@ -1,10 +1,11 @@
 mixin form-button(obj={})
     - 
         var text = obj.text ? obj.text : 'Click me';
-        var themeClass = obj.theme ? `form-button_theme_${obj.theme}` : '';
+        var themeClass = obj.theme ? ` form-button_theme_${obj.theme}` : '';
         var iconID = obj.iconID ? obj.iconID : 'arrow_forward';
+        var sizeClass = obj.size ? ` form-button_size_${obj.size}` : '';
 
-    button(class='form-button ' + themeClass)&attributes(attributes)
+    button(class='form-button ' + themeClass + sizeClass)&attributes(attributes)
         span.from-button__text= text
         if obj.theme=='fullwidth'
             i.material-icons.form-button__icon= iconID

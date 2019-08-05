@@ -8,4 +8,26 @@ block variables
 
 
 block content
-    +page-header()
+    .page-haf__elem-wrapper
+        +page-header({
+            menuItems: [
+                {text: 'Home', active: true},
+                {text: 'About Us'},
+                {text: 'Services', submenu: true},
+                {text: 'Careers'},
+                {text: 'News'},
+                {text: 'Documentation'},
+            ]
+        })
+    .page-haf__elem-wrapper
+        +page-header({
+            authUser: 'Cosmin Negoita',
+            menuItems: [
+                {text: 'Home', active: true},
+                {text: 'About Us'},
+                {text: 'Services', submenu: true},
+                {text: 'Careers'},
+                {text: 'News'},
+                {text: 'Documentation'},
+            ]
+        })

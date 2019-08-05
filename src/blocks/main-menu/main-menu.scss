@@ -1,0 +1,34 @@
+.main-menu__list-elem{
+    display: inline-flex;
+    margin-right: 30px;
+    align-items: center;
+
+    &:last-child{
+        margin-right: 0;
+    }
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.main-menu__list-elem_type_submenu{
+    margin-right: 20px;
+}
+
+.main-menu__list-elem-text,
+.main-menu__list-elem-link,
+.main-menu__expand-more-icon{
+    color: $darkShade50;
+}
+
+.main-menu__expand-more-icon{
+    height: 22px;
+}
+
+.main-menu__list-elem_active{
+    .main-menu__list-elem-link{
+        color: $darkShade75;
+        font-weight: bold;
+    }
+}

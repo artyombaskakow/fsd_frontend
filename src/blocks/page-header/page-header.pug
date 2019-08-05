@@ -1,4 +1,23 @@
+include ../main-menu/main-menu 
+
 mixin page-header(options={})
+    - 
+        var authUser = options.authUser ? options.authUser : '';
+        var menuItems = options.menuItems ? options.menuItems : [{text: 'Home'}, {text: 'About Us'}, ]
     header.page-header
-        .container
-            +toxin-logo()
+        .page-header__wrapper
+            .page-header__logo-container
+                +toxin-logo
+
+            .page-header__main-container
+                .page-header__menu-container
+                    +main-menu({
+                        items: menuItems
+                    })
+                .page-header__auth-container
+                    if !authUser
+                        .page-header__auth-buttons-container
+                            +form-button({text: 'Login', theme: 'ghost', size: 'medium'})
+                            +form-button({text: 'Register', size: 'medium'})
+                    else
+                        .page-header__auth-user= authUser
