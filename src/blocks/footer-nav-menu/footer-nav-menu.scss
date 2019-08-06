@@ -1,11 +1,21 @@
 .footer-nav-menu{
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (max-width: $phoneWidth){
+        justify-content: center;
+    }
 }
 
 .footer-nav-menu__column{
-    margin-right: 80px;
-    margin-left: 40px;
+    width: 33%;
+
+    @media (max-width: $phoneWidth){
+        width: 49%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
 }
 
 .footer-nav-menu__column-header{

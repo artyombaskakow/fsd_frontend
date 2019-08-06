@@ -1,3 +1,12 @@
+.main-menu__list{
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: $tableWidth) {
+        justify-content: center;
+    }
+}
+
 .main-menu__list-elem{
     display: inline-flex;
     margin-right: 30px;
@@ -9,6 +18,10 @@
 
     &:hover{
         cursor: pointer;
+    }
+
+    @media (max-width: $tableWidth) {
+        margin-bottom: 10px;
     }
 }
 

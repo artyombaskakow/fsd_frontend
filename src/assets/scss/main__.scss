@@ -141,7 +141,7 @@ section, .section {
   margin: 0 auto;
   max-width: $desktopWidth;
 
-  @media (max-width: $desktopWidth) {
+  @media (max-width: $desktopWidth+80px) {
     max-width: 90%;
   }
   @media (max-width: $phoneWidth) {

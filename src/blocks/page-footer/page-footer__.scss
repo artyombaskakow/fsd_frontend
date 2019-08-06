@@ -7,6 +7,12 @@
     @extend .container;
     display: flex;
     width: 100%;
+    flex-wrap: wrap;
+
+    @media (max-width: $tableWidth){
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .page-footer__top-container,
@@ -16,6 +22,10 @@
 
 .page-footer__top-container{
     padding: 100px 0 97px 0;
+
+    .page-footer__wrapper{
+        justify-content: space-between;
+    }
 }
 
 .page-footer__bottom-container{
@@ -28,16 +38,42 @@
     }
 }
 
-
 .page-footer__company-info-container{
-    width: 260px;
+    width: 25.5%;
+    padding-right: 20px;
+
+    @media (max-width: $smDesktopWidth){
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
 }
 
+
 .page-footer__nav-menu-container{
-    flex-grow: 1;
+    width: 51.2%;
+
+    @media (max-width: $smDesktopWidth) {
+        width: 100%;
+        margin-bottom: 40px;
+    }
 }
 
 .page-footer__subscribe-container{
-    width: 260px;
+    width: 22.42%;
+    
+
+    @media (min-width: $tableWidth) and (max-width: $smDesktopWidth){
+        width: 50%;
+    }
+
+    @media (max-width: $tableWidth){
+        width: 100%;
+    }
 }
 
+.page-footer__copyright{
+    @media (max-width: $tableWidth){
+        margin-bottom: 20px;
+    }
+}

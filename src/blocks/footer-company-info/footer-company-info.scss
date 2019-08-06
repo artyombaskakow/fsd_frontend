@@ -1,3 +1,10 @@
+.footer-company-info {
+
+    @media (max-width: $tableWidth){
+        text-align: center;
+    }
+}
+
 .footer-company-info__description{
     margin-top: 17px;
 }
