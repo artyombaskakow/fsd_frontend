@@ -6,6 +6,6 @@ mixin form-button(obj={})
         var sizeClass = obj.size ? ` form-button_size_${obj.size}` : '';
 
     button(class='form-button ' + themeClass + sizeClass)&attributes(attributes)
-        span.from-button__text= text
-        if obj.theme=='fullwidth'
-            i.material-icons.form-button__icon= iconID
+        .from-button__text= text
+            if obj.theme=='fullwidth'
+                i.material-icons.form-button__icon= iconID

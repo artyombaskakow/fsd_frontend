@@ -16,6 +16,10 @@
 }
 
 .from-button__text{
-    display: inline-block;
-    padding: 13px 16px;
+    //padding: 13px 16px;
+    width: 100%;
+    padding: 8px 16px;
+    text-align: center;
+    line-height: rem(24px);
+    position: relative;
 }

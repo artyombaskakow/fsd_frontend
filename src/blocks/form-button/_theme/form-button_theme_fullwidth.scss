@@ -1,25 +1,27 @@
 .form-button_theme_fullwidth {
 
-    $iconSize:  rem(24px);
+    //$iconSize:  rem(24px);
 
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: rem(10px);
+    //display: flex;
+    //flex-direction: row;
+    //align-items: center;
+    //padding: rem(10px);
 
     .from-button__text{
-        margin-left: auto;
-        margin-right: -$iconSize;
+        //margin-left: auto;
+        //margin-right: -$iconSize;
 
-        @media (max-width: $phoneWidth){
+        /*@media (max-width: $phoneWidth){
             margin-right: auto;
-        }
+        }*/
     }
 
     .form-button__icon{
-        width: $iconSize;
-        margin-left: auto;
+        //margin-left: auto;
+        position: absolute;
+        right: 8px;
+        font-size: rem(24px);
 
         @media (max-width: $phoneWidth){
             display: none;
