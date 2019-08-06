@@ -1,6 +1,8 @@
+include ../footer-company-info/footer-company-info 
+
 mixin page-footer(options={})
     -
-        var desctiption = options.desctiption ? options.desctiption : '';
+        var description = options.description ? options.description : '';
         var theme = options.theme ? options.theme : '';
         var instagram = options.instagram ? options.instagram : '';
         var facebook = options.facebook ? options.facebook : '';
@@ -17,8 +19,7 @@ mixin page-footer(options={})
                 div simple
 
             else
-                .page-footer__logo-container
-                    +toxin-logo
-                    .page-footer__company-description= desctiption
+                .page-footer__company-info-container
+                    +footer-company-info({description: description})
                 .page-footer__nav-menu-container nav menu
                 .page-footer__subscribe-container subscribe

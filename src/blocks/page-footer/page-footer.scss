@@ -1,0 +1,15 @@
+@import '../footer-company-info/footer-company-info.scss';
+
+.page-footer{
+    background: white;
+}
+
+.page-footer__wrapper{
+    @extend .container;
+    padding: 100px 0;
+    display: flex;
+}
+
+.page-footer__company-info-container{
+    width: 260px;
+}

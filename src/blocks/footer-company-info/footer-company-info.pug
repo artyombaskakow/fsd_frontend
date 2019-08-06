@@ -1,0 +1,10 @@
+include ../toxin-logo/toxin-logo
+
+mixin footer-company-info(options={})
+    - 
+        var description = options.description ? options.description : '';
+    .footer-company-info
+        .footer-company-info__logo
+            +toxin-logo
+        if description.length
+            .footer-company-info__description= description
