@@ -1,0 +1,15 @@
+include ../form-input/form-input 
+
+mixin footer-subscribe(options={})
+    -
+        var title = options.title ? options.title : '';
+        var description = options.description ? options.description : '';
+        var inputPlaceholder = options.inputPlaceholder ? options.inputPlaceholder : 'Email';
+
+    .footer-subscribe
+        if title.length
+            .footer-subscribe__title= title
+        if description.length
+            .footer-subscribe__description= description
+        form.footer-subscribe__form
+            +form-input({mode: 'subscription', name: 'subscribe-email', placeholder: inputPlaceholder})

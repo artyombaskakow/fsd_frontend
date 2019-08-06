@@ -1,15 +1,6 @@
 @import '../footer-company-info/footer-company-info.scss';
-
-.page-footer{
-    background: white;
-}
-
-.page-footer__wrapper{
-    @extend .container;
-    padding: 100px 0;
-    display: flex;
-}
-
-.page-footer__company-info-container{
-    width: 260px;
-}
+@import '../footer-nav-menu/footer-nav-menu.scss';
+@import '../footer-subscribe/footer-subscribe.scss';
+@import '../social-links/social-links.scss';
+@import './page-footer__.scss';
+@import './_theme/page-footer_theme_simple.scss';

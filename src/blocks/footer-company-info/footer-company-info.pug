@@ -3,7 +3,9 @@ include ../toxin-logo/toxin-logo
 mixin footer-company-info(options={})
     - 
         var description = options.description ? options.description : '';
-    .footer-company-info
+        var alignElems = options.alignElems ? ` footer-company-info_align-elems_${options.alignElems}` : '';
+
+    div(class="footer-company-info " + alignElems)
         .footer-company-info__logo
             +toxin-logo
         if description.length

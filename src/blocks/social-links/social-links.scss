@@ -1,0 +1,17 @@
+.social-links{
+    display: flex;
+}
+
+.social-links__item{
+    margin-right: 23px;
+    display: inline-flex;
+
+    .fab{
+        font-size: rem(24px);
+        @include icon-gradient;
+    }
+
+    &:last-child{
+        margin-right: 0;
+    }
+}

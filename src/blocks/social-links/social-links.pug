@@ -1,0 +1,12 @@
+mixin social-links(options={})
+    -
+        var links = [];
+        if( options.twitter ) links.push({link: options.twitter, iconClass: 'fa-twitter'});
+        if( options.facebook ) links.push({link: options.facebook, iconClass: 'fa-facebook-square'});
+        if( options.instagram ) links.push({link: options.instagram, iconClass: 'fa-instagram'});
+
+    .social-links 
+        each linkElem in links
+            a.social-links__item(href=linkElem.link, target="_blank", rel="noopener noreferrer")
+                i(class="fab "+linkElem.iconClass)
+        

@@ -1,4 +1,7 @@
 include ../footer-company-info/footer-company-info 
+include ../footer-nav-menu/footer-nav-menu 
+include ../footer-subscribe/footer-subscribe
+include ../social-links/social-links 
 
 mixin page-footer(options={})
     -
@@ -7,19 +10,46 @@ mixin page-footer(options={})
         var instagram = options.instagram ? options.instagram : '';
         var facebook = options.facebook ? options.facebook : '';
         var twitter = options.twitter ? options.twitter : '';
+        var themeClass = options.theme ? ` page-footer_theme_${options.theme}` : '';
 
         if(theme!='simple'){
             var navColumns = options.navColumns ? options.navColumns : [];
             var subscribe = options.subscribe ? options.subscribe : {};
-            var copyright = options.copyright ? options.copyright : '';
+            var copyright = options.copyright ? options.copyright : 'Copyright ©';
         }
-    footer.page-footer 
-        .page-footer__wrapper
-            if theme=='simple'
-                div simple
+    footer(class='page-footer'+themeClass)
 
+            if theme=='simple'
+                .page-footer__wrapper
+                    .page-footer__company-info-container
+                        +footer-company-info({description: description, alignElems: 'center'})
+                    .page-footer__social-links-container
+                        +social-links({
+                                instagram: instagram,
+                                facebook: facebook,
+                                twitter: twitter
+                            })
             else
-                .page-footer__company-info-container
-                    +footer-company-info({description: description})
-                .page-footer__nav-menu-container nav menu
-                .page-footer__subscribe-container subscribe
+                .page-footer__top-container
+                    .page-footer__wrapper
+                        .page-footer__company-info-container
+                            +footer-company-info({description: description})
+                        .page-footer__nav-menu-container 
+                            +footer-nav-menu({navColumns: navColumns})
+                        .page-footer__subscribe-container
+                            +footer-subscribe({
+                                title: subscribe.title, 
+                                description: subscribe.description, 
+                                inputPlaceholder: subscribe.inputPlaceholder
+                            })
+
+                .page-footer__bottom-container
+                    .page-footer__wrapper
+                        .page-footer__copyright= copyright
+                        .page-footer__social-links-container
+                            +social-links({
+                                instagram: instagram,
+                                facebook: facebook,
+                                twitter: twitter
+                            })
+

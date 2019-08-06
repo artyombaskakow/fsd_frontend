@@ -1,0 +1,29 @@
+.footer-nav-menu{
+    display: flex;
+    justify-content: left;
+}
+
+.footer-nav-menu__column{
+    margin-right: 80px;
+    margin-left: 40px;
+}
+
+.footer-nav-menu__column-header{
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 13px;
+    font-size: rem(12px);
+}
+
+.footer-nav-menu__list-item{
+    margin-bottom: 14px;
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+
+.footer-nav-menu__item-link{
+    color: $darkShade50;
+}

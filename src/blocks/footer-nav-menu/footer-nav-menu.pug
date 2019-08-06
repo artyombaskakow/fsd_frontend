@@ -1,0 +1,12 @@
+mixin footer-nav-menu(options={})
+    -
+        var navColumns = options.navColumns ? options.navColumns : [];
+
+    .footer-nav-menu
+        each navCol in navColumns
+            .footer-nav-menu__column
+                .footer-nav-menu__column-header= navCol.header
+                ul.footer-nav-menu__column-list
+                    each linkElem in navCol.links
+                        li.footer-nav-menu__list-item
+                            a.footer-nav-menu__item-link(href=linkElem.link)= linkElem.text

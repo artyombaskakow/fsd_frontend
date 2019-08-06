@@ -1,4 +1,6 @@
 import 'material-icons/iconfont/material-icons.scss'
+import '@fortawesome/fontawesome-free/css/all.css'
+
 import './form-group/form-group';
 import './form-input/form-input';
 import './form-button-like/form-buttom-like';

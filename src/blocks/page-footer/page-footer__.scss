@@ -1,0 +1,43 @@
+
+.page-footer{
+    background: white;
+}
+
+.page-footer__wrapper{
+    @extend .container;
+    display: flex;
+    width: 100%;
+}
+
+.page-footer__top-container,
+.page-footer__bottom-container{
+    display: flex;
+}
+
+.page-footer__top-container{
+    padding: 100px 0 97px 0;
+}
+
+.page-footer__bottom-container{
+    border-top: 1px solid $darkShade10;
+    padding: 23px 0;
+
+    .page-footer__wrapper{
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+.page-footer__company-info-container{
+    width: 260px;
+}
+
+.page-footer__nav-menu-container{
+    flex-grow: 1;
+}
+
+.page-footer__subscribe-container{
+    width: 260px;
+}
+
