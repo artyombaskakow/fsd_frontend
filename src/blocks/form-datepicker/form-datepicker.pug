@@ -3,9 +3,8 @@ include ../form-input/form-input
 
 mixin form-datepicker(obj)
     -
-        var range = obj.range ? obj.range : false;
-        var filterDate = obj.filterDate ? obj.filterDate : false;
-        var onlyCard = obj.onlyCard ? obj.onlyCard : false;
+        var mode = obj.mode ? obj.mode : 'separate'; // separate; filter; card
+        var dateFormat = mode=='filter' ? 'dd M' : 'dd.mm.yyyy';
         var label = obj.label ? obj.label : '';
         var labelFrom = obj.labelFrom ? obj.labelFrom : label;
         var labelTo = obj.labelTo ? obj.labelTo : '';
@@ -16,26 +15,23 @@ mixin form-datepicker(obj)
         var valuesStr = values.join(',');
 
     .form-datepicker
-        if filterDate
-            +form-label({text: label})
-            .form-datepicker__input-range-container(
-                data-date-format="dd M", 
-                data-range='true',
-                data-values=valuesStr
-            )
-                if !onlyCard
-                    +form-input({iconID: 'expand_more', value: inputValue})
-        else
+        if mode=='filter'
             .form-datepicker__input-container
-                .form-datepicker__input-from(
-                    data-date-format="dd.mm.yyyy",
-                    data-values=inputFromValue
-                )
+                .form-datepicker__input-range
+                    +form-label({text: label})
+                    +form-input({iconID: 'expand_more', value: inputValue})
+        else if mode=='separate'
+            .form-datepicker__input-container
+                .form-datepicker__input-from
                     +form-label({text: labelFrom})
-                    +form-input({placeholder: 'ДД.ММ.ГГГГ', iconID: 'expand_more', value: inputFromValue})
-                .form-datepicker__input-to(
-                    data-date-format="dd.mm.yyyy",
-                    data-values=inputToValue
-                )
+                    +form-input({placeholder: 'ДД.ММ.ГГГГ', mode: 'mask', mask: '99.99.9999', iconID: 'expand_more', value: inputFromValue})
+                .form-datepicker__input-to
                     +form-label({text: labelTo})
-                    +form-input({placeholder: 'ДД.ММ.ГГГГ', iconID: 'expand_more', value: inputToValue})
+                    +form-input({placeholder: 'ДД.ММ.ГГГГ', mode: 'mask', mask: '99.99.9999', iconID: 'expand_more', value: inputToValue})
+        
+        div(
+            class="form-datepicker__container"+(mode=='card' ? ' form-datepicker__container_visible' : ''),
+            data-date-format=dateFormat, 
+            data-values=valuesStr,
+            data-mode=mode
+        )

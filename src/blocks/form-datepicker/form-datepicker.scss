@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 
+
 .form-datepicker__input-container{
     display: flex;
     justify-content: space-between;
@@ -19,6 +20,34 @@
     @media (max-width: $phoneWidth) {
         width: 100%;
     }
+}
+
+.form-datepicker__input-range{
+    width: 100%;
+}
+
+.form-datepicker__container{
+    position: relative;
+    display: none;
+
+    .datepicker-inline{
+        position: absolute;
+        z-index: 2;
+        top: 5px;
+    }
+
+    &.form-datepicker__container_visible{
+        display: block;
+
+        .datepicker-inline{
+            position: relative;
+            top: 0;
+        }
+    }
+}
+
+.form-datepicker__container_active{
+    display: block;
 }
 
 .form-datepicker__input-from{
@@ -184,6 +213,12 @@
     border: none;
 }
 
-.datepicker--cell.-selected-.-focus-{
+.datepicker--cell.-selected-.-focus-,
+.datepicker--cell.-selected-, 
+.datepicker--cell.-selected-.-current-{ 
     background: none;
+}
+
+.datepicker--cell.datepicker--cell-month.-selected-{
+    background: $primaryGradient;
 }
