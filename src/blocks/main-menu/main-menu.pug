@@ -7,10 +7,15 @@ mixin main-menu(options={})
                 - var activeClass = item.active ? ' main-menu__list-elem_active' : '';
                 - var submenuClass = item.submenu ? ' main-menu__list-elem_type_submenu' : '';
                 li(class="main-menu__list-elem" + activeClass + submenuClass)
-                    if item.submenu
+                    if item.submenu && item.submenu.length
                         span.main-menu__list-elem-text= item.text
                         i.material-icons.main-menu__expand-more-icon expand_more
+                        ul.main-menu__submenu-list
+                            each subMenuItem in item.submenu
+                                li.main-menu__submenu-list-elem
+                                    a.main-menu__list-elem-link(href=subMenuItem.link)= subMenuItem.text
+
                     else
-                        a.main-menu__list-elem-link(href="/change-me.html")= item.text
+                        a.main-menu__list-elem-link(href=item.link)= item.text
                     
 

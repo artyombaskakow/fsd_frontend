@@ -8,28 +8,30 @@ block variables
 
 
 block content
+    -
+        var menuItems = [
+            {text: 'Home', link: '/change-me.html', active: true},
+            {text: 'About Us', link: '/change-me.html'},
+            {text: 'Services', link: '/change-me.html', 
+                submenu: [
+                    {text: 'First Service', link: '/change-me.html'},
+                    {text: 'Second Service', link: '/change-me.html'},
+                    {text: 'Third Our Service', link: '/change-me.html'},
+                ]
+            },
+            {text: 'Careers', link: '/change-me.html'},
+            {text: 'News', link: '/change-me.html'},
+            {text: 'Documentation', link: '/change-me.html'},
+        ];
+
     .page-haf__elem-wrapper
         +page-header({
-            menuItems: [
-                {text: 'Home', active: true},
-                {text: 'About Us'},
-                {text: 'Services', submenu: true},
-                {text: 'Careers'},
-                {text: 'News'},
-                {text: 'Documentation'},
-            ]
+            menuItems: menuItems
         })
     .page-haf__elem-wrapper
         +page-header({
             authUser: 'Cosmin Negoita',
-            menuItems: [
-                {text: 'Home', active: true},
-                {text: 'About Us'},
-                {text: 'Services', submenu: true},
-                {text: 'Careers'},
-                {text: 'News'},
-                {text: 'Documentation'},
-            ]
+            menuItems: menuItems
         })
 
     .page-haf__elem-wrapper

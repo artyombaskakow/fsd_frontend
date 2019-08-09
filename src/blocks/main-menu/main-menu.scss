@@ -27,6 +27,7 @@
 
 .main-menu__list-elem_type_submenu{
     margin-right: 20px;
+    position: relative;
 }
 
 .main-menu__list-elem-text,
@@ -34,6 +35,7 @@
 .main-menu__expand-more-icon{
     color: $darkShade50;
 }
+
 
 .main-menu__expand-more-icon{
     height: 22px;
@@ -43,5 +45,27 @@
     .main-menu__list-elem-link{
         color: $darkShade75;
         font-weight: bold;
+    }
+}
+
+.main-menu__submenu-list{
+    position: absolute;
+    top: 34px;
+    left: -14px;
+    background: white;
+    z-index: 1;
+    display: none;
+    box-shadow: 0 10px 11px 0px #e6e6e6;
+
+    .main-menu__list-elem-link{
+        white-space: nowrap;
+        padding: 7px 14px;
+        display: block;
+    }
+}
+
+.main-menu__list-elem_submenu_shown{
+    .main-menu__submenu-list{
+        display: block;
     }
 }
