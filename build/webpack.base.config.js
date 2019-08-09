@@ -51,14 +51,15 @@ module.exports = {
             test: /\.(png|jpg|gif|svg)$/,
             loader: 'file-loader',
             options: {
-                name: '[name].[ext]'
+                name: '[name].[ext]',
+                outputPath: `${PATHS.assets}img/`
             }
         },{
             test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
             loader: 'file-loader',
             options: {
                 name: `[name].[ext]`,
-                outputPath: 'fonts/'
+                outputPath: `${PATHS.assets}fonts/`
             }
         }, {
             test: /\.scss$/,
