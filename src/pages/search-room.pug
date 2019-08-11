@@ -1,0 +1,58 @@
+extends ../layouts/page-layout  
+
+block variables
+    -
+        title = 'Landing Page';
+
+block content
+    .container.search-room-container
+        aside.search-room-filter
+            +form-group({label: 'Даты пребывания в отеле'})
+                +form-datepicker({mode: 'filter', values: ['19.08.2019', '23.08.2019'] })
+
+            +form-group({label: 'Гости'})
+                +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Сколько гостей',
+                    dropdownApplyBtn: true,
+                    dropdownClearBtn: true,
+                    dropdownElems: [
+                        {title: 'Взрослые', count: 2},
+                        {title: 'Дети'},
+                        {title: 'Младенцы', count: 1}
+                    ]
+                })
+
+            +form-group
+                +range-slider({label: 'Диапазон цены', startValue: 5000, endValue: 10000, max: 15000})
+
+            +form-group({label: 'Checkbox buttons', labelMargin: true})
+                +form-checkbox({label: 'Можно курить'})
+                +form-checkbox({label: 'Можно с питомцами', checked: true})
+                +form-checkbox({label: 'Можно пригласить гостей <br/>(до 10 человек)', checked: true})
+
+            +form-group({label: 'Доступность', labelMargin: true})
+                +form-checkbox({label: 'Широкий коридор', mode: 'rich', descr: 'Ширина коридоров в номере<br/> не менее 91 см'})
+                +form-checkbox({label: 'Помощник для инвалидов', mode: 'rich', descr: 'На 1 этаже вас встретит специалист<br/> и проводит до номера.'})
+
+            +form-group({label: 'Удобства номера'})
+                +form-input({mode: 'dropdown', placeholder: 'Комнаты',
+                    dropdownElems: [
+                        {title: 'Спальни', name: 'bedrooms', count: 2},
+                        {title: 'Кровати', name: 'beds', count: 2},
+                        {title: 'Ванные комнаты', name: 'bathrooms'}
+                    ]
+                })
+
+            +form-group({label: 'Дополнительные удобства', expandable: true, expanded: false, labelMargin: true})
+                +form-checkbox({label: 'Завтрак'})
+                +form-checkbox({label: 'Письменный стол', checked: true})
+                +form-checkbox({label: 'Стул для кормления', checked: true})
+                +form-checkbox({label: 'Кроватка', checked: true})
+                +form-checkbox({label: 'Телевизор'})
+                +form-checkbox({label: 'Шампунь'})
+                +form-checkbox({label: 'Телевизор'})
+                +form-checkbox({label: 'Шампунь'}) 
+
+        .search-room-results
+            div results
+        
+        

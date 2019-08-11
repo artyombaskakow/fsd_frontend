@@ -108,6 +108,7 @@ section, .section {
 
 .content-wrapper{
   flex: 1 0 auto;
+  border-bottom: 1px solid $darkShade25;
 }
 
 .footer-wrapper {
@@ -144,7 +145,7 @@ section, .section {
 }
 
 .container {
-  flex: 0 0 auto;
+  //flex: 0 0 auto;
   position: relative;
   margin: 0 auto;
   max-width: $desktopWidth;
