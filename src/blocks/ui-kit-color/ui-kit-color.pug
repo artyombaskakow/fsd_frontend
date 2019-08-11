@@ -1,5 +1,10 @@
-mixin ui_kit_color(title, subtitle, color_value)
-    - var style_val = 'background: ' + color_value;
+mixin ui_kit_color(options)
+    - 
+        var title = options.title ? options.title : 'Title';
+        var subtitle = options.subtitle ? options.subtitle : 'subtitle';
+        var color = options.color ? options.color : 'black';
+        var style_val = `background: ${color}`;
+
     .ui-kit-color
         .ui-kit-color__color-rect(style= style_val)
         h2.ui-kit-color__color-title= title
