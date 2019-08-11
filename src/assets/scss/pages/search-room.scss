@@ -1,9 +1,64 @@
 .search-room-container{
     display: flex;
     padding-top: 26px;
-    padding-bottom: 70px;
+    padding-bottom: 71px;
+    justify-content: space-between;
+
+    @media (max-width: $smDesktopWidth){
+        flex-direction: column;
+    }
 }
 
 .search-room-filter{
     width: 266px;
+    margin-right: 60px;
+    flex: 0 0 auto;
+
+    @media (max-width: $smDesktopWidth){
+        margin-right: 0;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+.search-room-filter__controll-wrapper{
+    margin-bottom: 26px;
+
+    &:first-child{
+        margin-bottom: 16px;
+    }
+}
+
+.search-room-results{
+    //width: 835px;
+}
+
+.search-room-results__title{
+    margin-top: 4px;
+    margin-bottom: 21px;
+}
+
+.search-room-results__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .room-preview-item{
+        margin-bottom: 20px;
+
+        @media (max-width: $tableWidth){
+            margin: 0 auto 20px auto;
+        }
+    }
+
+}
+
+.search-room-results__pagination{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-right: 13px;
 }

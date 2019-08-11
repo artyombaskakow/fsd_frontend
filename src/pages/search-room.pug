@@ -7,52 +7,95 @@ block variables
 block content
     .container.search-room-container
         aside.search-room-filter
-            +form-group({label: 'Даты пребывания в отеле'})
-                +form-datepicker({mode: 'filter', values: ['19.08.2019', '23.08.2019'] })
 
-            +form-group({label: 'Гости'})
-                +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Сколько гостей',
-                    dropdownApplyBtn: true,
-                    dropdownClearBtn: true,
-                    dropdownElems: [
-                        {title: 'Взрослые', count: 2},
-                        {title: 'Дети'},
-                        {title: 'Младенцы', count: 1}
-                    ]
-                })
+            .search-room-filter__controll-wrapper
+                +form-group({label: 'Даты пребывания в отеле'})
+                    +form-datepicker({mode: 'filter', values: ['19.08.2019', '23.08.2019'] })
 
-            +form-group
-                +range-slider({label: 'Диапазон цены', startValue: 5000, endValue: 10000, max: 15000})
+            .search-room-filter__controll-wrapper
+                +form-group({label: 'Гости'})
+                    +form-input({mode: 'dropdown', label: 'dropdown', placeholder: 'Сколько гостей',
+                        dropdownApplyBtn: true,
+                        dropdownClearBtn: true,
+                        dropdownElems: [
+                            {title: 'Взрослые', count: 2},
+                            {title: 'Дети'},
+                            {title: 'Младенцы', count: 1}
+                        ]
+                    })
 
-            +form-group({label: 'Checkbox buttons', labelMargin: true})
-                +form-checkbox({label: 'Можно курить'})
-                +form-checkbox({label: 'Можно с питомцами', checked: true})
-                +form-checkbox({label: 'Можно пригласить гостей <br/>(до 10 человек)', checked: true})
+            .search-room-filter__controll-wrapper
+                +form-group
+                    +range-slider({label: 'Диапазон цены', startValue: 5000, endValue: 10000, max: 15000, description: 'Стоимость за сутки пребывания в номере'})
 
-            +form-group({label: 'Доступность', labelMargin: true})
-                +form-checkbox({label: 'Широкий коридор', mode: 'rich', descr: 'Ширина коридоров в номере<br/> не менее 91 см'})
-                +form-checkbox({label: 'Помощник для инвалидов', mode: 'rich', descr: 'На 1 этаже вас встретит специалист<br/> и проводит до номера.'})
+            .search-room-filter__controll-wrapper
+                +form-group({label: 'Checkbox buttons', labelMargin: true})
+                    +form-checkbox({label: 'Можно курить'})
+                    +form-checkbox({label: 'Можно с питомцами', checked: true})
+                    +form-checkbox({label: 'Можно пригласить гостей <br/>(до 10 человек)', checked: true})
 
-            +form-group({label: 'Удобства номера'})
-                +form-input({mode: 'dropdown', placeholder: 'Комнаты',
-                    dropdownElems: [
-                        {title: 'Спальни', name: 'bedrooms', count: 2},
-                        {title: 'Кровати', name: 'beds', count: 2},
-                        {title: 'Ванные комнаты', name: 'bathrooms'}
-                    ]
-                })
+            .search-room-filter__controll-wrapper
+                +form-group({label: 'Доступность', labelMargin: true})
+                    +form-checkbox({label: 'Широкий коридор', mode: 'rich', descr: 'Ширина коридоров в номере<br/> не менее 91 см'})
+                    +form-checkbox({label: 'Помощник для инвалидов', mode: 'rich', descr: 'На 1 этаже вас встретит специалист<br/> и проводит до номера.'})
 
-            +form-group({label: 'Дополнительные удобства', expandable: true, expanded: false, labelMargin: true})
-                +form-checkbox({label: 'Завтрак'})
-                +form-checkbox({label: 'Письменный стол', checked: true})
-                +form-checkbox({label: 'Стул для кормления', checked: true})
-                +form-checkbox({label: 'Кроватка', checked: true})
-                +form-checkbox({label: 'Телевизор'})
-                +form-checkbox({label: 'Шампунь'})
-                +form-checkbox({label: 'Телевизор'})
-                +form-checkbox({label: 'Шампунь'}) 
+            .search-room-filter__controll-wrapper
+                +form-group({label: 'Удобства номера'})
+                    +form-input({mode: 'dropdown', placeholder: 'Комнаты',
+                        dropdownElems: [
+                            {title: 'Спальни', name: 'bedrooms', count: 2},
+                            {title: 'Кровати', name: 'beds', count: 2},
+                            {title: 'Ванные комнаты', name: 'bathrooms'}
+                        ]
+                    })
+
+            .search-room-filter__controll-wrapper
+                +form-group({label: 'Дополнительные удобства', expandable: true, expanded: false, labelMargin: true})
+                    +form-checkbox({label: 'Завтрак'})
+                    +form-checkbox({label: 'Письменный стол', checked: true})
+                    +form-checkbox({label: 'Стул для кормления', checked: true})
+                    +form-checkbox({label: 'Кроватка', checked: true})
+                    +form-checkbox({label: 'Телевизор'})
+                    +form-checkbox({label: 'Шампунь'})
+                    +form-checkbox({label: 'Телевизор'})
+                    +form-checkbox({label: 'Шампунь'}) 
 
         .search-room-results
-            div results
-        
-        
+            h1.search-room-results__title Номера, которые мы для вас подобрали
+            .search-room-results__list
+                -
+                    var rooms = [
+                        {number: 888, type: 'люкс', rating: 5, votes: 145, price: '9 990', firstImage: '/assets/img/rooms/room1.png'},
+                        {number: 840, type: '', rating: 4, votes: 65, price: '9 990', firstImage: '/assets/img/rooms/room2.png'},
+                        {number: 980, type: 'люкс', rating: 3, votes: 35, price: '8 500', firstImage: '/assets/img/rooms/room3.png'},
+
+                        {number: 856, type: '', rating: 5, votes: 19, price: '7 300', firstImage: '/assets/img/rooms/room4.png'},
+                        {number: 740, type: '', rating: 4, votes: 44, price: '6 000', firstImage: '/assets/img/rooms/room5.png'},
+                        {number: 982, type: '', rating: 3, votes: 56, price: '5 800', firstImage: '/assets/img/rooms/room6.png'},
+
+                        {number: 678, type: '', rating: 5, votes: 45, price: '5 500', firstImage: '/assets/img/rooms/room7.png'},
+                        {number: 450, type: '', rating: 4, votes: 39, price: '5 300', firstImage: '/assets/img/rooms/room8.png'},
+                        {number: 350, type: '', rating: 3, votes: 77, price: '5 000', firstImage: '/assets/img/rooms/room9.png'},
+
+                        {number: 666, type: '', rating: 5, votes: 25, price: '5 000', firstImage: '/assets/img/rooms/room10.png'},
+                        {number: 444, type: '', rating: 4, votes: 15, price: '5 000', firstImage: '/assets/img/rooms/room11.png'},
+                        {number: 352, type: '', rating: 3, votes: 55, price: '5 000', firstImage: '/assets/img/rooms/room12.png'},
+                    ];
+
+                each room in rooms
+                    +room-preview-item({
+                        number: room.number, 
+                        type: room.type, 
+                        rating: room.rating, 
+                        votes: room.votes, 
+                        price: room.price,
+                        images: [
+                            room.firstImage, 
+                            '/assets/img/rooms/room2.png', 
+                            '/assets/img/rooms/room3.png', 
+                            '/assets/img/rooms/room4.png'
+                        ]
+                    })
+
+            .search-room-results__pagination
+                +pagination({elemCount: 170, pageSize: 12, descr: 'вариантов аренды'})
