@@ -12,13 +12,15 @@ html(lang='ru')
         title #{title}
         block head
 
-    body.main-content
-        .site-icons
-            +icons-define
-        .shadow-wrapper
-            include ./modules/header.pug
-        .content-wrapper
-            block content
-        .footer
+    body
+        .wrapper
+            .site-icons
+                +icons-define
+            .shadow-wrapper
+                include ./modules/header.pug
+            .content-wrapper
+                block content
+            .footer-wrapper
+                include ./modules/footer.pug
 
         block script
