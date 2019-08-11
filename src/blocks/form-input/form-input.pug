@@ -60,6 +60,6 @@ mixin form-input(obj={})
                     if obj.dropdownApplyBtn || obj.dropdownClearBtn
                         .form-input__dropdown-buttons-containers
                             if obj.dropdownClearBtn
-                                button.form-input__dropdown-clear Очистить
+                                button.form-input__dropdown-clear(type='button') Очистить
                             if obj.dropdownApplyBtn
-                                button.form-input__dropdown-apply Применить
+                                button.form-input__dropdown-apply(type='button') Применить

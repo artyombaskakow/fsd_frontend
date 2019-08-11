@@ -4,6 +4,14 @@
 @import '../form-input/form-input.scss';
 @import '../form-button/form-button.scss';
 
+.card-search-room{
+
+    @media (max-width: $tableWidth){
+        display: flex;
+        justify-content: center;
+    }
+}
+
 .card-search-room__button{
     margin-top: 32px;
 }

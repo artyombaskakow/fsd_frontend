@@ -1,0 +1,36 @@
+.langind-container{
+    display: flex;
+    width: 100%;
+    min-height: 500px;
+    height: 830px;
+    padding: 70px 0 0 140px;
+    background: url('/assets/img/main-bg.png') center center no-repeat;
+    justify-content: space-between;
+
+    @media (max-width: $tableWidth){
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        height: auto;
+    }
+}
+
+.landing-container_subtitle{
+    font-size: rem(14px);
+    color: $darkShade75;
+    margin-bottom: 21px;
+    margin-right: 135px;
+    align-self: flex-end;
+    width: 280px;
+    text-align: right;
+
+    @media (max-width: $tableWidth){
+        width: 70%;
+        padding: 10px;
+        background: hsla(0, 0%, 100%, 0.73);
+        margin: 0;
+        align-self: auto;
+        margin-top: 15px;
+        text-align: center;
+    }
+}
