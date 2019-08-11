@@ -6,7 +6,9 @@
 @import "./main__.scss";
 // Modules
 // @import "modules/my-module.scss";
+
 @import "../../blocks/blocks.scss";
+@import "./pages/ui-kit-layout.scss";
 @import "./pages/color-and-types.scss";
 @import "./pages/form-elements.scss";
 @import "./pages/headers-and-footers.scss";
