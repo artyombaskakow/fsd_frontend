@@ -1,8 +1,7 @@
 .langind-container{
     display: flex;
     width: 100%;
-    min-height: 500px;
-    height: 830px;
+    min-height: 830px;
     padding: 70px 0 0 140px;
     background: url('/assets/img/main-bg.png') center center no-repeat;
     justify-content: space-between;
@@ -15,7 +14,7 @@
     }
 }
 
-.landing-container_subtitle{
+.landing-container__subtitle{
     font-size: rem(14px);
     color: $darkShade75;
     margin-bottom: 21px;

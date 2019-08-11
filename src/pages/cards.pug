@@ -9,19 +9,19 @@ block content
     .container
         .flex-container(style="margin-top: 71px;")
             .flex-column
-                .content-wrapper
+                .ui-kit-card-wrapper
                     +card-search-room
-                .content-wrapper
+                .ui-kit-card-wrapper
                     +card-registration
             .flex-column
-                .content-wrapper
+                .ui-kit-card-wrapper
                     +card-booking-room
-                .content-wrapper
+                .ui-kit-card-wrapper
                     +card-sign-in
             .flex-column
-                .content-wrapper
+                .ui-kit-card-wrapper
                     +form-datepicker({filterDate: true, mode: 'card', values: ['23.08.2019', '19.08.2019'] })
-                .content-wrapper
+                .ui-kit-card-wrapper
                     +room-preview-item({
                         number: 888,
                         type: 'люкс',
@@ -36,7 +36,7 @@ block content
                         ]
                     })
 
-                .content-wrapper
+                .ui-kit-card-wrapper
                     +room-preview-item({
                         number: 840,
                         rating: 4,

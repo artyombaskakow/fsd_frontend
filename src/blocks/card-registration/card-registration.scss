@@ -5,6 +5,13 @@
 @import '../form-radio-buttons/form-radio-buttons.scss';
 @import '../form-checkbox/form-checkbox.scss';
 
+.card-registration{
+    @media (max-width: $tableWidth){
+        display: flex;
+        justify-content: center;
+    }
+}
+
 .card-registration__form{
     margin-top: rem(20px);
 }

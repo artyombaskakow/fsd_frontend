@@ -7,7 +7,7 @@
     flex-wrap: wrap;
 }
 
-@media (max-width: $phoneWidth){
+@media (max-width: $tableWidth){
     .card-footer__text,
     .card-footer__button{
         width: 100%;
