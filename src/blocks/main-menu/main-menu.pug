@@ -1,12 +1,18 @@
 mixin main-menu(options={})
     - 
         var items = options.items ? options.items : [];
+        var menuItemMarginSize = options.menuItemMarginSize ? options.menuItemMarginSize : '';
+        var additionalMenuItemClass = menuItemMarginSize ? ` main-menu__list-elem_margin_${menuItemMarginSize}` : '';
+        
     nav.main-menu
         ul.main-menu__list
             each item in items
-                - var activeClass = item.active ? ' main-menu__list-elem_active' : '';
-                - var submenuClass = item.submenu ? ' main-menu__list-elem_type_submenu' : '';
-                li(class="main-menu__list-elem" + activeClass + submenuClass)
+                - 
+                    var activeClass = item.active ? ' main-menu__list-elem_active' : '';
+                    var submenuClass = item.submenu ? ' main-menu__list-elem_type_submenu' : '';
+                    
+
+                li(class="main-menu__list-elem" + activeClass + submenuClass + additionalMenuItemClass)
                     if item.submenu && item.submenu.length
                         span.main-menu__list-elem-text= item.text
                         i.material-icons.main-menu__expand-more-icon expand_more

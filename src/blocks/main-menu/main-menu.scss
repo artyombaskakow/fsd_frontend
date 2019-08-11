@@ -12,8 +12,8 @@
     margin-right: 30px;
     align-items: center;
 
-    &:last-child{
-        margin-right: 0;
+    &_margin_medium{
+        margin-right: 23px;
     }
 
     &:hover{
@@ -21,7 +21,7 @@
     }
 
     @media (max-width: $tableWidth) {
-        margin-bottom: 10px;
+        margin: 0 10px 10px 10px;
     }
 }
 

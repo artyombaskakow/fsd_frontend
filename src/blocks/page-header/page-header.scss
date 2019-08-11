@@ -44,7 +44,6 @@
 
 
 .page-header__menu-container{
-    margin-right: 30px;
 
     @media (max-width: $tableWidth){
         margin: 20px 0;
@@ -53,13 +52,23 @@
 
 .page-header__auth-buttons-container{
     min-width: 200px;
-
-    .form-button:first-child{
-        margin-right: 20px;
-    }
+    display: flex;
 
     @media (max-width: $tableWidth) {
         padding-bottom: 20px;
+    }
+
+    @media (max-width: $phoneWidth){
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-button:first-child{
+        margin-right: 20px;
+
+        @media (max-width: $phoneWidth){
+            margin-bottom: 10px;
+        }
     }
 }
 

@@ -3,7 +3,11 @@ include ../main-menu/main-menu
 mixin page-header(options={})
     - 
         var authUser = options.authUser ? options.authUser : '';
-        var menuItems = options.menuItems ? options.menuItems : [{text: 'Home'}, {text: 'About Us'}, ]
+        var menuItems = options.menuItems ? options.menuItems : [{text: 'Home'}, {text: 'About Us'}, ];
+        var buttonLoginText = options.buttonLoginText ? options.buttonLoginText : 'Login';
+        var buttonRegisterText = options.buttonRegisterText ? options.buttonRegisterText : 'Register';
+        var menuItemMarginSize = options.menuItemMarginSize ? options.menuItemMarginSize : '';
+
     header.page-header
         .page-header__wrapper
             .page-header__logo-container
@@ -12,12 +16,13 @@ mixin page-header(options={})
             .page-header__main-container
                 .page-header__menu-container
                     +main-menu({
-                        items: menuItems
+                        items: menuItems,
+                        menuItemMarginSize: menuItemMarginSize
                     })
                 .page-header__auth-container
                     if !authUser
                         .page-header__auth-buttons-container
-                            +form-button({text: 'Login', theme: 'ghost', size: 'medium'})
-                            +form-button({text: 'Register', size: 'medium'})
+                            +form-button({text: buttonLoginText, theme: 'ghost', size: 'medium'})
+                            +form-button({text: buttonRegisterText, size: 'medium'})
                     else
                         .page-header__auth-user= authUser

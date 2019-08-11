@@ -3,7 +3,7 @@ include ../blocks/blocks
 block variables
 
 doctype html
-html(lang=ru)
+html(lang='ru')
     head
         meta(charset='urf-8')
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -12,12 +12,13 @@ html(lang=ru)
         title #{title}
         block head
 
-    body(class=pageClass)
+    body.main-content
         .site-icons
             +icons-define
-        header.ui-kit-header
-            +toxin-logo({theme: 'gray'})
-            block header-content
-        block content
+        .shadow-wrapper
+            include ./modules/header.pug
+        .content-wrapper
+            block content
+        .footer
 
         block script
