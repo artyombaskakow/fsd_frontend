@@ -1,0 +1,47 @@
+$mainPhotoWidth:    68.1%;
+
+.room-details-photos{
+    height: 485px;
+    display: flex;
+
+    @media (max-width: $smDesktopWidth) and (min-width: $tableWidth){
+        height: 300px;
+    }
+
+    @media (max-width: $tableWidth){
+        flex-direction: column;
+    }
+}
+
+.room-details-photos__main-photo{
+    height: 100%;
+    width: $mainPhotoWidth;
+
+    @media (max-width: $tableWidth){
+        width: 100%;
+    }
+}
+
+.room-details-photos__photo-container{
+    display: flex;
+    flex-direction: column;
+    width: 100% - $mainPhotoWidth;
+    position: relative;
+    height: 100%;
+
+    @media (max-width: $tableWidth){
+        width: 100%;
+        flex-direction: row;
+    }
+}
+
+.room-details-photos__photo-first,
+.room-details-photos__photo-second{
+    width: 100%;
+    height: 50%;
+    background-size: cover;
+
+    @media (max-width: $tableWidth){
+        width: 50%;
+    }
+}

@@ -10,11 +10,13 @@ mixin comment(obj)
         var text = obj.text ? obj.text : '';
     .comment
         .comment__author-info
-            .comment__author-photo(style=bgStyle)
-            .comment__author-name= authorName
-            .comment__date= date
+            .comment__author-photo-container
+                .comment__author-photo(style=bgStyle)
+            .comment__autor-name-container
+                .comment__author-name= authorName
+                .comment__date= date
         .comment__content
-            .comment__like-button-wrap
+            .comment__like-button-container
                 +form-button-like({likeCount: likeCount, liked: liked})
             .comment__text= text
 

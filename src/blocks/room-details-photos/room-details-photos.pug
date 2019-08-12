@@ -1,0 +1,12 @@
+mixin room-details-photos(photos=[])
+    if photos.length>=3
+        -
+            var mainPhotoStyle = `background: url("${photos[0]}") center center no-repeat; background-size: cover;`;
+            var firstPhotoStyle = `background: url("${photos[1]}") center center no-repeat; background-size: cover;`;
+            var secondPhotoStyle = `background: url("${photos[2]}") center center no-repeat; background-size: cover;`;
+
+        .room-details-photos
+            .room-details-photos__main-photo(style=mainPhotoStyle)
+            .room-details-photos__photo-container
+                .room-details-photos__photo-first(style=firstPhotoStyle)
+                .room-details-photos__photo-second(style=secondPhotoStyle)

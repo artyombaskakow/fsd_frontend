@@ -11,8 +11,9 @@ mixin form-group(obj={})
         }
         
     div(class='form-group' + expandableClass, style!=attributes.style)
-        div(class='form-group__label-wrapper ' + labelWrapperClass )
-            +form-label({text: label, hint: hint, icon: icon})
+        if label.length
+            div(class='form-group__label-wrapper ' + labelWrapperClass )
+                +form-label({text: label, hint: hint, icon: icon})
         .form-group_elems-container
             if block
                 block

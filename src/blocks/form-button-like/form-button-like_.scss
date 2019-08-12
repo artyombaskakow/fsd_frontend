@@ -7,7 +7,7 @@ $btnLikeBaseColor   : $darkShade25;
     background: none;
     color: $btnLikeBaseColor;
     line-height: 14px;
-    padding: 2px 0 2px 4px;
+    padding: 2px 4px;
     align-items: center;
     width: 40px;
 
@@ -19,7 +19,6 @@ $btnLikeBaseColor   : $darkShade25;
 .form-button__icon-empty,
 .form-button__icon-fill{
     font-size: rem(10px);
-    margin-right: 7px;
     color: $btnLikeBaseColor;
 }
 
@@ -29,5 +28,6 @@ $btnLikeBaseColor   : $darkShade25;
 
 .form-button-like__count{
     font-size: rem(10px);
+    margin: 0 auto;
 }
 

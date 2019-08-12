@@ -83,19 +83,20 @@ block content
                     ];
 
                 each room in rooms
-                    +room-preview-item({
-                        number: room.number, 
-                        type: room.type, 
-                        rating: room.rating, 
-                        votes: room.votes, 
-                        price: room.price,
-                        images: [
-                            room.firstImage, 
-                            '/assets/img/rooms/room2.png', 
-                            '/assets/img/rooms/room3.png', 
-                            '/assets/img/rooms/room4.png'
-                        ]
-                    })
+                    .shadow-wrapper.search-room-results__room-item
+                        +room-preview-item({
+                            number: room.number, 
+                            type: room.type, 
+                            rating: room.rating, 
+                            votes: room.votes, 
+                            price: room.price,
+                            images: [
+                                room.firstImage, 
+                                '/assets/img/rooms/room2.png', 
+                                '/assets/img/rooms/room3.png', 
+                                '/assets/img/rooms/room4.png'
+                            ]
+                        })
 
             .search-room-results__pagination
                 +pagination({elemCount: 170, pageSize: 12, descr: 'вариантов аренды'})

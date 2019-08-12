@@ -1,10 +1,32 @@
 .form-label{
-    @extend %form-elem-label;
+    //@extend %form-elem-label;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: $darkShade100;
+    font-size: 0.87rem;
+    align-items: baseline;
+}
+
+.form-label__text-header{
+    text-transform: none;
+}
+
+.form-label__text{
+    text-transform: uppercase;
 }
 
 .form-label__hint{
     font-weight: 100;
     color: $darkShade50;
+
+    &.form-label__hint_uppercase{
+        text-transform: uppercase;
+    }
+
+    &.form-label__hint_size_medium{
+        font-size: rem(14px);
+    }
 }
 
 .form-label__icon{

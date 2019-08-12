@@ -1,0 +1,67 @@
+.room-details-container{
+    display: flex;
+    padding-top: 70px;
+    justify-content: space-between;
+
+    
+}
+
+.room-details-info-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 61.1%;
+    justify-content: space-between;
+
+    .form-label{
+        margin-bottom: 18px;
+    }
+}
+
+.room-details-advantages,
+.room-details-impressions{
+    margin-bottom: 13px;
+
+    .form-label{
+        margin-bottom: 20px;
+    }
+}
+
+.room-details-advantages,
+.room-details-rools{
+    width: 280px;
+}
+
+.room-details-impressions,
+.room-details-cancel{
+    width: 49%;
+}
+
+.room-details-comments{
+    width: 100%;
+    margin-bottom: 33px;
+
+    .form-label{
+        margin-bottom: 18px;
+    }
+}
+
+.room-details-comments__comment-wrapper{
+    margin-bottom: 23px;
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+
+.room-details-rools-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 61px;
+}
+
+.room-details-rools{
+
+    .form-label{
+        padding-left: 20px;
+    }
+}

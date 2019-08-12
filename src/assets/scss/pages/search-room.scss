@@ -32,10 +32,6 @@
     }
 }
 
-.search-room-results{
-    //width: 835px;
-}
-
 .search-room-results__title{
     margin-top: 4px;
     margin-bottom: 21px;
@@ -46,7 +42,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-    .room-preview-item{
+    .search-room-results__room-item{
         margin-bottom: 20px;
 
         @media (max-width: $tableWidth){
