@@ -11,3 +11,4 @@ import './range-slider/range-slider';
 import './form-datepicker/form-datepicker';
 import './room-preview-item/room-preview-item';
 import './main-menu/main-menu';
+import './donut-chart/donut-chart';

@@ -24,6 +24,9 @@ block content
             .room-details-impressions
                 +form-group
                     +form-label({text: 'Впечатления от номера', headerTag: true})
+                    +donut-chart({
+                        votes: [260, 260, 520, 0]
+                    })
 
             .room-details-comments
                 +form-group

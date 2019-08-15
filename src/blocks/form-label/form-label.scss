@@ -19,6 +19,7 @@
 .form-label__hint{
     font-weight: 100;
     color: $darkShade50;
+    white-space: nowrap;
 
     &.form-label__hint_uppercase{
         text-transform: uppercase;
@@ -26,6 +27,10 @@
 
     &.form-label__hint_size_medium{
         font-size: rem(14px);
+    }
+
+    @media (max-width: $phoneWidth){
+        display: none;
     }
 }
 

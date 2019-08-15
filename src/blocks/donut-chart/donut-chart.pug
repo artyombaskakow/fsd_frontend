@@ -1,0 +1,27 @@
+mixin donut-chart(options={})
+    -
+        var votes = options.votes ? options.votes : [50, 50, 50, 50];
+        var votesAttr = votes.join(' ');
+
+        var strokeWidth = options.strokeWidth ? options.strokeWidth : 4;
+        var circleRadius = options.circleRadius ? options.circleRadius : 58;
+        var legendListElems = [
+            {classSuffux: 'nice', gradientID: '#markNiceGradient', text: 'Великолепно'},
+            {classSuffux: 'good', gradientID: '#markGoodGradient', text: 'Хорошо'},
+            {classSuffux: 'pass', gradientID: '#markPassGradient', text: 'Удовлетворительно'},
+            {classSuffux: 'bad', gradientID: '#markBadGradient', text: 'Разочарован'},
+        ];
+
+    figure.donut-chart(data-votes=votesAttr, data-stroke-width=strokeWidth, data-circle-radius=circleRadius)
+        svg.donut-chart__chart
+            g.donut-chart__chart-segments
+            g.donut-chart__text
+                text.donut-chart__value(data-theme="nice" x="50%" y="50%") 260
+                text.donut-chart__label(x="50%" y="50%") Голосов
+        figcaption.donut-chart__legend
+            ul.donut-chart__legend-list(aria-hidden="true" role="presentation")
+                each listElem in legendListElems
+                    li.donut-chart__legend-list-elem(data-segment-class=`donut-chart__chart-segment-${listElem.classSuffux}`)
+                        svg.donut-chart__legend-elem-icon(viewbox="0 0 10 10")
+                            circle(cx="5" cy="5" r="5" fill=`url(${listElem.gradientID})`)
+                        |  #{listElem.text}

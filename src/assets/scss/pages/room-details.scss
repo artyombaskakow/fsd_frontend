@@ -3,24 +3,45 @@
     padding-top: 70px;
     justify-content: space-between;
 
-    
+    @media (max-width: $smDesktopWidth){
+        flex-direction: column;
+    }
 }
 
 .room-details-info-container{
     display: flex;
     flex-wrap: wrap;
-    width: 61.1%;
+    width: 62.3%;
     justify-content: space-between;
+    padding-right: 15px;
 
     .form-label{
         margin-bottom: 18px;
     }
+
+    @media (max-width: $smDesktopWidth){
+        width: 100%;
+    }
+
+
+}
+
+.room-derails-booking-container{
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: $smDesktopWidth){
+        width: 100%;
+    }
+}
+
+.room-details-advantages{
+    margin-bottom: 13px;
 }
 
 .room-details-advantages,
 .room-details-impressions{
-    margin-bottom: 13px;
-
     .form-label{
         margin-bottom: 20px;
     }
@@ -29,11 +50,36 @@
 .room-details-advantages,
 .room-details-rools{
     width: 280px;
+
+    @media (max-width: $desktopWidth) and (min-width: $phoneWidth) {
+        width: 50%;
+        padding-right: 15px;
+    }
+
+    @media (max-width: $phoneWidth) {
+        width: 100%;
+        padding-right: 0;
+    }
 }
 
 .room-details-impressions,
 .room-details-cancel{
     width: 49%;
+    margin-bottom: 30px;
+
+    @media (max-width: $desktopWidth) and (min-width: $tableWidth) {
+        width: 50%;
+        padding-right: 15px;
+    }
+
+    @media (max-width: $tableWidth) and (min-width: $phoneWidth) {
+        width: 35%;
+        padding-right: 0;
+    }
+
+    @media (max-width: $phoneWidth) {
+        width: 100%;
+    }
 }
 
 .room-details-comments{
@@ -57,9 +103,11 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 61px;
+    flex-wrap: wrap;
 }
 
 .room-details-rools{
+    margin-bottom: 30px;
 
     .form-label{
         padding-left: 20px;

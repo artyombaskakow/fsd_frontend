@@ -1,0 +1,107 @@
+.donut-chart{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.donut-chart__chart{
+    margin-right: 26px;
+}
+
+.donut-chart__gradients{
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.donut-chart__chart-segment-nice,
+.donut-chart__chart-segment-good,
+.donut-chart__chart-segment-pass,
+.donut-chart__chart-segment-bad{
+    stroke-width: 4;
+    fill: none;
+    transition: all 0.3s;
+}
+
+.donut-chart__chart-segment-nice{
+    stroke: url(#markNiceGradient);
+    
+}
+
+.donut-chart__chart-segment-good{
+    stroke: url(#markGoodGradient);
+}
+
+.donut-chart__chart-segment-pass{
+    stroke: url(#markPassGradient);
+}
+
+.donut-chart__chart-segment-bad{
+    stroke: url(#markBadGradient);
+}
+
+.donut-chart__legend{
+    margin: 10px 0 1px 0;
+}
+
+.donut-chart__legend-list-elem{
+    display: flex;
+    align-items: center;
+}
+
+.donut-chart__legend-elem-icon{
+    width: 10px;
+    height: 10px;
+    fill: none;
+    margin-right: 5px;
+}
+
+.donut-chart__text {
+    fill: #000;
+    -moz-transform: translateY(0.25em);
+    -ms-transform: translateY(0.25em);
+    -webkit-transform: translateY(0.25em);
+    transform: translateY(0.25em);
+    transition: all .3s;
+
+    &[data-theme="nice"]{
+        fill: #FFBA9C;
+    }
+
+    &[data-theme="good"]{
+        fill: #66D2EA;
+    }
+
+    &[data-theme="pass"]{
+        fill: #BC9CFF;
+    }
+
+    &[data-theme="bad"]{
+        fill: #3D4975;
+    }
+}
+
+.donut-chart__value {
+    font-family: $secondFont;
+    font-size: rem(24px);
+    font-weight: bold;
+    line-height: 1;
+    line-height: 1;
+    text-anchor: middle;
+    -moz-transform: translateY(-0.25em);
+    -ms-transform: translateY(-0.25em);
+    -webkit-transform: translateY(-0.25em);
+    transform: translateY(-0.25em);
+}
+
+.donut-chart__label {
+    font-size: rem(12px);
+    text-transform: uppercase;
+    text-anchor: middle;
+    font-weight: bold;
+    -moz-transform: translateY(0.7em);
+    -ms-transform: translateY(0.7em);
+    -webkit-transform: translateY(0.7em);
+    transform: translateY(1em);
+}

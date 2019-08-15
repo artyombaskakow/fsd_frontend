@@ -2,7 +2,7 @@ $advListPaddingSize : rem(20px);
 
 .advantages-list__list-item{
     position: relative;
-    padding-left: 58px;
+    padding-left: rem(58px);
     padding-top: $advListPaddingSize;
     padding-bottom: $advListPaddingSize;
     border-bottom: 1px solid $darkShade10;

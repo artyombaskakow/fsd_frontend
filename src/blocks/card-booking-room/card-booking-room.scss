@@ -6,6 +6,14 @@
 @import '../room-number-price/room-number-price.scss';
  
 
+
+.card-booking-room{
+    @media (max-width: $tableWidth){
+        display: flex;
+        justify-content: center;
+    }
+}
+
 .card-booking-room__header{
     padding-top: 14px;
 }
