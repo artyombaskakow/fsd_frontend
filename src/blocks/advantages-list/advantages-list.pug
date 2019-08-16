@@ -4,7 +4,9 @@ mixin advantages-list(obj)
     ul.advantages-list
         each item in obj.list
             li.advantages-list__list-item
-                .advantages-list__icon.material-icons= item.icon
-                .advantages-list__title= item.title
-                .advantages-list__descr= item.descr
+                .advantages-list__container
+                    .advantages-list__icon.material-icons= item.icon
+                    .advantages-list__text
+                        .advantages-list__title= item.title
+                        .advantages-list__descr= item.descr
 

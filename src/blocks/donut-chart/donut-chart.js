@@ -223,7 +223,7 @@ function makeSVG(tag, attrs={}) {
 
 function initGradients(){
 
-    let gradientContainerClass = '.donut-chart__gradients';
+    let gradientContainerClass = 'donut-chart__gradients';
     let gradientHtmlList = [];
     let gradients = [
         {id: 'markNiceGradient', colors: {from: '#FFE39C', to: '#FFBA9C'} },

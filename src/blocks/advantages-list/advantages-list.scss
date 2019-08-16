@@ -1,18 +1,14 @@
 $advListPaddingSize : rem(20px);
 
 .advantages-list__list-item{
+    display: flex;
     position: relative;
-    padding-left: rem(58px);
     padding-top: $advListPaddingSize;
     padding-bottom: $advListPaddingSize;
     border-bottom: 1px solid $darkShade10;
 
     &:first-child{
         padding-top: 0;
-
-        .advantages-list__icon{
-            top: 0;
-        }
     }
 
     &:nth-child(2) ~ .advantages-list__list-item{
@@ -20,12 +16,14 @@ $advListPaddingSize : rem(20px);
     }
 }
 
+.advantages-list__container{
+    display: flex;
+}
+
 .advantages-list__icon{
     font-size: rem(48px);
     @include icon-gradient;
-    position: absolute;
-    left: 0;
-    top: $advListPaddingSize;
+    margin: 1px 10px 0 0;
 }
 
 .advantages-list__title{
