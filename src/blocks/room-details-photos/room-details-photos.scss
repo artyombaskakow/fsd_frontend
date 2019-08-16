@@ -29,9 +29,14 @@ $mainPhotoWidth:    68.1%;
     position: relative;
     height: 100%;
 
-    @media (max-width: $tableWidth){
+    @media (max-width: $tableWidth) and (min-width: $phoneWidth){
         width: 100%;
         flex-direction: row;
+    }
+
+    @media (max-width: $phoneWidth){
+        width: 100%;
+        flex-direction: column;
     }
 }
 
@@ -41,8 +46,12 @@ $mainPhotoWidth:    68.1%;
     height: 50%;
     background-size: cover;
 
-    @media (max-width: $tableWidth){
+    @media (max-width: $tableWidth) and (min-width: $phoneWidth){
         width: 50%;
         height: 100%;
+    }
+
+    @media (max-width: $phoneWidth){
+        width: 100%;
     }
 }
