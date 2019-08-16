@@ -108,11 +108,13 @@ section, .section {
 
 .content-wrapper{
   flex: 1 0 auto;
-  border-bottom: 1px solid $darkShade25;
+  //border-bottom: 1px solid $darkShade25;
+  box-shadow: 0 1px 0 0 darkShade25;
 }
 
 .footer-wrapper {
-	flex: 0 0 auto;
+  flex: 0 0 auto;
+  outline: 1px solid rgba(31,32,65,.25);
 }
 
 .shadow-wrapper{
@@ -204,8 +206,10 @@ section, .section {
   font-weight: 100;
   position: relative;
   padding-left: 30px;
-  display: inline-block;
-  line-height: 18px;
+  //display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 19px;
 
   &:hover{
       cursor: pointer;

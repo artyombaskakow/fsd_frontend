@@ -66,15 +66,15 @@
     position: absolute;
     z-index: 3;
     right: 12px;
-    bottom: 14px;
+    bottom: 15px;
 }
 
 .room-preview-item__slider-control-elem{
     display: block;
-    @include size(8px);
+    @include size(7px);
     border-radius: 50%;
     border: 1px solid white;
-    margin-right: 3px;
+    margin-right: 4px;
 
     &:hover{
         cursor: pointer;

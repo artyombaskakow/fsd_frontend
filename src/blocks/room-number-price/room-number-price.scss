@@ -4,6 +4,7 @@
     justify-content: space-between;
     width: 100%;
     flex-wrap: wrap;
+    align-items: baseline;
 }
 
 .room-number-price__number-container{
@@ -31,6 +32,7 @@
     color: $darkShade50;
     display: inline-flex;
     align-items: flex-end;
+    align-items: baseline;
 }
 
 .room-number-price__price-value{
