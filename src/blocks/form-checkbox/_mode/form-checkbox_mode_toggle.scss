@@ -5,10 +5,6 @@
         width: 40px;
         flex-direction: column;
     }
-    
-    .form-checkbox__label{
-        padding-left: 50px;
-    }
 
     .form-checkbox__checkmark::before{
         content: '';
@@ -26,6 +22,11 @@
     .form-checkbox__input:checked + .form-checkbox__checkmark::before{
         align-self: flex-end;
         background: $primaryGradient;
+    }
+
+    .form-checkbox__text{
+        line-height: rem(18px);
+        margin-top: 0;
     }
 
 }

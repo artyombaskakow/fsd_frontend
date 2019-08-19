@@ -6,6 +6,7 @@ mixin form-radio-buttons(obj)
     .form-radio-buttons
         for elem in elems
             .form-radio
-                label.form-radio__label !{elem.label}
+                label.form-radio__label 
                     input.form-radio__input(type='radio', value=elem.value, name=name, checked=elem.checked)
                     .form-radio__checkmark
+                    .form-radio__text !{elem.label}

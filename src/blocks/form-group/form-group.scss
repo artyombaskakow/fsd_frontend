@@ -1,9 +1,10 @@
 @import './_expandable/form-group_expandable_close.scss';
 @import './_expandable/form-group_expandable_expanded.scss';
 
-.form-group__label-wrapper{
-    //margin-bottom: 9px;
-    //padding-right: 9px;
+.form-group{
+    .form-label{
+        align-items: center;
+    }
 }
 
 .form-group__label-wrapper_margin{
@@ -13,17 +14,27 @@
 .form-group_elems-container{
 
     .form-checkbox {
-        //margin-top: 7px;
-        //margin-right: 20px;
-        margin-top: 12px;
+        margin-bottom: 11px;
 
-        &:first-child{
-            margin-top: 0;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    .form-checkbox_mode_toggle{
+        margin-bottom: 14px;
+
+        &:last-child{
+            margin-bottom: 0;
         }
     }
 
     .form-checkbox_mode_rich{
-        margin-top: 10px;
+        margin-bottom: 8px;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
     }
 
     .form-group__elem-row{

@@ -21,6 +21,10 @@
     &:focus{
         border-color: $darkShade50;
     }
+
+    &::placeholder{
+        color: $darkShade25;
+    }
 }
 
 .form-input__icon{

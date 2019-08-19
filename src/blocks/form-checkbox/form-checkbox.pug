@@ -13,15 +13,8 @@ mixin form-checkbox(obj)
                 if(!obj.mode || obj.mode=='checkbox' || obj.mode=='rich')
                     svg.form-checkbox__icon
                         use.form-checkbox__icon-elem(xlink:href='#icon-check')
-            .form-checkbox__text !{label}
+            .form-checkbox__text-container
+                .form-checkbox__text !{label}
 
-            if(obj.mode=='rich' && description.length)
-                .form-checkbox__description !{description}
-        //label.form-checkbox__label !{label}
-            input.form-checkbox__input(type='checkbox', value=value, checked=checked_attr)
-            .form-checkbox__checkmark
-                if(!obj.mode || obj.mode=='checkbox' || obj.mode=='rich')
-                    svg.form-checkbox__icon
-                        use.form-checkbox__icon-elem(xlink:href='#icon-check')
-            if(obj.mode=='rich' && description.length)
-                .form-checkbox__description !{description}
+                if(obj.mode=='rich' && description.length)
+                    .form-checkbox__description !{description}

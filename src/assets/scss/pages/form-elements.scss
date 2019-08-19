@@ -9,13 +9,14 @@
             margin-bottom: 138px;
         }
         &:last-of-type{
-            margin-top: 5px;
+            margin-top: 8px;
             justify-content: left;
 
             .form-elements-column:last-child{
                 margin: 0;
                 width: 700px; 
                 padding-top: 10px;
+                margin-left: 2px;
             }
         }
     }
@@ -33,7 +34,7 @@
         }
     
         &:first-child{
-            margin-right: 126px;
+            margin-right: 124px;
 
             @media (max-width: $smDesktopWidth){
                 margin-right: 0;
@@ -41,9 +42,11 @@
         }
         &:last-child{
             margin-left: 72px;
+            margin-right: 2px;
 
             @media (max-width: $smDesktopWidth){
                 margin-left: 0;
+                margin-right: 0;
             }
         }
         &:not(:first-child){
@@ -58,8 +61,29 @@
         margin-top: 38px;
     }
 
+    .form-elements__radio-buttons-wrapper{
+        margin-top: 35px;
+    }
+
+    .form-elements__like-buttons-wrapper,
+    .form-elements__buttons-wrapper{
+        margin-top: 40px;
+    }
+
+    .form-elements__rate-buttons-wrapper{
+        margin-top: 34px;
+    }
+
     .form-elements__button-row{
-        margin-bottom: 30px;
+        margin-bottom: 26px;
+
+        &:first-child{
+            margin-bottom: 30px;
+        }
+
+        &:last-child{
+            margin-bottom: 36px;
+        }
     
         .form-button {
             margin-right: 20px;

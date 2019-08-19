@@ -53,7 +53,7 @@ block content
                     +form-checkbox({label: 'Можно с питомцами', checked: true})
                     +form-checkbox({label: 'Можно пригласить гостей <br/>(до 10 человек)', checked: true})
 
-                .form-elements__form-group-wrapper
+                .form-elements__radio-buttons-wrapper
                     +form-group({label: 'Radio buttons', labelMargin: true})
                         +form-radio-buttons({
                             name: 'sex',
@@ -68,12 +68,12 @@ block content
                         +form-checkbox({label: 'Получать спецпредложения', mode: 'toggle', checked: true})
                         +form-checkbox({label: 'Получать спецпредложения', mode: 'toggle'})
 
-                .form-elements__form-group-wrapper
+                .form-elements__like-buttons-wrapper
                     +form-group({label: 'Like button', labelMargin: true})
                         +form-button-like({likeCount: 2})
                         +form-button-like({likeCount: 12, liked: true})
 
-                .form-elements__form-group-wrapper
+                .form-elements__rate-buttons-wrapper
                     +form-group({label: 'Rate button', labelMargin: true})
                         +form-button-rate({value: 4})
                         +form-button-rate({value: 5})
@@ -82,7 +82,7 @@ block content
                 .narrow-column
                     +range-slider({ startValue: 5000, endValue: 10000, max: 15000})
 
-                .form-elements__form-group-wrapper
+                .form-elements__buttons-wrapper
                     +form-group({label: 'Buttons', labelMargin: true})
                         .form-elements__button-row
                             +form-button({text: 'Click me'})

@@ -18,15 +18,6 @@ html {
   @media (max-width: $phoneWidth) {
     font-size: 15px;
   }
-  /*@media (min-width: $phoneWidth) {
-    font-size: 22px;
-  }
-  @media (min-width: $tableWidth) {
-    font-size: 20px;
-  }
-  @media (min-width: $smDesktopWidth) {
-    font-size: 15px;
-  }*/
   @media (min-width: $desktopWidth) {
     font-size: $mainFontSize;
   }
@@ -108,7 +99,6 @@ section, .section {
 
 .content-wrapper{
   flex: 1 0 auto;
-  //border-bottom: 1px solid $darkShade25;
   box-shadow: 0 1px 0 0 darkShade25;
 }
 
@@ -162,10 +152,10 @@ section, .section {
 }
 
 .form-group{
-    margin-top: 16px;
+    margin-bottom: 16px;
 
-    &:first-child{
-        margin-top: 0;
+    &:last-child{
+        margin-bottom: 0;
     }
 }
 
@@ -191,24 +181,12 @@ section, .section {
   display: table-column;
 }
 
-/*
-%form-elem-label{
-  text-transform: uppercase;
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  color: $darkShade100;
-  font-size: 0.87rem;
-}*/
 
 %form-input-label{
   color: $darkShade50;
   font-weight: 100;
   position: relative;
-  padding-left: 30px;
-  //display: inline-block;
   display: flex;
-  flex-wrap: wrap;
   line-height: 19px;
 
   &:hover{
@@ -216,15 +194,14 @@ section, .section {
   }
 }
 
+
 %form-input-checkmark{
-    position: absolute;
     display: flex;
     @include size(20px);
     border: 1px solid $darkShade25;
     border-radius: 4px;
-    left: 0;
-    top: 0;
     justify-content: center;
     align-items: center;
+    margin-right: 10px;
 }
 

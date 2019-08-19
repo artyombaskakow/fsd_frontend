@@ -26,7 +26,14 @@
     }
 }
 
+.form-checkbox__text-container{
+    display: flex;
+    flex-direction: column;
+}
+
 .form-checkbox__text{
+    display: flex;
     line-height: rem(20px);
+    margin-top: 1px;
 }
 
