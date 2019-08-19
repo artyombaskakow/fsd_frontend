@@ -65,21 +65,21 @@ block content
             .search-room-results__list
                 -
                     var rooms = [
-                        {number: 888, type: 'люкс', rating: 5, votes: 145, price: '9 990', firstImage: '/assets/img/rooms/room1.png'},
-                        {number: 840, type: '', rating: 4, votes: 65, price: '9 990', firstImage: '/assets/img/rooms/room2.png'},
-                        {number: 980, type: 'люкс', rating: 3, votes: 35, price: '8 500', firstImage: '/assets/img/rooms/room3.png'},
+                        {number: 888, type: 'люкс', rating: 5, votes: 145, price: '9 990', firstImage: './assets/img/rooms/room1.png'},
+                        {number: 840, type: '', rating: 4, votes: 65, price: '9 990', firstImage: './assets/img/rooms/room2.png'},
+                        {number: 980, type: 'люкс', rating: 3, votes: 35, price: '8 500', firstImage: './assets/img/rooms/room3.png'},
 
-                        {number: 856, type: '', rating: 5, votes: 19, price: '7 300', firstImage: '/assets/img/rooms/room4.png'},
-                        {number: 740, type: '', rating: 4, votes: 44, price: '6 000', firstImage: '/assets/img/rooms/room5.png'},
-                        {number: 982, type: '', rating: 3, votes: 56, price: '5 800', firstImage: '/assets/img/rooms/room6.png'},
+                        {number: 856, type: '', rating: 5, votes: 19, price: '7 300', firstImage: './assets/img/rooms/room4.png'},
+                        {number: 740, type: '', rating: 4, votes: 44, price: '6 000', firstImage: './assets/img/rooms/room5.png'},
+                        {number: 982, type: '', rating: 3, votes: 56, price: '5 800', firstImage: './assets/img/rooms/room6.png'},
 
-                        {number: 678, type: '', rating: 5, votes: 45, price: '5 500', firstImage: '/assets/img/rooms/room7.png'},
-                        {number: 450, type: '', rating: 4, votes: 39, price: '5 300', firstImage: '/assets/img/rooms/room8.png'},
-                        {number: 350, type: '', rating: 3, votes: 77, price: '5 000', firstImage: '/assets/img/rooms/room9.png'},
+                        {number: 678, type: '', rating: 5, votes: 45, price: '5 500', firstImage: './assets/img/rooms/room7.png'},
+                        {number: 450, type: '', rating: 4, votes: 39, price: '5 300', firstImage: './assets/img/rooms/room8.png'},
+                        {number: 350, type: '', rating: 3, votes: 77, price: '5 000', firstImage: './assets/img/rooms/room9.png'},
 
-                        {number: 666, type: '', rating: 5, votes: 25, price: '5 000', firstImage: '/assets/img/rooms/room10.png'},
-                        {number: 444, type: '', rating: 4, votes: 15, price: '5 000', firstImage: '/assets/img/rooms/room11.png'},
-                        {number: 352, type: '', rating: 3, votes: 55, price: '5 000', firstImage: '/assets/img/rooms/room12.png'},
+                        {number: 666, type: '', rating: 5, votes: 25, price: '5 000', firstImage: './assets/img/rooms/room10.png'},
+                        {number: 444, type: '', rating: 4, votes: 15, price: '5 000', firstImage: './assets/img/rooms/room11.png'},
+                        {number: 352, type: '', rating: 3, votes: 55, price: '5 000', firstImage: './assets/img/rooms/room12.png'},
                     ];
 
                 each room in rooms
@@ -92,9 +92,9 @@ block content
                             price: room.price,
                             images: [
                                 room.firstImage, 
-                                '/assets/img/rooms/room2.png', 
-                                '/assets/img/rooms/room3.png', 
-                                '/assets/img/rooms/room4.png'
+                                './assets/img/rooms/room2.png', 
+                                './assets/img/rooms/room3.png', 
+                                './assets/img/rooms/room4.png'
                             ]
                         })
 
